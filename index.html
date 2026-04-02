@@ -110,7 +110,6 @@
             width: 100%;
             height: 100%;
             display: none;
-            /* Added padding for Bandcamp/TikTok visibility */
             padding: 10px;
             box-sizing: border-box;
         }
@@ -126,104 +125,4 @@
             font-size: 1.2rem;
             text-shadow: 0 0 8px #22c55e;
             z-index: 25;
-            opacity: 0.8;
-        }
-
-        /* INVISIBLE KNOBS */
-        .knob {
-            position: absolute;
-            right: 4.5%;
-            width: 12%;
-            height: 16%;
-            z-index: 30;
-            cursor: pointer;
-            border-radius: 50%;
-        }
-
-        .knob-up { top: 48.5%; }
-        .knob-down { top: 66.5%; }
-
-        @media (max-width: 600px) {
-            .profile-container { transform: scale(0.7); height: 280px; }
-            #ch-display { font-size: 0.9rem; top: 15px; left: 15px; }
-        }
-    </style>
-</head>
-<body>
-
-    <div class="profile-container">
-        <div class="profile-pic"></div>
-        <a href="https://a.co/d/e8ejB2f" class="menu-item btn-1">Emplant</a>
-        <a href="https://a.co/d/4FbutND" class="menu-item btn-2">Black Dove</a>
-        <a href="https://substack.com/@khannections" class="menu-item btn-3">Substack</a>
-        <a href="#" class="menu-item btn-4">About</a>
-        <a href="https://khanimations.printful.me/" class="menu-item btn-5">Store</a>
-        <a href="https://mallon.bandcamp.com/" class="menu-item btn-6">Music</a>
-        <a href="https://podcasts.apple.com/us/podcast/dantes-history/id1147372266" class="menu-item btn-7">History</a>
-        <a href="https://youtu.be/eOkfrJ5i_l8" class="menu-item btn-8">Animations</a>
-    </div>
-
-    <div class="tv-frame">
-        <div id="ch-display">CH 01</div>
-        <img src="2-26590_vintage-tv-png-old-television-png.png" class="tv-img">
-
-        <div class="screen-container">
-            <div class="channel current-channel">
-                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/eOkfrJ5i_l8" frameborder="0" allowfullscreen></iframe>
-            </div>
-            
-            <div class="channel">
-                <iframe src="https://www.tiktok.com/embed/v2/7568475855752662285" width="100%" height="100%" frameborder="0"></iframe>
-            </div>
-
-            <div class="channel">
-                <iframe src="https://www.tiktok.com/embed/v2/7524060830736878861" width="100%" height="100%" frameborder="0"></iframe>
-            </div>
-
-            <div class="channel">
-                <iframe style="border: 0; width: 100%; height: 90%;" src="https://bandcamp.com/EmbeddedPlayer/album=3205329073/size=large/bgcol=333333/linkcol=0687f5/transparent=true/" seamless></iframe>
-            </div>
-
-            <div class="channel">
-                <iframe style="border: 0; width: 100%; height: 90%;" src="https://bandcamp.com/EmbeddedPlayer/album=1396164373/size=large/bgcol=333333/linkcol=0687f5/transparent=true/" seamless></iframe>
-            </div>
-
-            <div class="channel">
-                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/rWo9J791Yss" frameborder="0" allowfullscreen></iframe>
-            </div>
-
-            <div class="channel">
-                <img src="https://media.giphy.com/media/xTk9ZvMnbY0zVb19nE/giphy.gif" style="width:100%; height:100%; object-fit:cover;">
-            </div>
-        </div>
-
-        <div class="knob knob-up" onclick="changeChannel(1)"></div>
-        <div class="knob knob-down" onclick="changeChannel(-1)"></div>
-    </div>
-
-    <script>
-        let currentChannelIndex = 0;
-        const channels = document.querySelectorAll('.channel');
-        const display = document.getElementById('ch-display');
-
-        function changeChannel(dir) {
-            // Stop content on current channel by refreshing its iframe
-            let oldIframe = channels[currentChannelIndex].querySelector('iframe');
-            if (oldIframe) {
-                let currentSrc = oldIframe.src;
-                oldIframe.src = ''; // Wipe it
-                oldIframe.src = currentSrc; // Reset it (stops audio)
-            }
-
-            // Move to next channel
-            channels[currentChannelIndex].classList.remove('current-channel');
-            currentChannelIndex = (currentChannelIndex + dir + channels.length) % channels.length;
-            channels[currentChannelIndex].classList.add('current-channel');
-            
-            // Update HUD
-            let num = currentChannelIndex + 1;
-            display.innerText = "CH " + (num < 10 ? "0" + num : num);
-        }
-    </script>
-</body>
-</html>
+            opacity: 0
