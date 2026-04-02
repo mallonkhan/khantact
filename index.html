@@ -88,3 +88,133 @@
         .btn-8 { transform: translate(115px, -115px); }
 
         /* --- TV GALLERY SECTION --- */
+        .tv-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 600px; /* Main attraction size */
+            aspect-ratio: 4 / 3;
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .tv-mask {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            z-index: 20;
+            pointer-events: none;
+        }
+
+        .tv-screen-content {
+            position: absolute;
+            /* Adjust these % values to line up your video with the specific TV image hole */
+            top: 12%; 
+            left: 11%;
+            width: 65%;
+            height: 68%;
+            background-color: black;
+            overflow: hidden;
+            z-index: 10;
+        }
+
+        .channel {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+        }
+
+        .current-channel { display: flex; }
+
+        .tv-controls {
+            position: absolute;
+            right: 5%;
+            bottom: 15%;
+            z-index: 30;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .tv-knob {
+            background: #334155;
+            color: #f8fafc;
+            border: 2px solid var(--tv-accent);
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-family: monospace;
+            font-size: 11px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .tv-knob:hover {
+            background: var(--tv-accent);
+            color: black;
+        }
+
+        /* Mobile Fixes */
+        @media (max-width: 600px) {
+            .profile-container { transform: scale(0.7); height: 350px; }
+            .tv-wrapper { width: 95vw; }
+            .menu-item { font-size: 11px; padding: 8px 12px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="profile-container">
+        <div class="profile-pic"></div>
+        <a href="https://a.co/d/e8ejB2f" class="menu-item btn-1">Emplant</a>
+        <a href="https://a.co/d/4FbutND" class="menu-item btn-2">Black Dove</a>
+        <a href="https://substack.com/@khannections" class="menu-item btn-3">Substack</a>
+        <a href="#" class="menu-item btn-4">About</a>
+        <a href="https://khanimations.printful.me/" class="menu-item btn-5">Store</a>
+        <a href="https://mallon.bandcamp.com/" class="menu-item btn-6">Music</a>
+        <a href="https://podcasts.apple.com/us/podcast/dantes-history/id1147372266" class="menu-item btn-7">Dante's History</a>
+        <a href="https://youtu.be/eOkfrJ5i_l8" class="menu-item btn-8">Animations</a>
+    </div>
+
+    <div class="tv-wrapper">
+        <img src="tv-bezel.png" alt="TV Frame" class="tv-mask">
+        
+        <div class="tv-screen-content">
+            <div class="channel current-channel">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/eOkfrJ5i_l8" frameborder="0" allowfullscreen></iframe>
+            </div>
+
+            <div class="channel">
+                <iframe style="border: 0; width: 100%; height: 100%;" src="https://bandcamp.com/EmbeddedPlayer/album=3049581109/size=large/bgcol=333333/linkcol=0f91ff/tracklist=false/transparent=true/" seamless></iframe>
+            </div>
+
+            <div class="channel">
+                <img src="https://media.giphy.com/media/xTk9ZvMnbY0zVb19nE/giphy.gif" style="width:100%; height:100%; object-fit:cover;">
+            </div>
+        </div>
+
+        <div class="tv-controls">
+            <button onclick="changeChannel(1)" class="tv-knob">CH +</button>
+            <button onclick="changeChannel(-1)" class="tv-knob">CH -</button>
+        </div>
+    </div>
+
+    <script>
+        let currentChannelIndex = 0;
+        const channels = document.querySelectorAll('.channel');
+
+        function changeChannel(direction) {
+            channels[currentChannelIndex].classList.remove('current-channel');
+            currentChannelIndex = (currentChannelIndex + direction + channels.length) % channels.length;
+            channels[currentChannelIndex].classList.add('current-channel');
+        }
+    </script>
+
+</body>
+</html>
