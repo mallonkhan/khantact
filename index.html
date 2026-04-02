@@ -13,8 +13,7 @@
         }
 
         body {
-            /* Replace 'bg.jpg' with your background image filename */
-            background-image: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('pic09.jpg'); 
+            background-image: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('bg.jpg'); 
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -25,7 +24,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-start; /* Aligns content from top down */
+            justify-content: flex-start;
             min-height: 100vh;
             padding: 40px 20px;
             overflow-x: hidden;
@@ -36,7 +35,7 @@
             position: relative;
             width: 100%;
             max-width: 500px;
-            height: 450px; /* Space for the button circle */
+            height: 400px; 
             display: flex;
             justify-content: center;
             align-items: center;
@@ -45,8 +44,8 @@
         }
 
         .profile-pic {
-            width: 160px;
-            height: 160px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
             border: 4px solid var(--accent-color);
             background-image: url('IMG_8025.JPG'); 
@@ -59,7 +58,7 @@
         .menu-item {
             position: absolute;
             text-decoration: none;
-            background: rgba(15, 23, 42, 0.9);
+            background: rgba(15, 23, 42, 0.95);
             color: white;
             padding: 10px 16px;
             border-radius: 50px;
@@ -77,7 +76,7 @@
             box-shadow: 0 0 15px var(--accent-color);
         }
 
-        /* Responsive Circle Math */
+        /* Button Positions */
         .btn-1 { transform: translate(160px, 0px); }
         .btn-2 { transform: translate(115px, 115px); }
         .btn-3 { transform: translate(0px, 160px); }
@@ -91,12 +90,9 @@
         .tv-wrapper {
             position: relative;
             width: 100%;
-            max-width: 600px; /* Main attraction size */
+            max-width: 650px;
             aspect-ratio: 4 / 3;
             margin-top: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
 
         .tv-mask {
@@ -112,14 +108,32 @@
 
         .tv-screen-content {
             position: absolute;
-            /* Adjust these % values to line up your video with the specific TV image hole */
-            top: 12%; 
-            left: 11%;
-            width: 65%;
+            top: 11%; 
+            left: 10%;
+            width: 66%;
             height: 68%;
             background-color: black;
-            overflow: hidden;
+            overflow-y: auto; /* Allows scrolling for long TikToks or Podcasts */
+            overflow-x: hidden;
             z-index: 10;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Channel Number Display */
+        #channel-info {
+            position: absolute;
+            top: 15px;
+            right: 130px;
+            background: rgba(0, 255, 0, 0.2);
+            color: #00ff00;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 2px 8px;
+            font-size: 14px;
+            border-radius: 3px;
+            z-index: 25;
+            pointer-events: none;
         }
 
         .channel {
@@ -129,9 +143,19 @@
             width: 100%;
             height: 100%;
             display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: #000;
         }
 
         .current-channel { display: flex; }
+
+        /* Ensure all embeds are centered */
+        .channel iframe, .channel blockquote {
+            max-width: 100% !important;
+            margin: auto !important;
+        }
 
         .tv-controls {
             position: absolute;
@@ -155,16 +179,12 @@
             transition: 0.2s;
         }
 
-        .tv-knob:hover {
-            background: var(--tv-accent);
-            color: black;
-        }
+        .tv-knob:hover { background: var(--tv-accent); color: black; }
 
-        /* Mobile Fixes */
         @media (max-width: 600px) {
-            .profile-container { transform: scale(0.7); height: 350px; }
-            .tv-wrapper { width: 95vw; }
-            .menu-item { font-size: 11px; padding: 8px 12px; }
+            .profile-container { transform: scale(0.75); height: 320px; }
+            .tv-wrapper { width: 98vw; }
+            #channel-info { right: 80px; font-size: 10px; }
         }
     </style>
 </head>
@@ -183,7 +203,8 @@
     </div>
 
     <div class="tv-wrapper">
-        <img src="2-26590_vintage-tv-png-old-television-png.png" alt="TV Frame" class="tv-mask">
+        <div id="channel-info">CH 01</div>
+        <img src="tv-bezel.png" alt="TV Frame" class="tv-mask">
         
         <div class="tv-screen-content">
             <div class="channel current-channel">
@@ -191,30 +212,20 @@
             </div>
 
             <div class="channel">
-                <iframe style="border: 0; width: 100%; height: 100%;" src="https://bandcamp.com/EmbeddedPlayer/album=2607510681/size=small/bgcol=ffffff/linkcol=0687f5/transparent=true/" seamless></iframe>
+                <iframe src="https://redcircle.com/shows/1cbfd88e-9c60-4e7f-9168-46e0c7dc7b4a?fbclid=IwAR1" style="width:100%; height:100%; border:0;"></iframe>
             </div>
 
             <div class="channel">
-                <img src="https://media.giphy.com/media/xTk9ZvMnbY0zVb19nE/giphy.gif" style="width:100%; height:100%; object-fit:cover;">
+                <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@mallonkhan/video/7568475855752662285" data-video-id="7568475855752662285" style="width:100%"> <section></section> </blockquote>
             </div>
-        </div>
 
-        <div class="tv-controls">
-            <button onclick="changeChannel(1)" class="tv-knob">CH +</button>
-            <button onclick="changeChannel(-1)" class="tv-knob">CH -</button>
-        </div>
-    </div>
+            <div class="channel">
+                <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@mallonkhan/video/7524060830736878861" data-video-id="7524060830736878861" style="width:100%"> <section></section> </blockquote>
+            </div>
 
-    <script>
-        let currentChannelIndex = 0;
-        const channels = document.querySelectorAll('.channel');
+            <div class="channel">
+                <iframe style="border: 0; width: 100%; height: 100%;" src="https://bandcamp.com/EmbeddedPlayer/album=3205329073/size=large/bgcol=333333/linkcol=0687f5/transparent=true/" seamless></iframe>
+            </div>
 
-        function changeChannel(direction) {
-            channels[currentChannelIndex].classList.remove('current-channel');
-            currentChannelIndex = (currentChannelIndex + direction + channels.length) % channels.length;
-            channels[currentChannelIndex].classList.add('current-channel');
-        }
-    </script>
-
-</body>
-</html>
+            <div class="channel">
+                <iframe style="border: 0; width: 100%; height: 100%;" src="https://bandcamp.com/EmbeddedPlayer/album=1396164373/size=large/bgcol=333333/linkcol=0687f5/transparent=true/"
