@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,14 +9,14 @@
             --bg-color: #0f172a;
             --accent-color: #38bdf8;
             --text-color: #f8fafc;
-            --circle-size: 200px; /* Size of your profile pic */
-            --button-distance: 160px; /* How far buttons sit from center */
+            --circle-size: 180px; 
+            --distance: 180px; /* How far from center the buttons sit */
         }
 
         body {
             background-color: var(--bg-color);
             color: var(--text-color);
-            font-family: -apple-system, sans-serif;
+            font-family: -apple-system, system-ui, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -26,57 +27,62 @@
 
         .container {
             position: relative;
-            width: 500px;
-            height: 500px;
+            width: 600px;
+            height: 600px;
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
-        /* The Profile Picture */
+        /* Profile Picture */
         .profile-pic {
             width: var(--circle-size);
             height: var(--circle-size);
             border-radius: 50%;
             border: 4px solid var(--accent-color);
-            background-image: url('IMG_8025.JPG'); /* REPLACE WITH YOUR IMAGE URL */
+            /* Upload a photo named profile.jpg to GitHub or change this link */
+            background-image: url('IMG_8025.jpg'); 
             background-size: cover;
             background-position: center;
             z-index: 10;
-            box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+            box-shadow: 0 0 30px rgba(56, 189, 248, 0.2);
         }
 
-        /* The Buttons Wrapper */
+        /* Buttons Base Styling */
         .menu-item {
             position: absolute;
             text-decoration: none;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.08);
             color: white;
-            padding: 10px 18px;
-            border-radius: 20px;
+            padding: 12px 20px;
+            border-radius: 50px;
             font-size: 14px;
             font-weight: 600;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: background 0.3s, border 0.3s, box-shadow 0.3s;
             white-space: nowrap;
+            z-index: 5;
         }
 
+        /* Hover Effect - No "retreating" */
         .menu-item:hover {
             background: var(--accent-color);
             color: var(--bg-color);
-            transform: scale(1.1);
+            border-color: var(--accent-color);
+            box-shadow: 0 0 15px var(--accent-color);
+            cursor: pointer;
         }
 
-        /* Positioning the 8 buttons in a circle */
-        /* Formula: x = cos(angle), y = sin(angle) */
-        .btn-1 { transform: translate(calc(var(--button-distance) * cos(0deg)),   calc(var(--button-distance) * sin(0deg))); }
-        .btn-2 { transform: translate(calc(var(--button-distance) * cos(45deg)),  calc(var(--button-distance) * sin(45deg))); }
-        .btn-3 { transform: translate(calc(var(--button-distance) * cos(90deg)),  calc(var(--button-distance) * sin(90deg))); }
-        .btn-4 { transform: translate(calc(var(--button-distance) * cos(135deg)), calc(var(--button-distance) * sin(135deg))); }
-        .btn-5 { transform: translate(calc(var(--button-distance) * cos(180deg)), calc(var(--button-distance) * sin(180deg))); }
-        .btn-6 { transform: translate(calc(var(--button-distance) * cos(225deg)), calc(var(--button-distance) * sin(225deg))); }
-        .btn-7 { transform: translate(calc(var(--button-distance) * cos(270deg)), calc(var(--button-distance) * sin(270deg))); }
-        .btn-8 { transform: translate(calc(var(--button-distance) * cos(315deg)), calc(var(--button-distance) * sin(315deg))); }
+        /* The math to place buttons in a circle (360 degrees / 8 buttons = 45 deg intervals) */
+        /* Top is 270deg, Right is 0deg, Bottom is 90deg, Left is 180deg */
+        .btn-1 { transform: translate(calc(var(--distance) * cos(0deg)),   calc(var(--distance) * sin(0deg))); }
+        .btn-2 { transform: translate(calc(var(--distance) * cos(45deg)),  calc(var(--distance) * sin(45deg))); }
+        .btn-3 { transform: translate(calc(var(--distance) * cos(90deg)),  calc(var(--distance) * sin(90deg))); }
+        .btn-4 { transform: translate(calc(var(--distance) * cos(135deg)), calc(var(--distance) * sin(135deg))); }
+        .btn-5 { transform: translate(calc(var(--distance) * cos(180deg)), calc(var(--distance) * sin(180deg))); }
+        .btn-6 { transform: translate(calc(var(--distance) * cos(225deg)), calc(var(--distance) * sin(225deg))); }
+        .btn-7 { transform: translate(calc(var(--distance) * cos(270deg)), calc(var(--distance) * sin(270deg))); }
+        .btn-8 { transform: translate(calc(var(--distance) * cos(315deg)), calc(var(--distance) * sin(315deg))); }
 
     </style>
 </head>
@@ -85,14 +91,14 @@
     <div class="container">
         <div class="profile-pic"></div>
 
-        <a href="#" class="menu-item btn-1">Bandcamp</a>
-        <a href="#" class="menu-item btn-2">Novels</a>
-        <a href="#" class="menu-item btn-3">Artwork</a>
-        <a href="#" class="menu-item btn-4">Substack</a>
-        <a href="#" class="menu-item btn-5">Store</a>
-        <a href="#" class="menu-item btn-6">About</a>
-        <a href="#" class="menu-item btn-7">Contact</a>
-        <a href="#" class="menu-item btn-8">Animation</a>
+        <a href="INSERT_MUSIC_URL_HERE"  class="menu-item btn-1">Music</a>
+        <a href="INSERT_BOOKS_URL_HERE"  class="menu-item btn-2">Books</a>
+        <a href="INSERT_ART_URL_HERE"    class="menu-item btn-3">Artwork</a>
+        <a href="INSERT_BLOG_URL_HERE"   class="menu-item btn-4">Blog</a>
+        <a href="INSERT_STORE_URL_HERE"  class="menu-item btn-5">Store</a>
+        <a href="INSERT_ABOUT_URL_HERE"  class="menu-item btn-6">About</a>
+        <a href="INSERT_CONTACT_URL_HERE" class="menu-item btn-7">Contact</a>
+        <a href="INSERT_GALLERY_URL_HERE" class="menu-item btn-8">Gallery</a>
     </div>
 
 </body>
