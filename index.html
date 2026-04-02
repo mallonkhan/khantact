@@ -3,17 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mallon Khan</title>
+    <title>Mallon Khan | Khan-O-Vision</title>
     <style>
         :root {
             --bg-color: #0f172a;
             --accent-color: #38bdf8;
             --text-color: #f8fafc;
-            --tv-accent: #f59e0b; /* Golden Knob Color */
         }
 
         body {
-            background-image: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('bg.jpg'); 
+            background-image: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)), url('bg.jpg'); 
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -37,7 +36,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-bottom: 20px;
+            flex-shrink: 0;
         }
 
         .profile-pic {
@@ -77,39 +76,35 @@
         .btn-8 { transform: translate(110px, -110px); }
 
         /* --- TV SECTION --- */
-        .tv-wrapper {
+        .tv-frame {
             position: relative;
             width: 100%;
-            max-width: 600px;
-            background: #1e293b; /* TV Body Color */
-            border-radius: 20px;
-            padding: 20px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-            display: flex;
-            flex-direction: row; /* Layout: Screen on Left, Controls on Right */
-            gap: 15px;
-            align-items: center;
+            max-width: 800px; /* Wider for this specific TV model */
+            margin-top: 20px;
         }
 
-        .screen-area {
+        /* The actual TV Image */
+        .tv-img {
+            width: 100%;
+            display: block;
             position: relative;
-            flex: 3; /* Takes up most of the space */
-            aspect-ratio: 4/3;
-            background: #000;
-            border: 10px solid #334155;
-            border-radius: 10px;
-            overflow: hidden;
+            z-index: 20;
+            pointer-events: none; /* Allows clicking through the image to the knobs */
         }
 
-        #channel-display {
+        /* The Content Screen (Behind the Image) */
+        .screen-container {
             position: absolute;
-            top: 10px;
-            left: 10px;
-            color: #22c55e;
-            font-family: monospace;
-            font-size: 14px;
-            z-index: 30;
-            text-shadow: 0 0 5px #22c55e;
+            top: 10%; 
+            left: 5%;
+            width: 71%;
+            height: 74%;
+            background: #000;
+            z-index: 10;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .channel {
@@ -117,53 +112,43 @@
             width: 100%;
             height: 100%;
             display: none;
-            justify-content: center;
-            align-items: center;
         }
 
         .current-channel { display: flex; }
 
-        /* --- CONTROL PANEL --- */
-        .controls-area {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
+        /* Floating Green Channel Text */
+        #ch-display {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: #22c55e;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.5rem;
+            text-shadow: 0 0 8px #22c55e;
+            z-index: 25;
+            font-weight: bold;
         }
 
-        .knob-container {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .tv-btn {
-            background: #475569;
-            color: white;
-            border: 2px solid var(--tv-accent);
-            padding: 10px;
-            border-radius: 5px;
-            font-family: monospace;
-            font-size: 12px;
+        /* INVISIBLE KNOB BUTTONS (Positioned over the graphic) */
+        .knob {
+            position: absolute;
+            right: 4%;
+            width: 13%;
+            height: 18%;
+            z-index: 30;
             cursor: pointer;
-            width: 80px;
-        }
-
-        .tv-btn:active { transform: scale(0.95); }
-
-        .power-light {
-            width: 10px;
-            height: 10px;
-            background: #ef4444;
+            background: rgba(255, 255, 255, 0); /* Invisible but clickable */
             border-radius: 50%;
-            box-shadow: 0 0 10px #ef4444;
         }
 
-        @media (max-width: 500px) {
-            .tv-wrapper { flex-direction: column; }
-            .controls-area { flex-direction: row; width: 100%; justify-content: space-around; }
-            .profile-container { transform: scale(0.8); height: 300px; }
+        .knob:hover { background: rgba(255, 255, 255, 0.1); }
+
+        .knob-up { top: 48%; }   /* Over top knob */
+        .knob-down { top: 66%; } /* Over bottom knob */
+
+        @media (max-width: 600px) {
+            .profile-container { transform: scale(0.7); height: 300px; }
+            #ch-display { font-size: 1rem; top: 10px; left: 10px; }
         }
     </style>
 </head>
@@ -181,9 +166,52 @@
         <a href="https://youtu.be/eOkfrJ5i_l8" class="menu-item btn-8">Animations</a>
     </div>
 
-    <div class="tv-wrapper">
-        <div class="screen-area">
-            <div id="channel-display">CH 01</div>
-            
+    <div class="tv-frame">
+        <div id="ch-display">CH 01</div>
+
+        <img src="2-26590_vintage-tv-png-old-television-png.png" class="tv-img">
+
+        <div class="screen-container">
             <div class="channel current-channel">
-                <iframe width="100%" height="100%"
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/eOkfrJ5i_l8" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="channel">
+                <iframe src="https://redcircle.com/shows/1cbfd88e-9c60-4e7f-9168-46e0c7dc7b4a" style="width:100%; height:100%; border:0;"></iframe>
+            </div>
+            <div class="channel">
+                <iframe style="border: 0; width: 100%; height: 100%;" src="https://bandcamp.com/EmbeddedPlayer/album=3205329073/size=large/bgcol=333333/linkcol=0687f5/transparent=true/" seamless></iframe>
+            </div>
+            <div class="channel">
+                <iframe style="border: 0; width: 100%; height: 100%;" src="https://bandcamp.com/EmbeddedPlayer/album=1396164373/size=large/bgcol=333333/linkcol=0687f5/transparent=true/" seamless></iframe>
+            </div>
+            <div class="channel">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/rWo9J791Yss" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="channel">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/RoLPO3Ro14" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="channel">
+                <img src="https://media.giphy.com/media/xTk9ZvMnbY0zVb19nE/giphy.gif" style="width:100%; height:100%; object-fit:cover;">
+            </div>
+        </div>
+
+        <div class="knob knob-up" onclick="changeChannel(1)" title="Next Channel"></div>
+        <div class="knob knob-down" onclick="changeChannel(-1)" title="Previous Channel"></div>
+    </div>
+
+    <script>
+        let currentChannelIndex = 0;
+        const channels = document.querySelectorAll('.channel');
+        const display = document.getElementById('ch-display');
+
+        function changeChannel(dir) {
+            channels[currentChannelIndex].classList.remove('current-channel');
+            currentChannelIndex = (currentChannelIndex + dir + channels.length) % channels.length;
+            channels[currentChannelIndex].classList.add('current-channel');
+            
+            let num = currentChannelIndex + 1;
+            display.innerText = "CH " + (num < 10 ? "0" + num : num);
+        }
+    </script>
+</body>
+</html>
