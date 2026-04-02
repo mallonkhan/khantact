@@ -9,7 +9,7 @@
             --bg-color: #0f172a;
             --accent-color: #38bdf8;
             --text-color: #f8fafc;
-            --tv-accent: #f59e0b;
+            --tv-accent: #f59e0b; /* Golden Knob Color */
         }
 
         body {
@@ -24,10 +24,8 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-start;
             min-height: 100vh;
-            padding: 40px 20px;
-            overflow-x: hidden;
+            padding: 20px;
         }
 
         /* --- PROFILE SECTION --- */
@@ -35,24 +33,22 @@
             position: relative;
             width: 100%;
             max-width: 500px;
-            height: 400px; 
+            height: 380px; 
             display: flex;
             justify-content: center;
             align-items: center;
             margin-bottom: 20px;
-            flex-shrink: 0;
         }
 
         .profile-pic {
-            width: 150px;
-            height: 150px;
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
             border: 4px solid var(--accent-color);
             background-image: url('IMG_8025.JPG'); 
             background-size: cover;
             background-position: center;
             z-index: 10;
-            box-shadow: 0 0 30px rgba(56, 189, 248, 0.3);
         }
 
         .menu-item {
@@ -60,131 +56,114 @@
             text-decoration: none;
             background: rgba(15, 23, 42, 0.95);
             color: white;
-            padding: 10px 16px;
+            padding: 8px 14px;
             border-radius: 50px;
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 600;
             border: 1px solid var(--accent-color);
-            transition: all 0.3s ease;
-            white-space: nowrap;
+            transition: 0.3s;
             z-index: 5;
         }
 
-        .menu-item:hover {
-            background: var(--accent-color);
-            color: var(--bg-color);
-            box-shadow: 0 0 15px var(--accent-color);
-        }
+        .menu-item:hover { background: var(--accent-color); color: var(--bg-color); }
 
-        /* Button Positions */
-        .btn-1 { transform: translate(160px, 0px); }
-        .btn-2 { transform: translate(115px, 115px); }
-        .btn-3 { transform: translate(0px, 160px); }
-        .btn-4 { transform: translate(-115px, 115px); }
-        .btn-5 { transform: translate(-160px, 0px); }
-        .btn-6 { transform: translate(-115px, -115px); }
-        .btn-7 { transform: translate(0px, -160px); }
-        .btn-8 { transform: translate(115px, -115px); }
+        .btn-1 { transform: translate(150px, 0px); }
+        .btn-2 { transform: translate(110px, 110px); }
+        .btn-3 { transform: translate(0px, 150px); }
+        .btn-4 { transform: translate(-110px, 110px); }
+        .btn-5 { transform: translate(-150px, 0px); }
+        .btn-6 { transform: translate(-110px, -110px); }
+        .btn-7 { transform: translate(0px, -150px); }
+        .btn-8 { transform: translate(110px, -110px); }
 
-        /* --- TV GALLERY SECTION --- */
+        /* --- TV SECTION --- */
         .tv-wrapper {
             position: relative;
             width: 100%;
-            max-width: 650px;
-            aspect-ratio: 4 / 3;
-            margin-top: 20px;
-        }
-
-        .tv-mask {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            z-index: 20;
-            pointer-events: none;
-        }
-
-        .tv-screen-content {
-            position: absolute;
-            top: 11%; 
-            left: 10%;
-            width: 66%;
-            height: 68%;
-            background-color: black;
-            overflow-y: auto; /* Allows scrolling for long TikToks or Podcasts */
-            overflow-x: hidden;
-            z-index: 10;
+            max-width: 600px;
+            background: #1e293b; /* TV Body Color */
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
             display: flex;
-            justify-content: center;
+            flex-direction: row; /* Layout: Screen on Left, Controls on Right */
+            gap: 15px;
             align-items: center;
         }
 
-        /* Channel Number Display */
-        #channel-info {
+        .screen-area {
+            position: relative;
+            flex: 3; /* Takes up most of the space */
+            aspect-ratio: 4/3;
+            background: #000;
+            border: 10px solid #334155;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        #channel-display {
             position: absolute;
-            top: 15px;
-            right: 130px;
-            background: rgba(0, 255, 0, 0.2);
-            color: #00ff00;
-            font-family: 'Courier New', Courier, monospace;
-            padding: 2px 8px;
+            top: 10px;
+            left: 10px;
+            color: #22c55e;
+            font-family: monospace;
             font-size: 14px;
-            border-radius: 3px;
-            z-index: 25;
-            pointer-events: none;
+            z-index: 30;
+            text-shadow: 0 0 5px #22c55e;
         }
 
         .channel {
             position: absolute;
-            top: 0;
-            left: 0;
             width: 100%;
             height: 100%;
             display: none;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
-            background: #000;
         }
 
         .current-channel { display: flex; }
 
-        /* Ensure all embeds are centered */
-        .channel iframe, .channel blockquote {
-            max-width: 100% !important;
-            margin: auto !important;
+        /* --- CONTROL PANEL --- */
+        .controls-area {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
         }
 
-        .tv-controls {
-            position: absolute;
-            right: 5%;
-            bottom: 15%;
-            z-index: 30;
+        .knob-container {
             display: flex;
             flex-direction: column;
             gap: 10px;
         }
 
-        .tv-knob {
-            background: #334155;
-            color: #f8fafc;
+        .tv-btn {
+            background: #475569;
+            color: white;
             border: 2px solid var(--tv-accent);
-            padding: 8px 12px;
+            padding: 10px;
             border-radius: 5px;
             font-family: monospace;
-            font-size: 11px;
+            font-size: 12px;
             cursor: pointer;
-            transition: 0.2s;
+            width: 80px;
         }
 
-        .tv-knob:hover { background: var(--tv-accent); color: black; }
+        .tv-btn:active { transform: scale(0.95); }
 
-        @media (max-width: 600px) {
-            .profile-container { transform: scale(0.75); height: 320px; }
-            .tv-wrapper { width: 98vw; }
-            #channel-info { right: 80px; font-size: 10px; }
+        .power-light {
+            width: 10px;
+            height: 10px;
+            background: #ef4444;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #ef4444;
+        }
+
+        @media (max-width: 500px) {
+            .tv-wrapper { flex-direction: column; }
+            .controls-area { flex-direction: row; width: 100%; justify-content: space-around; }
+            .profile-container { transform: scale(0.8); height: 300px; }
         }
     </style>
 </head>
@@ -198,34 +177,13 @@
         <a href="#" class="menu-item btn-4">About</a>
         <a href="https://khanimations.printful.me/" class="menu-item btn-5">Store</a>
         <a href="https://mallon.bandcamp.com/" class="menu-item btn-6">Music</a>
-        <a href="https://podcasts.apple.com/us/podcast/dantes-history/id1147372266" class="menu-item btn-7">Dante's History</a>
+        <a href="https://podcasts.apple.com/us/podcast/dantes-history/id1147372266" class="menu-item btn-7">History</a>
         <a href="https://youtu.be/eOkfrJ5i_l8" class="menu-item btn-8">Animations</a>
     </div>
 
     <div class="tv-wrapper">
-        <div id="channel-info">CH 01</div>
-        <img src="2-26590_vintage-tv-png-old-television-png.png" alt="TV Frame" class="tv-mask">
-        
-        <div class="tv-screen-content">
+        <div class="screen-area">
+            <div id="channel-display">CH 01</div>
+            
             <div class="channel current-channel">
-                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/eOkfrJ5i_l8" frameborder="0" allowfullscreen></iframe>
-            </div>
-
-            <div class="channel">
-                <iframe src="https://redcircle.com/shows/1cbfd88e-9c60-4e7f-9168-46e0c7dc7b4a?fbclid=IwAR1" style="width:100%; height:100%; border:0;"></iframe>
-            </div>
-
-            <div class="channel">
-                <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@mallonkhan/video/7568475855752662285" data-video-id="7568475855752662285" style="width:100%"> <section></section> </blockquote>
-            </div>
-
-            <div class="channel">
-                <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@mallonkhan/video/7524060830736878861" data-video-id="7524060830736878861" style="width:100%"> <section></section> </blockquote>
-            </div>
-
-            <div class="channel">
-                <iframe style="border: 0; width: 100%; height: 100%;" src="https://bandcamp.com/EmbeddedPlayer/album=3205329073/size=large/bgcol=333333/linkcol=0687f5/transparent=true/" seamless></iframe>
-            </div>
-
-            <div class="channel">
-                <iframe style="border: 0; width: 100%; height: 100%;" src="https://bandcamp.com/EmbeddedPlayer/album=1396164373/size=large/bgcol=333333/linkcol=0687f5/transparent=true/"
+                <iframe width="100%" height="100%"
