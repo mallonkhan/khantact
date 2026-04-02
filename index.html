@@ -16,7 +16,7 @@
 
         body {
             /* BACKGROUND IMAGE ADDED HERE */
-            background-image: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)), url('pic01.jpg'); 
+            background-image: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)), url('your-background.jpg'); 
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -127,9 +127,169 @@
         <a href="https://youtu.be/eOkfrJ5i_l8" class="menu-item btn-8">Animations</a>
     </div>
 
+    </div>
+
+<div class="tv-gallery-container">
+    
+    <img src="tv-bezel.png" alt="Retro TV Frame" class="tv-mask">
+
+    <div class="tv-screen-content">
+        
+        <div class="channel current-channel">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/eOkfrJ5i_l8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+
+        <div class="channel">
+            <iframe style="border: 0; width: 100%; height: 100%;" src="https://bandcamp.com/EmbeddedPlayer/album=YOUR_ALBUM_ID/size=large/bgcol=1e293b/linkcol=38bdf8/transparent=true/" seamless></iframe>
+        </div>
+
+        <div class="channel">
+            <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write *" frameborder="0" height="100%" style="width:100%; overflow:hidden; border-radius:10px;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.podcasts.apple.com/us/podcast/dantes-history/id1147372266"></iframe>
+        </div>
+
+        <div class="channel">
+            <img src="https://media.giphy.com/media/xTk9ZvMnbY0zVb19nE/giphy.gif" style="width:100%; height:100%; object-fit: cover;">
+        </div>
+
+        </div>
+
+    <div class="tv-controls">
+        <button onclick="changeChannel(-1)" class="tv-knob">Channel &minus;</button>
+        <button onclick="changeChannel(1)" class="tv-knob">Channel &plus;</button>
+    </div>
+
+</div>
+
+<style>
+    :root {
+        /* ... previous roots ... */
+        --tv-accent: #f59e0b; /* Golden knob color */
+    }
+
+    /* Add to your CSS section */
+    .tv-gallery-container {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 320px;
+        height: 280px;
+        z-index: 100;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+        background: #1e293b; /* Fallback screen color */
+        border-radius: 15px; /* So the shadow respects the TV shape */
+    }
+
+    /* The masking PNG sits in front */
+    .tv-mask {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        z-index: 20;
+        pointer-events: none; /* Allows user to click "through" the bezel to the content */
+    }
+
+    /* The container for the embed codes */
+    .tv-screen-content {
+        position: absolute;
+        top: 30px; /* Adjust these values so the content lines up with the screen hole in your PNG */
+        left: 30px; 
+        width: 200px; /* Adjust these values to match the size of your screen hole */
+        height: 180px; 
+        background-color: black;
+        overflow: hidden;
+        z-index: 10;
+        border-radius: 5px;
+    }
+
+    /* Base styling for each channel's embed */
+    .channel {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: none; /* Hide all channels by default */
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Only show the current channel */
+    .current-channel {
+        display: flex;
+    }
+
+    /* Make sure all embeds fill the channel container */
+    .channel iframe, .channel video, .channel img {
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+
+    /* Styling the channel surfing buttons */
+    .tv-controls {
+        position: absolute;
+        bottom: 10px;
+        right: 15px;
+        z-index: 30;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .tv-knob {
+        background: #475569;
+        color: #f8fafc;
+        border: 2px solid var(--tv-accent);
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-family: monospace;
+        font-size: 10px;
+        cursor: pointer;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: all 0.2s;
+    }
+
+    .tv-knob:hover {
+        background: var(--tv-accent);
+        color: var(--bg-color);
+        box-shadow: 0 0 10px var(--tv-accent);
+    }
+
+    /* Small Mobile Adjustment */
+    @media (max-width: 600px) {
+        .tv-gallery-container {
+            width: 250px;
+            height: 220px;
+            bottom: 10px;
+            right: 10px;
+        }
+        /* You will need to make mobile-specific top/left/width/height adjustments for .tv-screen-content here based on your mobile-resized PNG */
+    }
+</style>
+
+<script>
+    let currentChannelIndex = 0;
+    const channels = document.querySelectorAll('.channel');
+
+    function changeChannel(direction) {
+        // 1. Fade/Hide current channel
+        channels[currentChannelIndex].classList.remove('current-channel');
+
+        // 2. Calculate next channel index (loops around)
+        currentChannelIndex = (currentChannelIndex + direction + channels.length) % channels.length;
+
+        // 3. Show new channel
+        channels[currentChannelIndex].classList.add('current-channel');
+    }
+</script>
+
     <div class="cd-player-container">
-        <div style="color: #38bdf8; font-size: 10px; margin-bottom: 5px; font-family: monospace;">PORTABLE CD PLAYER | SHUFFLE ON</div>
-        <iframe style="border: 0; width: 350px; height: 470px;" src="https://bandcamp.com/EmbeddedPlayer/album=2607510681/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/" seamless><a href="https://mallon.bandcamp.com/album/khantact">KHANTACT by Khan!</a></iframe>
+        <div style="color: #38bdf8; font-size: 10px; margin-bottom: 5px; font-family: monospace;">KHANTENT | SHUFFLE ON</div>
+        <iframe style="border: 0; width: 100%; height: 42px;" <iframe style="border: 0; width: 100%; height: 42px;" src="https://bandcamp.com/EmbeddedPlayer/album=2607510681/size=small/bgcol=ffffff/linkcol=0687f5/transparent=true/" seamless><a href="https://mallon.bandcamp.com/album/khantact">KHANTACT by Khan!</a></iframe>
     </div>
 
 </body>
