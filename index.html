@@ -9,72 +9,86 @@
             --bg-color: #0f172a;
             --accent-color: #38bdf8;
             --text-color: #f8fafc;
+            /* Adaptive sizes */
             --circle-size: 180px; 
-            --distance: 180px; /* How far from center the buttons sit */
+            --distance: 180px; 
         }
 
         body {
+            /* BACKGROUND IMAGE ADDED HERE */
+            background-image: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)), url('your-background.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             background-color: var(--bg-color);
             color: var(--text-color);
             font-family: -apple-system, system-ui, sans-serif;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             margin: 0;
-            overflow: hidden;
+            overflow-x: hidden;
         }
 
         .container {
             position: relative;
-            width: 600px;
+            width: 100%;
+            max-width: 600px;
             height: 600px;
             display: flex;
             justify-content: center;
             align-items: center;
+            transform: scale(1); /* Default scale */
         }
 
-        /* Profile Picture */
+        /* Profile Picture Fix */
         .profile-pic {
             width: var(--circle-size);
             height: var(--circle-size);
             border-radius: 50%;
             border: 4px solid var(--accent-color);
-            /* Upload a photo named profile.jpg to GitHub or change this link */
-            background-image: url('IMG_8025.JPG'); 
+            /* CASE SENSITIVE FIX: Ensure this exactly matches the file name in GitHub */
+            background-image: url('IMG_8025.JPG');  
             background-size: cover;
             background-position: center;
             z-index: 10;
-            box-shadow: 0 0 30px rgba(56, 189, 248, 0.2);
+            box-shadow: 0 0 30px rgba(56, 189, 248, 0.4);
         }
 
-        /* Buttons Base Styling */
         .menu-item {
             position: absolute;
             text-decoration: none;
-            background: rgba(255, 255, 255, 0.08);
+            background: rgba(15, 23, 42, 0.9);
             color: white;
             padding: 12px 20px;
             border-radius: 50px;
             font-size: 14px;
             font-weight: 600;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: background 0.3s, border 0.3s, box-shadow 0.3s;
+            border: 1px solid var(--accent-color);
+            transition: all 0.3s ease;
             white-space: nowrap;
             z-index: 5;
         }
 
-        /* Hover Effect - No "retreating" */
         .menu-item:hover {
             background: var(--accent-color);
             color: var(--bg-color);
-            border-color: var(--accent-color);
-            box-shadow: 0 0 15px var(--accent-color);
-            cursor: pointer;
+            box-shadow: 0 0 20px var(--accent-color);
         }
 
-        /* The math to place buttons in a circle (360 degrees / 8 buttons = 45 deg intervals) */
-        /* Top is 270deg, Right is 0deg, Bottom is 90deg, Left is 180deg */
+        /* Responsive Scaling for Mobile */
+        @media (max-width: 600px) {
+            .container {
+                transform: scale(0.65); /* Shrinks the whole circle for small screens */
+            }
+            .cd-player-container {
+                width: 95% !important;
+            }
+        }
+
+        /* Circle Positioning */
         .btn-1 { transform: translate(calc(var(--distance) * cos(0deg)),   calc(var(--distance) * sin(0deg))); }
         .btn-2 { transform: translate(calc(var(--distance) * cos(45deg)),  calc(var(--distance) * sin(45deg))); }
         .btn-3 { transform: translate(calc(var(--distance) * cos(90deg)),  calc(var(--distance) * sin(90deg))); }
@@ -84,6 +98,18 @@
         .btn-7 { transform: translate(calc(var(--distance) * cos(270deg)), calc(var(--distance) * sin(270deg))); }
         .btn-8 { transform: translate(calc(var(--distance) * cos(315deg)), calc(var(--distance) * sin(315deg))); }
 
+        /* CD PLAYER WIDGET STYLING */
+        .cd-player-container {
+            position: fixed;
+            bottom: 20px;
+            width: 400px;
+            background: #1e293b;
+            border: 3px solid #64748b;
+            border-radius: 15px;
+            padding: 10px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            z-index: 100;
+        }
     </style>
 </head>
 <body>
@@ -91,14 +117,19 @@
     <div class="container">
         <div class="profile-pic"></div>
 
-        <a href="https://a.co/d/e8ejB2f"  class="menu-item btn-1">Emplant</a>
-        <a href="https://a.co/d/4FbutND"  class="menu-item btn-2">Black Dove</a>
-        <a href="https://substack.com/@khannections"  class="menu-item btn-3">Substack</a>
-        <a href="INSERT_BLOG_URL_HERE"   class="menu-item btn-4">About</a>
-        <a href="https://khanimations.printful.me/"  class="menu-item btn-5">Store</a>
-        <a href="https://mallon.bandcamp.com/"  class="menu-item btn-6">Music</a>
-        <a href="https://podcasts.apple.com/us/podcast/dantes-history/id1147372266" class="menu-item btn-7">Dante's HIstory</a>
+        <a href="https://a.co/d/e8ejB2f" class="menu-item btn-1">Emplant</a>
+        <a href="https://a.co/d/4FbutND" class="menu-item btn-2">Black Dove</a>
+        <a href="https://substack.com/@khannections" class="menu-item btn-3">Substack</a>
+        <a href="INSERT_BLOG_URL_HERE" class="menu-item btn-4">About</a>
+        <a href="https://khanimations.printful.me/" class="menu-item btn-5">Store</a>
+        <a href="https://mallon.bandcamp.com/" class="menu-item btn-6">Music</a>
+        <a href="https://podcasts.apple.com/us/podcast/dantes-history/id1147372266" class="menu-item btn-7">Dante's History</a>
         <a href="https://youtu.be/eOkfrJ5i_l8" class="menu-item btn-8">Animations</a>
+    </div>
+
+    <div class="cd-player-container">
+        <div style="color: #38bdf8; font-size: 10px; margin-bottom: 5px; font-family: monospace;">PORTABLE CD PLAYER | SHUFFLE ON</div>
+        <iframe style="border: 0; width: 100%; height: 42px;" src="https://bandcamp.com/EmbeddedPlayer/album=3049581109/size=small/bgcol=1e293b/linkcol=38bdf8/transparent=true/" seamless></iframe>
     </div>
 
 </body>
