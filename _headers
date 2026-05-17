@@ -1,0 +1,7 @@
+/*
+  Content-Security-Policy: default-src 'self'; img-src 'self' https://mallonkhan.com data:; frame-src https://www.youtube-nocookie.com https://bandcamp.com; style-src 'self'; script-src 'self'; base-uri 'self'; form-action 'self' mailto:; object-src 'self'; frame-ancestors 'none'; upgrade-insecure-requests
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
+  Strict-Transport-Security: max-age=31536000
