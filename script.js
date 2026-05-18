@@ -1,6 +1,16 @@
 const videos = [
   {
     type: "youtube",
+    title: "Khanimations Live",
+    id: "n9O874FdWa4"
+  },
+  {
+    type: "youtube",
+    title: "Khanimations Feature",
+    id: "wydfPdBl-qk"
+  },
+  {
+    type: "youtube",
     title: "Khanimations",
     id: "eOkfrJ5i_l8"
   },
@@ -110,9 +120,9 @@ const posterArt = {
     title: "Baphomesh",
     src: "assets/artwork/baphomesh.png"
   },
-  "ape-rock": {
-    title: "Ape Rock",
-    src: "assets/artwork/ape-rock.png"
+  "chaos": {
+    title: "Chaos",
+    src: "assets/artwork/Chaos.png"
   },
   "pizza": {
     title: "Pizza",
@@ -161,6 +171,34 @@ const posterArt = {
   "robo-oreos": {
     title: "Robo Wants Oreos",
     src: "assets/artwork/Robo wants oreos.PNG"
+  },
+  "emplant-page-2": {
+    title: "Emplant Page 2 Preview",
+    src: "assets/emplant/emplant page 2 preview.png"
+  },
+  "black-dove-2020": {
+    title: "Black Dove 2020",
+    src: "assets/black-dove/motion-comic/LOBD_2020_Black Dove 2020.PNG"
+  },
+  "black-dove-falcon": {
+    title: "Falcon 2020",
+    src: "assets/black-dove/motion-comic/LOBD_2020_Falcon.PNG"
+  },
+  "black-dove-jessica": {
+    title: "Jessica 2020",
+    src: "assets/black-dove/motion-comic/LOBD_2020_jessica.PNG"
+  },
+  "black-dove-blast": {
+    title: "Blast 2020",
+    src: "assets/black-dove/motion-comic/LOBD_2020_blast.PNG"
+  },
+  "black-dove-edmond": {
+    title: "Edmond Prays",
+    src: "assets/black-dove/motion-comic/LOBD_2020_Edmond_Prays.png"
+  },
+  "black-dove-dove": {
+    title: "Dove 2020",
+    src: "assets/black-dove/motion-comic/LOBD_2020_dove.jpg"
   }
 };
 
@@ -170,7 +208,9 @@ const dialogs = {
   essays: document.querySelector("#essaysModal"),
   music: document.querySelector("#musicModal"),
   books: document.querySelector("#booksModal"),
-  pc: document.querySelector("#pcModal")
+  pc: document.querySelector("#pcModal"),
+  contact: document.querySelector("#contactModal"),
+  lightbox: document.querySelector("#imageLightbox")
 };
 
 const videoFrame = document.querySelector("#videoFrame");
@@ -183,9 +223,92 @@ const donateModal = document.querySelector("#donateModal");
 const donateBookTitle = document.querySelector("#donateBookTitle");
 const continueBookLink = document.querySelector("#continueBookLink");
 const roomShell = document.querySelector(".room-shell");
+const bedroomStage = document.querySelector(".bedroom-stage");
+const bedroomArt = document.querySelector(".bedroom-art");
+const constellationLines = document.querySelector("#constellationLines");
 const avatarHub = document.querySelector("#avatarHub");
+const lightboxTitle = document.querySelector("#lightboxTitle");
+const lightboxImage = document.querySelector("#lightboxImage");
 
 let channelIndex = 0;
+
+function getRenderedBedroomRect() {
+  if (!bedroomStage || !bedroomArt) return null;
+  const stage = bedroomStage.getBoundingClientRect();
+  const naturalWidth = bedroomArt.naturalWidth || Number(bedroomArt.getAttribute("width")) || 1536;
+  const naturalHeight = bedroomArt.naturalHeight || Number(bedroomArt.getAttribute("height")) || 1024;
+  const stageRatio = stage.width / stage.height;
+  const imageRatio = naturalWidth / naturalHeight;
+  const objectFit = getComputedStyle(bedroomArt).objectFit;
+
+  let width = stage.width;
+  let height = stage.height;
+  let left = 0;
+  let top = 0;
+
+  if (objectFit === "contain") {
+    if (stageRatio > imageRatio) {
+      width = stage.height * imageRatio;
+      left = (stage.width - width) / 2;
+    } else {
+      height = stage.width / imageRatio;
+      top = (stage.height - height) / 2;
+    }
+  } else if (stageRatio > imageRatio) {
+    height = stage.width / imageRatio;
+    top = (stage.height - height) / 2;
+  } else {
+    width = stage.height * imageRatio;
+    left = (stage.width - width) / 2;
+  }
+
+  return { left, top, width, height };
+}
+
+function pointFromImageCoords(element, imageRect = getRenderedBedroomRect()) {
+  if (!element || !imageRect) return null;
+  const x = Number(element.dataset.x);
+  const y = Number(element.dataset.y);
+  if (!Number.isFinite(x) || !Number.isFinite(y)) return null;
+  return {
+    x: imageRect.left + imageRect.width * x,
+    y: imageRect.top + imageRect.height * y
+  };
+}
+
+function positionSceneObjects() {
+  const imageRect = getRenderedBedroomRect();
+  if (!imageRect) return;
+
+  document.querySelectorAll("[data-x][data-y]").forEach((element) => {
+    const point = pointFromImageCoords(element, imageRect);
+    if (!point) return;
+    element.style.left = `${point.x}px`;
+    element.style.top = `${point.y}px`;
+  });
+
+  drawConstellation(imageRect);
+}
+
+function drawConstellation(imageRect = getRenderedBedroomRect()) {
+  if (!constellationLines || !avatarHub || !imageRect) return;
+  const avatarPoint = pointFromImageCoords(avatarHub, imageRect);
+  if (!avatarPoint) return;
+
+  constellationLines.setAttribute("viewBox", `0 0 ${bedroomStage.clientWidth} ${bedroomStage.clientHeight}`);
+  constellationLines.innerHTML = "";
+
+  document.querySelectorAll(".scene-object[data-x][data-y]").forEach((pin) => {
+    const pinPoint = pointFromImageCoords(pin, imageRect);
+    if (!pinPoint) return;
+    const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+    line.setAttribute("x1", pinPoint.x.toFixed(1));
+    line.setAttribute("y1", pinPoint.y.toFixed(1));
+    line.setAttribute("x2", avatarPoint.x.toFixed(1));
+    line.setAttribute("y2", avatarPoint.y.toFixed(1));
+    constellationLines.append(line);
+  });
+}
 
 function openDialog(dialog) {
   if (!dialog) return;
@@ -220,10 +343,10 @@ function renderChannel(index = channelIndex) {
     videoFrame.innerHTML = `
       <iframe
         title="${video.title}"
-        src="https://www.youtube-nocookie.com/embed/${video.id}?autoplay=1&rel=0&origin=${encodeURIComponent(origin)}"
+        src="https://www.youtube-nocookie.com/embed/${video.id}?rel=0&origin=${encodeURIComponent(origin)}"
         loading="lazy"
         referrerpolicy="origin-when-cross-origin"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowfullscreen
       ></iframe>
     `;
@@ -275,6 +398,19 @@ document.addEventListener("click", (event) => {
     return;
   }
 
+  const galleryImage = event.target.closest(".image-gallery img");
+  if (galleryImage && dialogs.lightbox && lightboxImage) {
+    event.preventDefault();
+    const sourceLink = galleryImage.closest("a");
+    lightboxImage.src = sourceLink?.href || galleryImage.currentSrc || galleryImage.src;
+    lightboxImage.alt = galleryImage.alt || "Gallery preview";
+    if (lightboxTitle) {
+      lightboxTitle.textContent = galleryImage.alt || "Gallery Preview";
+    }
+    openDialog(dialogs.lightbox);
+    return;
+  }
+
   const gatedBook = event.target.closest(".gated-book");
   if (gatedBook) {
     event.preventDefault();
@@ -307,10 +443,34 @@ document.addEventListener("click", (event) => {
   if (action === "pc") {
     openDialog(dialogs.pc);
   }
+  if (action === "contact") {
+    openDialog(dialogs.contact);
+  }
 });
 
 document.querySelector("#nextChannel")?.addEventListener("click", () => changeChannel(1));
 document.querySelector("#prevChannel")?.addEventListener("click", () => changeChannel(-1));
+
+positionSceneObjects();
+window.addEventListener("resize", positionSceneObjects);
+window.addEventListener("orientationchange", positionSceneObjects);
+bedroomArt?.addEventListener("load", positionSceneObjects);
+
+avatarHub?.addEventListener("mouseenter", () => {
+  roomShell?.classList.add("pins-on");
+});
+
+avatarHub?.addEventListener("mouseleave", () => {
+  roomShell?.classList.remove("pins-on");
+});
+
+avatarHub?.addEventListener("focus", () => {
+  roomShell?.classList.add("pins-on");
+});
+
+avatarHub?.addEventListener("blur", () => {
+  roomShell?.classList.remove("pins-on");
+});
 
 avatarHub?.addEventListener("click", () => {
   roomShell?.classList.add("pins-on");
@@ -326,11 +486,27 @@ document.querySelectorAll(".album").forEach((album) => {
     album.classList.add("is-active");
     const linkLabel = album.dataset.linkLabel || "Open Link";
     const linkTarget = album.dataset.album?.startsWith("http") ? ' target="_blank" rel="noopener noreferrer"' : "";
+    const artist = album.dataset.artist || "";
     const player = album.dataset.embed
       ? `<iframe class="bandcamp-player" title="${album.dataset.title}" src="${album.dataset.embed}" loading="lazy" seamless></iframe>`
-      : `<audio controls src="${album.dataset.audio}"></audio>`;
+      : album.dataset.audio
+        ? `<audio controls controlsList="nodownload" src="${album.dataset.audio}"></audio>`
+        : `<p class="radio-note">Tune in through the RSS feed or open the project page.</p>`;
     playerDisplay.innerHTML = `
-      <strong>${album.dataset.title}</strong>
+      <div class="discman-badge">Discman</div>
+      <div class="discman-lid">
+        <div class="spinning-cd" aria-hidden="true"></div>
+      </div>
+      <div class="cd-readout">
+        <span class="readout-label">Now Playing</span>
+        <strong>${album.dataset.title}</strong>
+        <span>${artist}</span>
+      </div>
+      <div class="discman-controls" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
       ${player}
       <a href="${album.dataset.album}"${linkTarget}>${linkLabel}</a>
     `;
@@ -340,5 +516,20 @@ document.querySelectorAll(".album").forEach((album) => {
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") {
     Object.values(dialogs).forEach(closeDialog);
+  }
+});
+
+document.addEventListener("click", (event) => {
+  const audioSelect = event.target.closest("[data-audio-select]");
+  if (!audioSelect) return;
+  const player = document.querySelector("#emplantChapterPlayer");
+  if (!player) return;
+  player.src = audioSelect.dataset.audioSelect;
+  player.play?.();
+});
+
+document.addEventListener("contextmenu", (event) => {
+  if (event.target.closest("audio, video, img")) {
+    event.preventDefault();
   }
 });

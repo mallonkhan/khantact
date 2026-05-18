@@ -7,26 +7,69 @@
     <title>The Legend of Black Dove | Mallon Khan</title>
     <link rel="stylesheet" href="styles.css">
   </head>
-  <body class="detail-page">
-    <main class="detail-shell">
+  <body class="detail-page black-dove-page">
+    <main class="detail-shell project-shell">
       <a class="back-link" href="index.html">Back to the room</a>
-      <section class="detail-hero">
+      <section class="detail-hero project-hero">
         <div class="detail-copy">
           <p class="eyebrow">Novel / Myth / Vigilante Story</p>
           <h1>The Legend of Black Dove</h1>
           <p>
-            A supernatural vigilante story with crime, myth, and illustrated-world energy. This page can become
-            the home for cover art, excerpts, character notes, and related visuals.
+            A supernatural vigilante story with crime, myth, and illustrated-world energy. This page
+            is shaped as a home for the cover, old concept art, character fragments, and future extras.
           </p>
           <div class="detail-actions">
-            <a class="button" href="https://a.co/d/4FbutND" target="_blank" rel="noopener noreferrer">Open on Amazon</a>
-            <a class="button ghost" href="index.html">Return Home</a>
+            <a class="button" href="https://a.co/d/4FbutND" target="_blank" rel="noopener noreferrer">Buy on Amazon</a>
+            <a class="button ghost" href="#gallery">Browse Gallery</a>
           </div>
         </div>
         <figure class="detail-art">
-          <img src="assets/page-art/black-dove-cover.png" alt="The Legend of Black Dove cover artwork">
+          <img src="assets/page-art/Legend of Black Dove Cover.png" alt="The Legend of Black Dove cover artwork">
         </figure>
       </section>
+
+      <section class="project-section">
+        <div class="section-header">
+          <p class="eyebrow">2020</p>
+          <h2>Unfinished Motion Comic</h2>
+        </div>
+        <div class="image-gallery motion-gallery">
+          <a href="assets/black-dove/motion-comic/LOBD_2020_Black Dove 2020.PNG" target="_blank" rel="noopener noreferrer"><img src="assets/black-dove/motion-comic/LOBD_2020_Black Dove 2020.PNG" alt="Black Dove 2020 motion comic frame"></a>
+          <a href="assets/black-dove/motion-comic/LOBD_2020_Falcon.PNG" target="_blank" rel="noopener noreferrer"><img src="assets/black-dove/motion-comic/LOBD_2020_Falcon.PNG" alt="Falcon 2020 motion comic frame"></a>
+          <a href="assets/black-dove/motion-comic/LOBD_2020_jessica.PNG" target="_blank" rel="noopener noreferrer"><img src="assets/black-dove/motion-comic/LOBD_2020_jessica.PNG" alt="Jessica 2020 motion comic frame"></a>
+          <a href="assets/black-dove/motion-comic/LOBD_2020_blast.PNG" target="_blank" rel="noopener noreferrer"><img src="assets/black-dove/motion-comic/LOBD_2020_blast.PNG" alt="Blast 2020 motion comic frame"></a>
+          <a href="assets/black-dove/motion-comic/LOBD_2020_Edmond_Prays.png" target="_blank" rel="noopener noreferrer"><img src="assets/black-dove/motion-comic/LOBD_2020_Edmond_Prays.png" alt="Edmond prays 2020 motion comic frame"></a>
+          <a href="assets/black-dove/motion-comic/LOBD_2020_dove.jpg" target="_blank" rel="noopener noreferrer"><img src="assets/black-dove/motion-comic/LOBD_2020_dove.jpg" alt="Dove 2020 motion comic frame"></a>
+        </div>
+      </section>
+
+      <section class="project-section" id="gallery">
+        <div class="section-header">
+          <p class="eyebrow">Visuals</p>
+          <h2>Concept Art</h2>
+        </div>
+        <div class="image-gallery">
+          <a href="assets/black-dove/black sparrow hi res.jpg" target="_blank" rel="noopener noreferrer"><img src="assets/black-dove/black sparrow hi res.jpg" alt="Black Dove concept art"></a>
+          <a href="assets/black-dove/Godmouth-Victor 2010.jpg" target="_blank" rel="noopener noreferrer"><img src="assets/black-dove/Godmouth-Victor 2010.jpg" alt="Victor concept art"></a>
+          <a href="assets/black-dove/Apostle circa 2010.jpg" target="_blank" rel="noopener noreferrer"><img src="assets/black-dove/Apostle circa 2010.jpg" alt="Apostle concept art"></a>
+          <a href="assets/black-dove/Falcon Xray 2010.jpg" target="_blank" rel="noopener noreferrer"><img src="assets/black-dove/Falcon Xray 2010.jpg" alt="Falcon X-ray concept art"></a>
+          <a href="assets/black-dove/victor-13.png" target="_blank" rel="noopener noreferrer"><img src="assets/black-dove/victor-13.png" alt="Victor illustration"></a>
+          <a href="assets/black-dove/falcon-front-fly.png" target="_blank" rel="noopener noreferrer"><img src="assets/black-dove/falcon-front-fly.png" alt="Falcon front fly concept art"></a>
+        </div>
+      </section>
     </main>
+    <dialog class="modal image-lightbox" id="imageLightbox" aria-labelledby="lightboxTitle">
+      <div class="modal-bar">
+        <div>
+          <p class="window-label">Gallery Preview</p>
+          <h2 id="lightboxTitle">Image Preview</h2>
+        </div>
+        <button class="icon-button" type="button" data-close aria-label="Close">x</button>
+      </div>
+      <div class="lightbox-body">
+        <img id="lightboxImage" src="" alt="">
+      </div>
+    </dialog>
+    <script src="script.js" defer></script>
   </body>
 </html>

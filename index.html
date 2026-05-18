@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self'; img-src 'self' https://mallonkhan.com https://media.giphy.com data:; frame-src https://www.youtube-nocookie.com https://bandcamp.com; style-src 'self'; script-src 'self'; base-uri 'self'; form-action 'self' mailto:; object-src 'self'; frame-ancestors 'none'; upgrade-insecure-requests"
+      content="default-src 'self'; img-src 'self' https://mallonkhan.com https://media.giphy.com data:; frame-src https://www.youtube-nocookie.com https://bandcamp.com https://redcircle.com https://app.redcircle.com; style-src 'self'; script-src 'self'; base-uri 'self'; form-action 'self' mailto:; object-src 'self'; frame-ancestors 'none'; upgrade-insecure-requests"
     >
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="description" content="Mallon Khan is a multimedia creative lead, artist, storyteller, animator, writer, podcaster, and musician.">
@@ -14,7 +14,7 @@
     <meta property="og:description" content="An interactive creative bedroom: Khanimations, Khannections, Khantent, novels, music, videos, and ways to reach Mallon Khan.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.mallonkhan.com/">
-    <meta property="og:image" content="https://www.mallonkhan.com/assets/bedroom-hero-v2.png">
+    <meta property="og:image" content="https://www.mallonkhan.com/assets/bedroom-hero-v3.png">
     <title>Mallon Khan | Creative Room</title>
     <link rel="canonical" href="https://www.mallonkhan.com/">
     <link rel="stylesheet" href="styles.css">
@@ -34,55 +34,60 @@
       <section class="bedroom-stage" aria-label="Clickable 90s bedroom scene">
         <img
           class="bedroom-art"
-          src="assets/bedroom-hero-v2.png"
+          src="assets/bedroom-hero-v3.png"
           alt="Graphic novel illustration of a 1990s creative bedroom with a glowing CRT television, blank wall frames, stereo, bookshelf, and desktop computer"
           width="1536"
           height="1024"
         >
-        <a class="avatar-hub" id="avatarHub" href="bio.html" aria-label="Open Mallon Khan bio">
+        <svg class="constellation-lines" id="constellationLines" aria-hidden="true"></svg>
+        <a class="avatar-hub" id="avatarHub" href="bio.html" data-x="0.638" data-y="0.595" aria-label="Open Mallon Khan bio">
           <img src="assets/avatar.jpg" alt="">
         </a>
-        <button class="scene-object tv" type="button" data-action="tv" aria-label="Change the TV channel">
+        <button class="scene-object tv" type="button" data-action="tv" data-x="0.145" data-y="0.465" aria-label="Change the TV channel">
           <span>Khanimations</span>
         </button>
-        <button class="scene-object art-pin" type="button" data-action="poster" data-poster="cornered" aria-label="Open artwork gallery">
+        <button class="scene-object art-pin" type="button" data-action="poster" data-poster="cornered" data-x="0.575" data-y="0.835" aria-label="Open artwork gallery">
           <span>Artwork</span>
         </button>
-        <a class="scene-object proud-fools" href="https://proudfools.bandcamp.com/" target="_blank" rel="noopener noreferrer" aria-label="Open Proud Fools on Bandcamp">
+        <a class="scene-object proud-fools" href="proud-fools.html" data-x="0.390" data-y="0.270" aria-label="Open Proud Fools page">
           <span>Proud Fools</span>
         </a>
-        <a class="scene-object dante-pin" href="dantes-history.html" aria-label="Open Dante's History page">
+        <a class="scene-object ape-rock-pin" href="ape-rock.html" data-x="0.288" data-y="0.648" aria-label="Open Ape Rock page">
+          <span>Ape Rock</span>
+        </a>
+        <a class="scene-object dante-pin" href="dantes-history.html" data-x="0.790" data-y="0.178" aria-label="Open Dante's History page">
           <span>Dante's History</span>
         </a>
-        <button class="scene-object essay-stack" type="button" data-action="essays" aria-label="Open Substack essay stack">
+        <button class="scene-object essay-stack" type="button" data-action="essays" data-x="0.840" data-y="0.625" aria-label="Open Substack essay stack">
           <span>Khannections</span>
         </button>
-        <button class="scene-object stereo" type="button" data-action="music" aria-label="Open CD gallery">
+        <button class="scene-object stereo" type="button" data-action="music" data-x="0.357" data-y="0.603" aria-label="Open CD gallery">
           <span>CDs</span>
         </button>
-        <button class="scene-object shelf" type="button" data-action="books" aria-label="Open bookshelf">
+        <button class="scene-object shelf" type="button" data-action="books" data-x="0.593" data-y="0.280" aria-label="Open bookshelf">
           <span>Novels</span>
         </button>
-        <button class="scene-object pc" type="button" data-action="pc" aria-label="Open Windows 95 computer">
+        <button class="scene-object pc" type="button" data-action="pc" data-x="0.798" data-y="0.430" aria-label="Open Windows 95 computer">
           <span>Khantent</span>
         </button>
       </section>
 
       <nav class="quick-links" aria-label="Main links">
-        <a href="https://www.youtube.com/@MallonKhan" target="_blank" rel="noopener noreferrer">Khanimations</a>
         <a href="https://substack.com/@khannections" target="_blank" rel="noopener noreferrer">Khannections</a>
         <details class="menu-group">
           <summary>Khantent</summary>
           <div class="submenu">
+            <a href="https://www.youtube.com/@MallonKhan" target="_blank" rel="noopener noreferrer">Khanimations</a>
             <a href="proud-fools.html">Proud Fools</a>
             <a href="ape-rock.html">Ape Rock</a>
             <a href="dantes-history.html">Dante's History</a>
             <a href="emplant.html">Emplant</a>
             <a href="black-dove.html">Legend of Black Dove</a>
             <a href="store.html">Store</a>
+            <a href="https://mallonkhan.blogspot.com/" target="_blank" rel="noopener noreferrer">Blogs 2009-2012</a>
           </div>
         </details>
-        <a href="mailto:mallonkhan@gmail.com">Khantact</a>
+        <button class="quick-link-button" type="button" data-action="contact">Khantact</button>
       </nav>
     </main>
 
@@ -127,9 +132,9 @@
             <img src="assets/artwork/baphomesh.png" alt="">
             <strong>Baphomesh</strong>
           </button>
-          <button class="media-card" type="button" data-poster-select="ape-rock">
-            <img src="assets/artwork/ape-rock.png" alt="">
-            <strong>Ape Rock</strong>
+          <button class="media-card" type="button" data-poster-select="chaos">
+            <img src="assets/artwork/Chaos.png" alt="">
+            <strong>Chaos</strong>
           </button>
           <button class="media-card" type="button" data-poster-select="pizza">
             <img src="assets/artwork/pizza.jpg" alt="">
@@ -179,6 +184,34 @@
             <img src="assets/artwork/Robo wants oreos.PNG" alt="">
             <strong>Robo Wants Oreos</strong>
           </button>
+          <button class="media-card" type="button" data-poster-select="emplant-page-2">
+            <img src="assets/emplant/emplant page 2 preview.png" alt="">
+            <strong>Emplant Page 2</strong>
+          </button>
+          <button class="media-card" type="button" data-poster-select="black-dove-2020">
+            <img src="assets/black-dove/motion-comic/LOBD_2020_Black Dove 2020.PNG" alt="">
+            <strong>Black Dove 2020</strong>
+          </button>
+          <button class="media-card" type="button" data-poster-select="black-dove-falcon">
+            <img src="assets/black-dove/motion-comic/LOBD_2020_Falcon.PNG" alt="">
+            <strong>Falcon 2020</strong>
+          </button>
+          <button class="media-card" type="button" data-poster-select="black-dove-jessica">
+            <img src="assets/black-dove/motion-comic/LOBD_2020_jessica.PNG" alt="">
+            <strong>Jessica 2020</strong>
+          </button>
+          <button class="media-card" type="button" data-poster-select="black-dove-blast">
+            <img src="assets/black-dove/motion-comic/LOBD_2020_blast.PNG" alt="">
+            <strong>Blast 2020</strong>
+          </button>
+          <button class="media-card" type="button" data-poster-select="black-dove-edmond">
+            <img src="assets/black-dove/motion-comic/LOBD_2020_Edmond_Prays.png" alt="">
+            <strong>Edmond Prays</strong>
+          </button>
+          <button class="media-card" type="button" data-poster-select="black-dove-dove">
+            <img src="assets/black-dove/motion-comic/LOBD_2020_dove.jpg" alt="">
+            <strong>Dove 2020</strong>
+          </button>
         </div>
         <div class="gallery-viewing-room">
           <div class="poster-viewer">
@@ -201,44 +234,111 @@
         <span class="thread thread-a" aria-hidden="true"></span>
         <span class="thread thread-b" aria-hidden="true"></span>
         <span class="thread thread-c" aria-hidden="true"></span>
-        <a class="essay-card folder-card" href="https://substack.com/@khannections" target="_blank" rel="noopener noreferrer">
-          <img src="assets/posters/witches.png" alt="Witches of Oz essay artwork">
-          <strong>Witches of Oz</strong>
+        <a class="essay-card folder-card" href="https://open.substack.com/pub/mallonkhan/p/space-railroad?r=1ngiy&utm_campaign=post&utm_medium=web" target="_blank" rel="noopener noreferrer">
+          <img src="assets/posters/space railroad substack.jpg" alt="Space Railroad essay artwork">
+          <strong>Space Railroad</strong>
           <span>Open on Khannections</span>
         </a>
-        <a class="essay-card folder-card" href="https://substack.com/@khannections" target="_blank" rel="noopener noreferrer">
-          <img src="assets/posters/sweet-crude.png" alt="The Oil is The Drug essay artwork">
-          <strong>The Oil is The Drug</strong>
+        <a class="essay-card folder-card" href="https://open.substack.com/pub/mallonkhan/p/puck-the-people-of-oz?r=1ngiy&utm_campaign=post&utm_medium=web" target="_blank" rel="noopener noreferrer">
+          <img src="assets/posters/puck the people of oz.jpg" alt="Puck the People of Oz essay artwork">
+          <strong>Puck the People of Oz</strong>
+          <span>Open on Khannections</span>
+        </a>
+        <a class="essay-card folder-card" href="https://open.substack.com/pub/mallonkhan/p/welcome-to-the-machine-5?r=1ngiy&utm_campaign=post&utm_medium=web" target="_blank" rel="noopener noreferrer">
+          <img src="assets/posters/Proud Boys.jpg" alt="Proud Boys of the 1980s essay artwork">
+          <strong>Proud Boys of the 1980s</strong>
+          <span>Open on Khannections</span>
+        </a>
+        <a class="essay-card folder-card" href="https://open.substack.com/pub/mallonkhan/p/big-tech-is-the-new-church?r=1ngiy&utm_campaign=post&utm_medium=web&showWelcomeOnShare=true" target="_blank" rel="noopener noreferrer">
+          <img src="assets/posters/Big Tech is the New Church.jpg" alt="Big Tech is the New Church essay artwork">
+          <strong>Big Tech is the New Church</strong>
+          <span>Open on Khannections</span>
+        </a>
+        <a class="essay-card folder-card" href="https://open.substack.com/pub/mallonkhan/p/americas-hell-hole?r=1ngiy&utm_campaign=post&utm_medium=web" target="_blank" rel="noopener noreferrer">
+          <img src="assets/posters/Hell Hole.jpg" alt="America's Hell Hole essay artwork">
+          <strong>America's Hell Hole</strong>
+          <span>Open on Khannections</span>
+        </a>
+        <a class="essay-card folder-card" href="https://open.substack.com/pub/mallonkhan/p/the-real-witches-of-oz?r=1ngiy&utm_campaign=post&utm_medium=web" target="_blank" rel="noopener noreferrer">
+          <img src="assets/posters/witches.png" alt="Real Witches of Oz essay artwork">
+          <strong>The Real Witches of Oz</strong>
+          <span>Open on Khannections</span>
+        </a>
+        <a class="essay-card folder-card" href="https://open.substack.com/pub/mallonkhan/p/the-oil-is-the-drug?r=1ngiy&utm_campaign=post&utm_medium=web" target="_blank" rel="noopener noreferrer">
+          <img src="assets/posters/Oil Is the Drug.jpg" alt="The Oil is the Drug essay artwork">
+          <strong>The Oil Is the Drug</strong>
           <span>Open on Khannections</span>
         </a>
       </div>
     </dialog>
 
-    <dialog class="modal music-modal" id="musicModal" aria-labelledby="musicTitle">
+    <dialog class="modal music-modal cd-modal" id="musicModal" aria-labelledby="musicTitle">
       <div class="modal-bar">
         <div>
           <p class="window-label">Stereo System</p>
-          <h2 id="musicTitle">CD Tray</h2>
+          <h2 id="musicTitle">CD Tower</h2>
         </div>
         <button class="icon-button" type="button" data-close aria-label="Close">×</button>
       </div>
-      <div class="album-grid media-grid">
-        <button class="album media-card is-active" type="button" data-album="https://proudfools.bandcamp.com/" data-link-label="Open Pretty As Shit" data-title="Pretty As Shit" data-embed="https://bandcamp.com/EmbeddedPlayer/album=3205329073/size=large/bgcol=333333/linkcol=0687f5/transparent=true/">
-          <img src="assets/page-art/proud fools Pretty as shit.png" alt="">
-          <strong>Pretty As Shit</strong>
-          <span>Bandcamp album</span>
-        </button>
-        <button class="album media-card" type="button" data-album="https://proudfools.bandcamp.com/album/economics" data-link-label="Open Economics" data-title="Economics" data-embed="https://bandcamp.com/EmbeddedPlayer/album=1396164373/size=large/bgcol=333333/linkcol=0687f5/transparent=true/">
-          <img src="assets/page-art/economics-2025.png" alt="">
-          <strong>Economics</strong>
-          <span>Bandcamp album</span>
-        </button>
+      <div class="cd-system">
+        <div class="cd-tower" aria-label="CD rack">
+          <div class="rack-label">CD Rack</div>
+          <button class="album cd-spine is-active" type="button" data-album="https://proudfools.bandcamp.com/album/pretty-as-shit" data-link-label="Support on Bandcamp" data-title="Pretty As Shit" data-artist="Proud Fools" data-embed="https://bandcamp.com/EmbeddedPlayer/album=3205329073/size=large/bgcol=333333/linkcol=4ec5ec/minimal=true/transparent=true/"><span>Pretty As Shit</span></button>
+          <button class="album cd-spine" type="button" data-album="https://proudfools.bandcamp.com/album/humble-genus" data-link-label="Support on Bandcamp" data-title="Humble Genus" data-artist="Proud Fools" data-embed="https://bandcamp.com/EmbeddedPlayer/album=434990304/size=large/bgcol=333333/linkcol=4ec5ec/minimal=true/transparent=true/"><span>Humble Genus</span></button>
+          <button class="album cd-spine" type="button" data-album="https://proudfools.bandcamp.com/album/economics-2" data-link-label="Support on Bandcamp" data-title="Economics" data-artist="Proud Fools" data-embed="https://bandcamp.com/EmbeddedPlayer/album=602750464/size=large/bgcol=333333/linkcol=4ec5ec/minimal=true/transparent=true/"><span>Economics</span></button>
+          <button class="album cd-spine" type="button" data-album="https://mallon.bandcamp.com/album/ekhanomics" data-link-label="Open Mallon Bandcamp" data-title="Ekhanomics" data-artist="Khan!" data-embed="https://bandcamp.com/EmbeddedPlayer/album=1396164373/size=large/bgcol=333333/linkcol=4ec5ec/minimal=true/transparent=true/"><span>Ekhanomics</span></button>
+          <button class="album cd-spine" type="button" data-album="https://mallon.bandcamp.com/album/khantact" data-link-label="Open Mallon Bandcamp" data-title="Khantact" data-artist="Khan!" data-embed="https://bandcamp.com/EmbeddedPlayer/album=2607510681/size=large/bgcol=333333/linkcol=4ec5ec/minimal=true/transparent=true/"><span>Khantact</span></button>
+          <button class="album cd-spine" type="button" data-album="https://mallon.bandcamp.com/album/songs-for-humanoids" data-link-label="Open Mallon Bandcamp" data-title="Songs For Humanoids" data-artist="GoZen" data-embed="https://bandcamp.com/EmbeddedPlayer/album=125651572/size=large/bgcol=ffffff/linkcol=0687f5/minimal=true/transparent=true/"><span>Songs For Humanoids</span></button>
+          <button class="album cd-spine" type="button" data-album="emplant.html" data-link-label="Open Emplant" data-title="Emplant Opening" data-artist="Mallon Khan" data-audio="assets/audio/emplant/audiobook/Emplant-Opening.mp3"><span>Emplant Audiobook</span></button>
+          <button class="album cd-spine" type="button" data-album="https://redcircle.com/shows/1cbfd88e-9c60-4e7f-9168-46e0c7dc7b4a" data-link-label="Open on RedCircle" data-title="Dante's History Radio" data-artist="Mallon Khan" data-embed="https://redcircle.com/shows/1cbfd88e-9c60-4e7f-9168-46e0c7dc7b4a"><span>Dante Radio</span></button>
+        </div>
+        <div class="cd-player" id="playerDisplay">
+          <div class="discman-badge">Discman</div>
+          <div class="discman-lid">
+            <div class="spinning-cd" aria-hidden="true"></div>
+          </div>
+          <div class="cd-readout">
+            <span class="readout-label">Now Playing</span>
+            <strong>Pretty As Shit</strong>
+            <span>Proud Fools</span>
+          </div>
+          <div class="discman-controls" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <iframe class="bandcamp-player minimal-player" title="Pretty As Shit" src="https://bandcamp.com/EmbeddedPlayer/album=3205329073/size=large/bgcol=333333/linkcol=4ec5ec/minimal=true/transparent=true/" loading="lazy" seamless></iframe>
+          <a href="https://proudfools.bandcamp.com/album/pretty-as-shit" target="_blank" rel="noopener noreferrer">Support on Bandcamp</a>
+        </div>
       </div>
-      <div class="player-display" id="playerDisplay">
-        <strong>Pretty As Shit</strong>
-        <iframe class="bandcamp-player" title="Pretty As Shit" src="https://bandcamp.com/EmbeddedPlayer/album=3205329073/size=large/bgcol=333333/linkcol=0687f5/transparent=true/" loading="lazy" seamless></iframe>
-        <a href="https://proudfools.bandcamp.com/" target="_blank" rel="noopener noreferrer">Open Pretty As Shit</a>
+    </dialog>
+
+    <dialog class="modal contact-modal" id="contactModal" aria-labelledby="contactTitle">
+      <div class="modal-bar">
+        <div>
+          <p class="window-label">Khantact</p>
+          <h2 id="contactTitle">Send Mallon A Note</h2>
+        </div>
+        <button class="icon-button" type="button" data-close aria-label="Close">×</button>
       </div>
+      <form class="contact-form" action="mailto:mallonkhan@gmail.com" method="post" enctype="text/plain">
+        <label>
+          Name
+          <input name="name" autocomplete="name" required>
+        </label>
+        <label>
+          Email
+          <input name="email" type="email" autocomplete="email" required>
+        </label>
+        <label>
+          Message
+          <textarea name="message" rows="7" required></textarea>
+        </label>
+        <div class="modal-actions">
+          <button class="button" type="submit">Send Email</button>
+          <a class="button ghost" href="mailto:mallonkhan@gmail.com">Open Email App</a>
+        </div>
+      </form>
     </dialog>
 
     <dialog class="modal books-modal" id="booksModal" aria-labelledby="booksTitle">
@@ -251,12 +351,12 @@
       </div>
       <div class="book-list novel-shelf">
         <a class="media-card book-card" href="emplant.html">
-          <img src="assets/page-art/emplant-logo.png" alt="">
+          <img src="assets/page-art/EMPLANT_Cover_Cover_Apr2025.png" alt="">
           <strong>Emplant</strong>
           <span>Open project page</span>
         </a>
         <a class="media-card book-card" href="black-dove.html">
-          <img src="assets/page-art/black-dove-cover.png" alt="">
+          <img src="assets/page-art/Legend of Black Dove Cover.png" alt="">
           <strong>The Legend Of Black Dove</strong>
           <span>Open project page</span>
         </a>
@@ -302,10 +402,24 @@
             <a class="desktop-icon doc-icon" href="emplant.html"><span>Emplant.doc</span></a>
             <a class="desktop-icon folder-icon" href="black-dove.html"><span>BlackDove.html</span></a>
             <a class="desktop-icon store-icon" href="store.html"><span>Store.exe</span></a>
+            <a class="desktop-icon folder-icon" href="https://mallonkhan.blogspot.com/" target="_blank" rel="noopener noreferrer"><span>Blogs2009.url</span></a>
             <a class="desktop-icon mail-icon" href="mailto:mallonkhan@gmail.com"><span>Khantact.bat</span></a>
           </div>
         </div>
         <div class="computer-base" aria-hidden="true"></div>
+      </div>
+    </dialog>
+
+    <dialog class="modal image-lightbox" id="imageLightbox" aria-labelledby="lightboxTitle">
+      <div class="modal-bar">
+        <div>
+          <p class="window-label">Gallery Preview</p>
+          <h2 id="lightboxTitle">Image Preview</h2>
+        </div>
+        <button class="icon-button" type="button" data-close aria-label="Close">×</button>
+      </div>
+      <div class="lightbox-body">
+        <img id="lightboxImage" src="" alt="">
       </div>
     </dialog>
 
