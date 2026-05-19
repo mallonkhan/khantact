@@ -1,4 +1,8 @@
 *.psd
 *.zip
 *.log
+*.wav
+*.mp4
+*.mov
 assets/Khantent/Proud Fools/Videos/Zombies-PF.mov
+!assets/video/emplant/*.mov

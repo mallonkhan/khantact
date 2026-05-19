@@ -61,6 +61,12 @@
           <div class="facebook-frame square-video">
             <iframe title="Dante's History Facebook video" src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Fdanteshistory%2Fvideos%2F1192953911073158%2F&show_text=false&width=476&t=0" loading="lazy" scrolling="no" allow="clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
+          <div class="facebook-frame square-video">
+            <iframe title="Dante's History Facebook video" src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Fdanteshistory%2Fvideos%2F357340638278729%2F&show_text=false&width=476&t=0" loading="lazy" scrolling="no" allow="clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          <div class="facebook-frame square-video">
+            <iframe title="Dante's History Facebook video" src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Fdanteshistory%2Fvideos%2F349661809504443%2F&show_text=false&width=476&t=0" loading="lazy" scrolling="no" allow="clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
         </div>
       </section>
 
@@ -81,21 +87,30 @@
           <p class="eyebrow">Fund Me</p>
           <h2>Grant Proposal</h2>
         </div>
-        <div class="proposal-card">
+        <button class="proposal-card proposal-trigger" type="button" data-proposal-open aria-label="Open Dante's History grant proposal reader">
           <img src="assets/dante/DH logio.png" alt="Dante's History project logo">
-          <p>
-            A grant proposal for Season 2 of Dante's History, expanding the podcast's canto-by-canto
-            journey through the Divine Comedy and its relevance to modern moral questions. The
-            proposal frames Dante as a guide for an age shaped by artificial intelligence, genetic
-            engineering, physics, neuroscience, and renewed interest in philosophy, theology, and
-            ancient wisdom.
-          </p>
-          <p>
-            It makes the case for carrying Dante's Renaissance vision forward: uniting art, ethics,
-            intellectual rigor, and the soul's search for meaning in service of human flourishing.
-          </p>
-        </div>
+          <span>
+            <strong>Season 2 Grant Proposal</strong>
+            A proposal expanding Dante's History into a richer canto-by-canto audio series for modern audiences, using scholarship, story, and immersive sound to reconnect the Divine Comedy with today's questions about power, technology, conscience, and redemption.
+          </span>
+        </button>
       </section>
     </main>
+
+    <dialog class="modal proposal-modal" id="proposalModal" aria-labelledby="proposalTitle">
+      <div class="modal-bar">
+        <div>
+          <p class="window-label">Fund Me</p>
+          <h2 id="proposalTitle">Grant Proposal: <span id="proposalPageLabel">Cover</span></h2>
+        </div>
+        <button class="icon-button" type="button" data-close aria-label="Close">x</button>
+      </div>
+      <div class="proposal-reader proposal-carousel">
+        <button class="proposal-arrow proposal-prev" id="proposalPrev" type="button" aria-label="Previous proposal page">‹</button>
+        <img id="proposalFrame" src="assets/dante/grant-proposal/COVER PAGE.png" alt="Dante's History grant proposal cover page">
+        <button class="proposal-arrow proposal-next" id="proposalNext" type="button" aria-label="Next proposal page">›</button>
+      </div>
+    </dialog>
+    <script src="script.js" defer></script>
   </body>
 </html>
