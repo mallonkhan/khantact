@@ -1778,7 +1778,7 @@ h1 {
   }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 900px) {
   .room-shell {
     padding: 0;
   }
@@ -1805,22 +1805,24 @@ h1 {
   .bedroom-stage {
     min-height: 100svh;
     height: 100svh;
-    overflow-x: auto;
-    justify-content: start;
+    overflow: hidden;
+    justify-content: center;
   }
 
   .bedroom-art {
     width: 100vw;
     height: 100svh;
+    max-width: none;
     object-fit: contain;
     object-position: center center;
   }
 
   @media (max-aspect-ratio: 1 / 1) {
     .bedroom-stage {
-      background: #050607;
-      justify-content: center;
-      overflow-x: hidden;
+      height: auto;
+      min-height: 0;
+      justify-content: start;
+      overflow: visible;
     }
 
     .bedroom-stage::before {
@@ -1843,6 +1845,9 @@ h1 {
     }
 
     .bedroom-art {
+      width: 100vw;
+      height: auto;
+      max-width: none;
       object-fit: contain;
       object-position: center center;
     }
