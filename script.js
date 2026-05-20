@@ -238,7 +238,6 @@ const videoFrame = document.querySelector("#videoFrame");
 const channelDisplay = document.querySelector("#channelDisplay");
 const posterTitle = document.querySelector("#posterTitle");
 const posterImage = document.querySelector("#posterImage");
-const posterZoom = document.querySelector("#posterZoom");
 const playerDisplay = document.querySelector("#playerDisplay");
 const donateModal = document.querySelector("#donateModal");
 const donateBookTitle = document.querySelector("#donateBookTitle");
@@ -422,8 +421,6 @@ function changeChannel(direction = 1) {
 
 function openPoster(id) {
   selectPoster(id);
-  posterZoom.value = "1";
-  posterImage.style.transform = "scale(1)";
   openDialog(dialogs.poster);
 }
 
@@ -432,8 +429,6 @@ function selectPoster(id) {
   posterTitle.textContent = poster.title;
   posterImage.src = poster.src;
   posterImage.alt = poster.title;
-  posterZoom.value = "1";
-  posterImage.style.transform = "scale(1)";
   document.querySelectorAll("[data-poster-select]").forEach((item) => {
     item.classList.toggle("is-active", item.dataset.posterSelect === id);
   });
@@ -554,10 +549,6 @@ avatarHub?.addEventListener("blur", () => {
 
 avatarHub?.addEventListener("click", () => {
   roomShell?.classList.add("pins-on");
-});
-
-posterZoom?.addEventListener("input", () => {
-  posterImage.style.transform = `scale(${posterZoom.value})`;
 });
 
 document.querySelectorAll(".album").forEach((album) => {
