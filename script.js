@@ -172,6 +172,26 @@ const posterArt = {
     title: "Robo Wants Oreos",
     src: "assets/artwork/Robo wants oreos.PNG"
   },
+  "purple-painting": {
+    title: "Purple Painting",
+    src: "assets/artwork/IMG_7165.PNG"
+  },
+  "new-painting": {
+    title: "New Painting",
+    src: "assets/artwork/Screenshot 2023-09-17 at 1.05.40 PM.png"
+  },
+  "sketch-painting": {
+    title: "Sketch Painting",
+    src: "assets/artwork/IMG_5570.PNG"
+  },
+  "small-painting": {
+    title: "Small Painting",
+    src: "assets/artwork/7A61C532-20F0-4879-9FED-A0254EE1F9EE.JPG"
+  },
+  "we-are-butthead": {
+    title: "We Are Butthead",
+    src: "assets/artwork/We Are Butthead.png"
+  },
   "emplant-page-2": {
     title: "Emplant Page 2 Preview",
     src: "assets/emplant/emplant page 2 preview.png"
@@ -210,7 +230,8 @@ const dialogs = {
   books: document.querySelector("#booksModal"),
   pc: document.querySelector("#pcModal"),
   contact: document.querySelector("#contactModal"),
-  lightbox: document.querySelector("#imageLightbox")
+  lightbox: document.querySelector("#imageLightbox"),
+  proposal: document.querySelector("#proposalModal")
 };
 
 const videoFrame = document.querySelector("#videoFrame");
@@ -229,8 +250,40 @@ const constellationLines = document.querySelector("#constellationLines");
 const avatarHub = document.querySelector("#avatarHub");
 const lightboxTitle = document.querySelector("#lightboxTitle");
 const lightboxImage = document.querySelector("#lightboxImage");
+const proposalFrame = document.querySelector("#proposalFrame");
+const proposalPageLabel = document.querySelector("#proposalPageLabel");
+const proposalPrev = document.querySelector("#proposalPrev");
+const proposalNext = document.querySelector("#proposalNext");
+const proposalPages = [
+  { label: "Cover", src: "assets/dante/grant-proposal/COVER PAGE.png" },
+  { label: "Page 2", src: "assets/dante/grant-proposal/PAGE 2.png" },
+  { label: "Page 3", src: "assets/dante/grant-proposal/PAGE 3.png" },
+  { label: "Page 4", src: "assets/dante/grant-proposal/PAGE 4.png" },
+  { label: "Page 5", src: "assets/dante/grant-proposal/PAGE 5.png" },
+  { label: "Page 6", src: "assets/dante/grant-proposal/PAGE 6.png" },
+  { label: "Page 7", src: "assets/dante/grant-proposal/PAGE 7.png" },
+  { label: "Page 8", src: "assets/dante/grant-proposal/PAGE 8.png" },
+  { label: "Page 9", src: "assets/dante/grant-proposal/PAGE 9.png" }
+];
 
 let channelIndex = 0;
+let proposalIndex = 0;
+
+function resolveObjectPosition(position, freeSpace, axis) {
+  const parts = position.split(/\s+/).filter(Boolean);
+  let value = parts[axis] || (axis === 0 ? "50%" : "50%");
+  if (parts.length === 1) {
+    value = axis === 0 ? parts[0] : "50%";
+  }
+
+  if (value === "left" || value === "top") return 0;
+  if (value === "center") return freeSpace / 2;
+  if (value === "right" || value === "bottom") return freeSpace;
+  if (value.endsWith("%")) return freeSpace * (parseFloat(value) / 100);
+  if (value.endsWith("px")) return parseFloat(value);
+  const number = parseFloat(value);
+  return Number.isFinite(number) ? number : freeSpace / 2;
+}
 
 function getRenderedBedroomRect() {
   if (!bedroomStage || !bedroomArt) return null;
@@ -239,7 +292,9 @@ function getRenderedBedroomRect() {
   const naturalHeight = bedroomArt.naturalHeight || Number(bedroomArt.getAttribute("height")) || 1024;
   const stageRatio = stage.width / stage.height;
   const imageRatio = naturalWidth / naturalHeight;
-  const objectFit = getComputedStyle(bedroomArt).objectFit;
+  const imageStyle = getComputedStyle(bedroomArt);
+  const objectFit = imageStyle.objectFit;
+  const objectPosition = imageStyle.objectPosition || "50% 50%";
 
   let width = stage.width;
   let height = stage.height;
@@ -261,6 +316,9 @@ function getRenderedBedroomRect() {
     width = stage.height * imageRatio;
     left = (stage.width - width) / 2;
   }
+
+  left = resolveObjectPosition(objectPosition, stage.width - width, 0);
+  top = resolveObjectPosition(objectPosition, stage.height - height, 1);
 
   return { left, top, width, height };
 }
@@ -411,6 +469,14 @@ document.addEventListener("click", (event) => {
     return;
   }
 
+  const proposalOpen = event.target.closest("[data-proposal-open]");
+  if (proposalOpen && dialogs.proposal) {
+    event.preventDefault();
+    renderProposalPage(0);
+    openDialog(dialogs.proposal);
+    return;
+  }
+
   const gatedBook = event.target.closest(".gated-book");
   if (gatedBook) {
     event.preventDefault();
@@ -447,6 +513,20 @@ document.addEventListener("click", (event) => {
     openDialog(dialogs.contact);
   }
 });
+
+function renderProposalPage(index) {
+  if (!proposalFrame) return;
+  proposalIndex = (index + proposalPages.length) % proposalPages.length;
+  const page = proposalPages[proposalIndex];
+  proposalFrame.src = page.src;
+  proposalFrame.alt = `Dante's History grant proposal ${page.label.toLowerCase()}`;
+  if (proposalPageLabel) {
+    proposalPageLabel.textContent = page.label;
+  }
+}
+
+proposalPrev?.addEventListener("click", () => renderProposalPage(proposalIndex - 1));
+proposalNext?.addEventListener("click", () => renderProposalPage(proposalIndex + 1));
 
 document.querySelector("#nextChannel")?.addEventListener("click", () => changeChannel(1));
 document.querySelector("#prevChannel")?.addEventListener("click", () => changeChannel(-1));
@@ -487,27 +567,47 @@ document.querySelectorAll(".album").forEach((album) => {
     const linkLabel = album.dataset.linkLabel || "Open Link";
     const linkTarget = album.dataset.album?.startsWith("http") ? ' target="_blank" rel="noopener noreferrer"' : "";
     const artist = album.dataset.artist || "";
+    const kind = album.dataset.kind || (album.dataset.audio ? "tape" : album.dataset.embed?.includes("redcircle.com") ? "radio" : "cd");
     const player = album.dataset.embed
       ? `<iframe class="bandcamp-player" title="${album.dataset.title}" src="${album.dataset.embed}" loading="lazy" seamless></iframe>`
       : album.dataset.audio
         ? `<audio controls controlsList="nodownload" src="${album.dataset.audio}"></audio>`
         : `<p class="radio-note">Tune in through the RSS feed or open the project page.</p>`;
-    playerDisplay.innerHTML = `
-      <div class="discman-badge">Discman</div>
-      <div class="discman-lid">
+    const playerShell = kind === "tape"
+      ? `
+      <div class="tape-deck-player">
+        <div class="book-tape">
+          <img src="${album.dataset.thumb || "assets/emplant/emplant-logo.png"}" alt="">
+          <span>Book On Tape</span>
+        </div>
+        <div class="cassette-deck">
+          <div class="cassette-window" aria-hidden="true"><span></span><span></span></div>
+          ${player}
+        </div>
+      </div>`
+      : kind === "radio"
+        ? `
+      <div class="radio-tuner-player">
+        <div class="tuner-face">
+          <div class="tuner-scale" aria-hidden="true"><span></span></div>
+          <iframe class="radio-player" title="${album.dataset.title}" src="${album.dataset.embed}" loading="lazy"></iframe>
+        </div>
+        <div class="radio-dial" aria-hidden="true"></div>
+      </div>`
+        : `
+      <div class="jewel-case-player">
         <div class="spinning-cd" aria-hidden="true"></div>
-      </div>
+        <div class="jewel-case-frame">
+          ${player}
+        </div>
+      </div>`;
+    playerDisplay.innerHTML = `
       <div class="cd-readout">
         <span class="readout-label">Now Playing</span>
         <strong>${album.dataset.title}</strong>
         <span>${artist}</span>
       </div>
-      <div class="discman-controls" aria-hidden="true">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      ${player}
+      ${playerShell}
       <a href="${album.dataset.album}"${linkTarget}>${linkLabel}</a>
     `;
   });
