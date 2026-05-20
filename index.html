@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self'; img-src 'self' https://mallonkhan.com https://media.giphy.com data:; frame-src https://www.youtube-nocookie.com https://bandcamp.com https://redcircle.com https://app.redcircle.com; style-src 'self'; script-src 'self'; base-uri 'self'; form-action 'self' mailto:; object-src 'self'; frame-ancestors 'none'; upgrade-insecure-requests"
+      content="default-src 'self'; img-src 'self' https://mallonkhan.com https://media.giphy.com data:; frame-src https://www.youtube-nocookie.com https://www.facebook.com https://www.tiktok.com https://bandcamp.com https://redcircle.com https://app.redcircle.com; style-src 'self'; script-src 'self'; base-uri 'self'; form-action 'self' mailto:; object-src 'self'; frame-ancestors 'none'; upgrade-insecure-requests"
     >
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="description" content="Mallon Khan is a multimedia creative lead, artist, storyteller, animator, writer, podcaster, and musician.">
@@ -46,7 +46,7 @@
         <button class="scene-object tv" type="button" data-action="tv" data-x="0.180" data-y="0.475" aria-label="Change the TV channel">
           <span>Khanimations</span>
         </button>
-        <button class="scene-object art-pin" type="button" data-action="poster" data-poster="cornered" data-x="0.535" data-y="0.825" aria-label="Open artwork gallery">
+        <button class="scene-object art-pin" type="button" data-action="poster" data-poster="cornered" data-x="0.468" data-y="0.790" aria-label="Open artwork gallery">
           <span>Artwork</span>
         </button>
         <a class="scene-object proud-fools" href="proud-fools.html" data-x="0.405" data-y="0.365" aria-label="Open Proud Fools page">
@@ -73,10 +73,11 @@
       </section>
 
       <nav class="quick-links" aria-label="Main links">
-        <a href="https://substack.com/@khannections" target="_blank" rel="noopener noreferrer">Khannections</a>
         <details class="menu-group">
           <summary>Khantent</summary>
           <div class="submenu">
+            <button class="submenu-button" type="button" data-action="contact">Khantact</button>
+            <a href="https://substack.com/@khannections" target="_blank" rel="noopener noreferrer">Khannections</a>
             <a href="https://www.youtube.com/@MallonKhan" target="_blank" rel="noopener noreferrer">Khanimations</a>
             <a href="proud-fools.html">Proud Fools</a>
             <a href="ape-rock.html">Ape Rock</a>
@@ -87,7 +88,6 @@
             <a href="https://mallonkhan.blogspot.com/" target="_blank" rel="noopener noreferrer">Blogs 2009-2012</a>
           </div>
         </details>
-        <button class="quick-link-button" type="button" data-action="contact">Khantact</button>
       </nav>
     </main>
 
@@ -118,27 +118,63 @@
       <div class="modal-bar">
         <div>
           <p class="window-label">Artwork</p>
-          <h2 id="posterTitle">Cornered</h2>
+          <h2 id="posterTitle">Universal</h2>
         </div>
         <button class="icon-button" type="button" data-close aria-label="Close">×</button>
       </div>
       <div class="art-gallery-layout">
         <div class="poster-strip media-grid" aria-label="More art">
-          <button class="media-card is-active" type="button" data-poster-select="cornered">
-            <img src="assets/artwork/cornered.png" alt="">
-            <strong>Cornered</strong>
+          <button class="media-card is-active" type="button" data-poster-select="universal">
+            <img src="assets/artwork/Universal.png" alt="">
+            <strong>Universal</strong>
+          </button>
+          <button class="media-card" type="button" data-poster-select="we-are-butthead">
+            <img src="assets/artwork/We Are Butthead.png" alt="">
+            <strong>We Are Butthead</strong>
+          </button>
+          <button class="media-card" type="button" data-poster-select="emplant-page-2">
+            <img src="assets/emplant/emplant page 2 preview.png" alt="">
+            <strong>Emplant Page 2</strong>
+          </button>
+          <button class="media-card" type="button" data-poster-select="purple-painting">
+            <img src="assets/artwork/IMG_7165.PNG" alt="">
+            <strong>Whippy</strong>
+          </button>
+          <button class="media-card" type="button" data-poster-select="black-dove-2020">
+            <img src="assets/black-dove/motion-comic/LOBD_2020_Black Dove 2020.PNG" alt="">
+            <strong>Black Dove 2020</strong>
+          </button>
+          <button class="media-card" type="button" data-poster-select="black-dove-jessica">
+            <img src="assets/black-dove/motion-comic/LOBD_2020_jessica.PNG" alt="">
+            <strong>Jessica 2020</strong>
+          </button>
+          <button class="media-card" type="button" data-poster-select="strange">
+            <img src="assets/artwork/Strange.PNG" alt="">
+            <strong>Strange</strong>
+          </button>
+          <button class="media-card" type="button" data-poster-select="pizza">
+            <img src="assets/artwork/pizza.jpg" alt="">
+            <strong>Pizza</strong>
           </button>
           <button class="media-card" type="button" data-poster-select="baphomesh">
             <img src="assets/artwork/baphomesh.png" alt="">
             <strong>Baphomesh</strong>
           </button>
+          <button class="media-card" type="button" data-poster-select="american-gothic">
+            <img src="assets/artwork/American gothic 2020.PNG" alt="">
+            <strong>American Gothic</strong>
+          </button>
+          <button class="media-card" type="button" data-poster-select="witcher">
+            <img src="assets/artwork/Witcher.JPEG" alt="">
+            <strong>Witcher</strong>
+          </button>
+          <button class="media-card" type="button" data-poster-select="cornered">
+            <img src="assets/artwork/cornered.png" alt="">
+            <strong>Cornered</strong>
+          </button>
           <button class="media-card" type="button" data-poster-select="chaos">
             <img src="assets/artwork/Chaos.png" alt="">
             <strong>Chaos</strong>
-          </button>
-          <button class="media-card" type="button" data-poster-select="pizza">
-            <img src="assets/artwork/pizza.jpg" alt="">
-            <strong>Pizza</strong>
           </button>
           <button class="media-card" type="button" data-poster-select="dave">
             <img src="assets/artwork/dave.png" alt="">
@@ -152,21 +188,9 @@
             <img src="assets/artwork/sonic.png" alt="">
             <strong>Sonic</strong>
           </button>
-          <button class="media-card" type="button" data-poster-select="universal">
-            <img src="assets/artwork/Universal.png" alt="">
-            <strong>Universal</strong>
-          </button>
           <button class="media-card" type="button" data-poster-select="gollum">
             <img src="assets/artwork/Gollum-purp.JPG" alt="">
             <strong>Gollum</strong>
-          </button>
-          <button class="media-card" type="button" data-poster-select="american-gothic">
-            <img src="assets/artwork/American gothic 2020.PNG" alt="">
-            <strong>American Gothic</strong>
-          </button>
-          <button class="media-card" type="button" data-poster-select="witcher">
-            <img src="assets/artwork/Witcher.JPEG" alt="">
-            <strong>Witcher</strong>
           </button>
           <button class="media-card" type="button" data-poster-select="batman-at-home">
             <img src="assets/artwork/Batman at home.PNG" alt="">
@@ -176,17 +200,9 @@
             <img src="assets/artwork/Sabrina.PNG" alt="">
             <strong>Sabrina</strong>
           </button>
-          <button class="media-card" type="button" data-poster-select="strange">
-            <img src="assets/artwork/Strange.PNG" alt="">
-            <strong>Strange</strong>
-          </button>
           <button class="media-card" type="button" data-poster-select="robo-oreos">
             <img src="assets/artwork/Robo wants oreos.PNG" alt="">
             <strong>Robo Wants Oreos</strong>
-          </button>
-          <button class="media-card" type="button" data-poster-select="purple-painting">
-            <img src="assets/artwork/IMG_7165.PNG" alt="">
-            <strong>Purple Painting</strong>
           </button>
           <button class="media-card" type="button" data-poster-select="new-painting">
             <img src="assets/artwork/Screenshot 2023-09-17 at 1.05.40 PM.png" alt="">
@@ -200,25 +216,9 @@
             <img src="assets/artwork/7A61C532-20F0-4879-9FED-A0254EE1F9EE.JPG" alt="">
             <strong>Small Painting</strong>
           </button>
-          <button class="media-card" type="button" data-poster-select="we-are-butthead">
-            <img src="assets/artwork/We Are Butthead.png" alt="">
-            <strong>We Are Butthead</strong>
-          </button>
-          <button class="media-card" type="button" data-poster-select="emplant-page-2">
-            <img src="assets/emplant/emplant page 2 preview.png" alt="">
-            <strong>Emplant Page 2</strong>
-          </button>
-          <button class="media-card" type="button" data-poster-select="black-dove-2020">
-            <img src="assets/black-dove/motion-comic/LOBD_2020_Black Dove 2020.PNG" alt="">
-            <strong>Black Dove 2020</strong>
-          </button>
           <button class="media-card" type="button" data-poster-select="black-dove-falcon">
             <img src="assets/black-dove/motion-comic/LOBD_2020_Falcon.PNG" alt="">
             <strong>Falcon 2020</strong>
-          </button>
-          <button class="media-card" type="button" data-poster-select="black-dove-jessica">
-            <img src="assets/black-dove/motion-comic/LOBD_2020_jessica.PNG" alt="">
-            <strong>Jessica 2020</strong>
           </button>
           <button class="media-card" type="button" data-poster-select="black-dove-blast">
             <img src="assets/black-dove/motion-comic/LOBD_2020_blast.PNG" alt="">
@@ -234,8 +234,14 @@
           </button>
         </div>
         <div class="gallery-viewing-room">
+          <div class="poster-tools" aria-label="Artwork zoom controls">
+            <button class="button ghost" type="button" id="posterZoomOut">-</button>
+            <output id="posterZoomLevel">100%</output>
+            <button class="button ghost" type="button" id="posterZoomIn">+</button>
+            <button class="button ghost" type="button" id="posterZoomReset">Reset</button>
+          </div>
           <div class="poster-viewer">
-            <img id="posterImage" src="assets/artwork/cornered.png" alt="Selected artwork close-up">
+            <img id="posterImage" src="assets/artwork/Universal.png" alt="Selected artwork close-up">
           </div>
         </div>
       </div>
