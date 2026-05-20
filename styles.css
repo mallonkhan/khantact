@@ -1778,7 +1778,7 @@ h1 {
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 760px) {
   .room-shell {
     padding: 0;
   }
@@ -1805,8 +1805,8 @@ h1 {
   .bedroom-stage {
     min-height: 100svh;
     height: 100svh;
-    overflow: hidden;
-    justify-content: center;
+    overflow-x: auto;
+    justify-content: start;
   }
 
   .bedroom-art {
@@ -1819,34 +1819,19 @@ h1 {
 
   @media (max-aspect-ratio: 1 / 1) {
     .bedroom-stage {
-      height: auto;
-      min-height: 0;
-      justify-content: start;
-      overflow: visible;
+      height: 100svh;
+      min-height: 100svh;
+      justify-content: center;
+      overflow: hidden;
     }
 
     .bedroom-stage::before {
-      content: "";
-      position: absolute;
-      left: 50%;
-      bottom: 5.6rem;
-      z-index: 3;
-      width: 3.2rem;
-      height: 3.2rem;
-      display: grid;
-      place-items: center;
-      border: 1px solid rgba(247, 239, 216, 0.18);
-      border-radius: 50%;
-      background:
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='96' viewBox='0 0 96 96'%3E%3Cg fill='none' stroke='%23f7efd8' stroke-width='8' stroke-linecap='round' stroke-linejoin='round' opacity='.42'%3E%3Cpath d='M73 30A29 29 0 0 0 22 28'/%3E%3Cpath d='M74 12v18H56'/%3E%3Cpath d='M23 66a29 29 0 0 0 51 2'/%3E%3Cpath d='M22 84V66h18'/%3E%3C/g%3E%3C/svg%3E") center / 72% 72% no-repeat,
-        rgba(9, 9, 11, 0.28);
-      transform: translateX(-50%) rotate(-12deg);
-      pointer-events: none;
+      content: none;
     }
 
     .bedroom-art {
       width: 100vw;
-      height: auto;
+      height: 100svh;
       max-width: none;
       object-fit: contain;
       object-position: center center;
