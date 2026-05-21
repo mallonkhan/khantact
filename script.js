@@ -774,10 +774,20 @@ posterViewer?.addEventListener("pointercancel", () => {
 posterViewer?.addEventListener("dblclick", resetPosterZoom);
 
 roomShell?.classList.remove("pins-on");
-positionSceneObjects();
-window.addEventListener("resize", positionSceneObjects);
-window.addEventListener("orientationchange", positionSceneObjects);
-bedroomArt?.addEventListener("load", positionSceneObjects);
+
+function scheduleScenePositioning() {
+  positionSceneObjects();
+  requestAnimationFrame(positionSceneObjects);
+  window.setTimeout(positionSceneObjects, 120);
+  window.setTimeout(positionSceneObjects, 360);
+}
+
+scheduleScenePositioning();
+window.addEventListener("resize", scheduleScenePositioning);
+window.addEventListener("orientationchange", scheduleScenePositioning);
+window.visualViewport?.addEventListener("resize", scheduleScenePositioning);
+window.visualViewport?.addEventListener("scroll", scheduleScenePositioning);
+bedroomArt?.addEventListener("load", scheduleScenePositioning);
 openHashTarget();
 window.addEventListener("hashchange", openHashTarget);
 

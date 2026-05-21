@@ -1920,6 +1920,10 @@ h1 {
     .room-intro p:last-child {
       display: none;
     }
+
+    .bedroom-art {
+      object-fit: cover;
+    }
   }
 
   .quick-links {
@@ -2031,6 +2035,24 @@ h1 {
   .link-dial {
     width: 3.8rem;
     height: 3.8rem;
+  }
+}
+
+@media (orientation: landscape) and (hover: none) and (pointer: coarse) {
+  .bedroom-stage {
+    height: 100svh;
+    height: 100dvh;
+    min-height: 100svh;
+    min-height: 100dvh;
+    overflow: hidden;
+  }
+
+  .bedroom-art {
+    width: 100vw;
+    height: 100svh;
+    height: 100dvh;
+    object-fit: cover;
+    object-position: center center;
   }
 }
 
