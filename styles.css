@@ -122,7 +122,9 @@ h1 {
   position: relative;
   width: 100vw;
   height: 100vh;
+  height: 100dvh;
   min-height: 100vh;
+  min-height: 100dvh;
   display: grid;
   place-items: center;
   isolation: isolate;
@@ -146,9 +148,10 @@ h1 {
 .bedroom-art {
   width: 100vw;
   height: 100vh;
+  height: 100dvh;
   max-width: none;
   max-height: none;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center center;
   filter: drop-shadow(0 24px 70px rgba(0, 0, 0, 0.58));
   opacity: 0;
@@ -1189,6 +1192,13 @@ h1 {
   backdrop-filter: blur(3px);
 }
 
+.simple-media-player {
+  display: grid;
+  place-items: center;
+  width: min(100%, 22rem);
+  margin-inline: auto;
+}
+
 .tape-deck-player {
   display: grid;
   grid-template-columns: minmax(8rem, 12rem) minmax(0, 1fr);
@@ -1857,23 +1867,28 @@ h1 {
 
   .bedroom-stage {
     min-height: 100svh;
+    min-height: 100dvh;
     height: 100svh;
-    overflow-x: auto;
-    justify-content: start;
+    height: 100dvh;
+    overflow: hidden;
+    justify-content: center;
   }
 
   .bedroom-art {
     width: 100vw;
     height: 100svh;
+    height: 100dvh;
     max-width: none;
-    object-fit: contain;
+    object-fit: cover;
     object-position: center center;
   }
 
   @media (max-aspect-ratio: 1 / 1) {
     .bedroom-stage {
       height: 100svh;
+      height: 100dvh;
       min-height: 100svh;
+      min-height: 100dvh;
       justify-content: center;
       overflow: hidden;
     }
@@ -1885,8 +1900,9 @@ h1 {
     .bedroom-art {
       width: 100vw;
       height: 100svh;
+      height: 100dvh;
       max-width: none;
-      object-fit: contain;
+      object-fit: cover;
       object-position: center center;
     }
   }

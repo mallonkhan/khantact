@@ -167,6 +167,26 @@ const videos = [
     id: "7kwT-Ru2u1U"
   },
   {
+    type: "youtube",
+    title: "Emplant - Promo",
+    id: "C9PxaiFw0ik"
+  },
+  {
+    type: "localVideo",
+    title: "Emplant - About",
+    src: "assets/video/emplant/About Emplant.mov"
+  },
+  {
+    type: "localVideo",
+    title: "Emplant - 2013 Promo",
+    src: "assets/video/emplant/EMPLANT-2013-promo-book.mov"
+  },
+  {
+    type: "localVideo",
+    title: "Emplant - Doubting Tomas",
+    src: "assets/video/emplant/Emplant Doubting Tomas.mov"
+  },
+  {
     type: "facebook",
     title: "Dante's History - Reel",
     format: "vertical",
@@ -503,6 +523,12 @@ function closeDialog(dialog) {
   }
 }
 
+function openHashTarget() {
+  if (window.location.hash !== "#khantact") return;
+  openDialog(dialogs.contact);
+  history.replaceState(null, "", window.location.pathname + window.location.search);
+}
+
 function formatChannel(index) {
   return `CH ${String(index + 1).padStart(2, "0")}`;
 }
@@ -530,6 +556,10 @@ function renderChannel(index = channelIndex) {
   }
   if (video.type === "image") {
     videoFrame.innerHTML = `<img src="${video.src}" alt="${video.title}">`;
+    return;
+  }
+  if (video.type === "localVideo") {
+    videoFrame.innerHTML = `<video controls controlsList="nodownload" playsinline src="${video.src}"></video>`;
     return;
   }
   if (video.type === "facebook" || video.type === "tiktok") {
@@ -748,11 +778,8 @@ positionSceneObjects();
 window.addEventListener("resize", positionSceneObjects);
 window.addEventListener("orientationchange", positionSceneObjects);
 bedroomArt?.addEventListener("load", positionSceneObjects);
-
-avatarHub?.addEventListener("click", (event) => {
-  event.preventDefault();
-  roomShell?.classList.toggle("pins-on");
-});
+openHashTarget();
+window.addEventListener("hashchange", openHashTarget);
 
 document.querySelectorAll(".album").forEach((album) => {
   album.addEventListener("click", () => {
@@ -789,11 +816,8 @@ document.querySelectorAll(".album").forEach((album) => {
         <div class="radio-dial" aria-hidden="true"></div>
       </div>`
         : `
-      <div class="jewel-case-player">
-        <div class="spinning-cd" aria-hidden="true"></div>
-        <div class="jewel-case-frame">
-          ${player}
-        </div>
+      <div class="simple-media-player">
+        ${player}
       </div>`;
     playerDisplay.innerHTML = `
       <div class="cd-readout">
