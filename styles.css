@@ -1921,9 +1921,6 @@ h1 {
       display: none;
     }
 
-    .bedroom-art {
-      object-fit: cover;
-    }
   }
 
   .quick-links {
@@ -2044,15 +2041,30 @@ h1 {
     height: 100dvh;
     min-height: 100svh;
     min-height: 100dvh;
-    overflow: hidden;
+    align-items: start;
+    justify-items: start;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y pinch-zoom;
+    background: #050607;
   }
 
   .bedroom-art {
     width: 100vw;
-    height: 100svh;
-    height: 100dvh;
-    object-fit: cover;
-    object-position: center center;
+    height: auto;
+    min-height: 0;
+    max-width: none;
+    max-height: none;
+    object-fit: fill;
+    object-position: left top;
+  }
+
+  .constellation-lines {
+    inset: auto;
+    left: 0;
+    top: 0;
   }
 }
 

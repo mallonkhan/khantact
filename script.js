@@ -427,6 +427,19 @@ function getRenderedBedroomRect() {
   const stage = bedroomStage.getBoundingClientRect();
   const naturalWidth = bedroomArt.naturalWidth || Number(bedroomArt.getAttribute("width")) || 1536;
   const naturalHeight = bedroomArt.naturalHeight || Number(bedroomArt.getAttribute("height")) || 1024;
+  const art = bedroomArt.getBoundingClientRect();
+  const actualRatio = art.width / art.height;
+  const naturalRatio = naturalWidth / naturalHeight;
+
+  if (Number.isFinite(actualRatio) && Math.abs(actualRatio - naturalRatio) < 0.01) {
+    return {
+      left: art.left - stage.left + bedroomStage.scrollLeft,
+      top: art.top - stage.top + bedroomStage.scrollTop,
+      width: art.width,
+      height: art.height
+    };
+  }
+
   const stageRatio = stage.width / stage.height;
   const imageRatio = naturalWidth / naturalHeight;
   const imageStyle = getComputedStyle(bedroomArt);
@@ -490,7 +503,11 @@ function drawConstellation(imageRect = getRenderedBedroomRect()) {
   const avatarPoint = pointFromImageCoords(avatarHub, imageRect);
   if (!avatarPoint) return;
 
-  constellationLines.setAttribute("viewBox", `0 0 ${bedroomStage.clientWidth} ${bedroomStage.clientHeight}`);
+  const lineWidth = Math.max(bedroomStage.clientWidth, bedroomStage.scrollWidth);
+  const lineHeight = Math.max(bedroomStage.clientHeight, bedroomStage.scrollHeight);
+  constellationLines.style.width = `${lineWidth}px`;
+  constellationLines.style.height = `${lineHeight}px`;
+  constellationLines.setAttribute("viewBox", `0 0 ${lineWidth} ${lineHeight}`);
   constellationLines.innerHTML = "";
 
   document.querySelectorAll(".scene-object[data-x][data-y]").forEach((pin) => {
