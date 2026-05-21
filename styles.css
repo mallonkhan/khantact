@@ -1879,7 +1879,7 @@ h1 {
     height: 100svh;
     height: 100dvh;
     max-width: none;
-    object-fit: cover;
+    object-fit: contain;
     object-position: center center;
   }
 
@@ -1902,7 +1902,7 @@ h1 {
       height: 100svh;
       height: 100dvh;
       max-width: none;
-      object-fit: cover;
+      object-fit: contain;
       object-position: center center;
     }
   }
