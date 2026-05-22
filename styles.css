@@ -2035,7 +2035,12 @@ h1 {
   }
 }
 
-@media (orientation: landscape) and (hover: none) and (pointer: coarse) {
+@media (hover: none) and (pointer: coarse) {
+  .room-shell {
+    min-height: 100svh;
+    min-height: 100dvh;
+  }
+
   .bedroom-stage {
     height: 100svh;
     height: 100dvh;
@@ -2059,6 +2064,11 @@ h1 {
     max-height: none;
     object-fit: fill;
     object-position: left top;
+    filter: none;
+    opacity: 1;
+    animation: none;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
   }
 
   .constellation-lines {
