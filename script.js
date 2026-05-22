@@ -172,19 +172,14 @@ const videos = [
     id: "C9PxaiFw0ik"
   },
   {
+    type: "youtube",
+    title: "Emplant - Animation",
+    id: "AyYX-LZS1WU"
+  },
+  {
     type: "localVideo",
     title: "Emplant - About",
     src: "assets/video/emplant/About Emplant.mov"
-  },
-  {
-    type: "localVideo",
-    title: "Emplant - 2013 Promo",
-    src: "assets/video/emplant/EMPLANT-2013-promo-book.mov"
-  },
-  {
-    type: "localVideo",
-    title: "Emplant - Doubting Tomas",
-    src: "assets/video/emplant/Emplant Doubting Tomas.mov"
   },
   {
     type: "facebook",
