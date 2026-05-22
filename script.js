@@ -426,7 +426,7 @@ function getRenderedBedroomRect() {
   const actualRatio = art.width / art.height;
   const naturalRatio = naturalWidth / naturalHeight;
 
-  if (Number.isFinite(actualRatio) && Math.abs(actualRatio - naturalRatio) < 0.01) {
+  if (art.width > 0 && art.height > 0 && Number.isFinite(actualRatio) && Math.abs(actualRatio - naturalRatio) < 0.03) {
     return {
       left: art.left - stage.left + bedroomStage.scrollLeft,
       top: art.top - stage.top + bedroomStage.scrollTop,
@@ -799,6 +799,7 @@ window.addEventListener("resize", scheduleScenePositioning);
 window.addEventListener("orientationchange", scheduleScenePositioning);
 window.visualViewport?.addEventListener("resize", scheduleScenePositioning);
 window.visualViewport?.addEventListener("scroll", scheduleScenePositioning);
+bedroomStage?.addEventListener("scroll", scheduleScenePositioning, { passive: true });
 bedroomArt?.addEventListener("load", scheduleScenePositioning);
 openHashTarget();
 window.addEventListener("hashchange", openHashTarget);

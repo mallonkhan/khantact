@@ -24,10 +24,7 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  background:
-    radial-gradient(circle at 15% 45%, rgba(126, 231, 225, 0.16), transparent 28rem),
-    radial-gradient(circle at 82% 64%, rgba(255, 207, 87, 0.11), transparent 25rem),
-    var(--bg);
+  background: #050607;
   color: var(--ink);
   overflow-x: hidden;
 }
@@ -59,7 +56,7 @@ a {
 .room-shell {
   min-height: 100vh;
   padding: 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .room-intro {
@@ -125,10 +122,13 @@ h1 {
   height: 100dvh;
   min-height: 100vh;
   min-height: 100dvh;
-  display: grid;
-  place-items: center;
+  display: block;
   isolation: isolate;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y pinch-zoom;
   background: #050607;
 }
 
@@ -146,21 +146,23 @@ h1 {
 }
 
 .bedroom-art {
+  display: block;
   width: 100vw;
-  height: 100vh;
-  height: 100dvh;
+  height: auto;
   max-width: none;
   max-height: none;
-  object-fit: cover;
-  object-position: center center;
-  filter: drop-shadow(0 24px 70px rgba(0, 0, 0, 0.58));
-  opacity: 0;
-  animation: roomFade 1400ms ease forwards;
+  object-fit: fill;
+  object-position: left top;
+  filter: none;
+  opacity: 1;
+  animation: none;
 }
 
 .constellation-lines {
   position: absolute;
-  inset: 0;
+  inset: auto;
+  left: 0;
+  top: 0;
   z-index: 3;
   width: 100%;
   height: 100%;
@@ -1870,17 +1872,16 @@ h1 {
     min-height: 100dvh;
     height: 100svh;
     height: 100dvh;
-    overflow: hidden;
-    justify-content: center;
+    overflow-x: auto;
+    overflow-y: auto;
   }
 
   .bedroom-art {
     width: 100vw;
-    height: 100svh;
-    height: 100dvh;
+    height: auto;
     max-width: none;
-    object-fit: contain;
-    object-position: center center;
+    object-fit: fill;
+    object-position: left top;
   }
 
   @media (max-aspect-ratio: 1 / 1) {
@@ -1889,8 +1890,8 @@ h1 {
       height: 100dvh;
       min-height: 100svh;
       min-height: 100dvh;
-      justify-content: center;
-      overflow: hidden;
+      overflow-x: auto;
+      overflow-y: hidden;
     }
 
     .bedroom-stage::before {
@@ -1898,12 +1899,12 @@ h1 {
     }
 
     .bedroom-art {
-      width: 100vw;
+      width: auto;
       height: 100svh;
       height: 100dvh;
       max-width: none;
-      object-fit: contain;
-      object-position: center center;
+      object-fit: fill;
+      object-position: left top;
     }
   }
 
@@ -1928,6 +1929,20 @@ h1 {
     right: 0.75rem;
     justify-content: flex-end;
     max-width: min(14rem, calc(100vw - 1.5rem));
+  }
+
+  .submenu {
+    max-height: min(70svh, 18rem);
+    overflow-y: auto;
+  }
+
+  .quick-links a,
+  .quick-link-button,
+  .submenu-button,
+  .menu-group summary {
+    min-height: 2.05rem;
+    padding: 0.42rem 0.72rem;
+    font-size: 0.88rem;
   }
 
   .avatar-hub {
@@ -2033,48 +2048,37 @@ h1 {
     width: 3.8rem;
     height: 3.8rem;
   }
-}
 
-@media (hover: none) and (pointer: coarse) {
-  .room-shell {
-    min-height: 100svh;
-    min-height: 100dvh;
-  }
+  @media (orientation: landscape), (max-height: 480px) {
+    .quick-links {
+      right: 0.45rem;
+      bottom: 0.45rem;
+      max-width: min(10.5rem, calc(100vw - 0.9rem));
+    }
 
-  .bedroom-stage {
-    height: 100svh;
-    height: 100dvh;
-    min-height: 100svh;
-    min-height: 100dvh;
-    align-items: start;
-    justify-items: start;
-    overflow-x: hidden;
-    overflow-y: auto;
-    overscroll-behavior: contain;
-    -webkit-overflow-scrolling: touch;
-    touch-action: pan-y pinch-zoom;
-    background: #050607;
-  }
+    .menu-group summary {
+      min-height: 1.9rem;
+      padding: 0.34rem 0.66rem;
+      font-size: 0.82rem;
+    }
 
-  .bedroom-art {
-    width: 100vw;
-    height: auto;
-    min-height: 0;
-    max-width: none;
-    max-height: none;
-    object-fit: fill;
-    object-position: left top;
-    filter: none;
-    opacity: 1;
-    animation: none;
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-  }
+    .submenu {
+      bottom: calc(100% + 0.25rem);
+      min-width: min(10.5rem, calc(100vw - 0.9rem));
+      max-height: min(62svh, 11rem);
+      gap: 0.22rem;
+      padding: 0.28rem;
+      border-radius: 0.45rem;
+    }
 
-  .constellation-lines {
-    inset: auto;
-    left: 0;
-    top: 0;
+    .submenu a,
+    .submenu-button {
+      min-height: 1.72rem;
+      padding: 0.25rem 0.52rem;
+      border-radius: 0.55rem;
+      font-size: 0.75rem;
+      line-height: 1.05;
+    }
   }
 }
 
