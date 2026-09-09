@@ -1,0 +1,279 @@
+{
+  "version": 1,
+  "managedFiles": [
+    "assets/designer/music/econ-photoshop-economics2025-apr2025.png",
+    "assets/designer/music/proud-fools-pretty-as-shit.png",
+    "assets/designer/music/dh-logio.png"
+  ],
+  "artwork": [
+    {
+      "id": "universal",
+      "title": "Universal",
+      "image": "assets/artwork/Universal.png"
+    },
+    {
+      "id": "we-are-butthead",
+      "title": "We Are Butthead",
+      "image": "assets/artwork/We Are Butthead.png"
+    },
+    {
+      "id": "emplant-page-2",
+      "title": "Emplant Page 2",
+      "image": "assets/emplant/emplant page 2 preview.png"
+    },
+    {
+      "id": "purple-painting",
+      "title": "Whippy",
+      "image": "assets/artwork/IMG_7165.PNG"
+    },
+    {
+      "id": "black-dove-2020",
+      "title": "Black Dove 2020",
+      "image": "assets/black-dove/motion-comic/LOBD_2020_Black Dove 2020.PNG"
+    },
+    {
+      "id": "black-dove-jessica",
+      "title": "Jessica 2020",
+      "image": "assets/black-dove/motion-comic/LOBD_2020_jessica.PNG"
+    },
+    {
+      "id": "strange",
+      "title": "Strange",
+      "image": "assets/artwork/Strange.PNG"
+    },
+    {
+      "id": "pizza",
+      "title": "Pizza",
+      "image": "assets/artwork/pizza.jpg"
+    },
+    {
+      "id": "baphomesh",
+      "title": "Baphomesh",
+      "image": "assets/artwork/baphomesh.png"
+    },
+    {
+      "id": "american-gothic",
+      "title": "American Gothic",
+      "image": "assets/artwork/American gothic 2020.PNG"
+    },
+    {
+      "id": "witcher",
+      "title": "Witcher",
+      "image": "assets/artwork/Witcher.JPEG"
+    },
+    {
+      "id": "cornered",
+      "title": "Cornered",
+      "image": "assets/artwork/cornered.png"
+    },
+    {
+      "id": "chaos",
+      "title": "Chaos",
+      "image": "assets/artwork/Chaos.png"
+    },
+    {
+      "id": "dave",
+      "title": "Dave",
+      "image": "assets/artwork/dave.png"
+    },
+    {
+      "id": "election-2016",
+      "title": "2016 Election",
+      "image": "assets/artwork/election-2016.png"
+    },
+    {
+      "id": "sonic",
+      "title": "Sonic",
+      "image": "assets/artwork/sonic.png"
+    },
+    {
+      "id": "gollum",
+      "title": "Gollum",
+      "image": "assets/artwork/Gollum-purp.JPG"
+    },
+    {
+      "id": "batman-at-home",
+      "title": "Batman At Home",
+      "image": "assets/artwork/Batman at home.PNG"
+    },
+    {
+      "id": "sabrina",
+      "title": "Sabrina",
+      "image": "assets/artwork/Sabrina.PNG"
+    },
+    {
+      "id": "robo-oreos",
+      "title": "Robo Wants Oreos",
+      "image": "assets/artwork/Robo wants oreos.PNG"
+    },
+    {
+      "id": "new-painting",
+      "title": "New Painting",
+      "image": "assets/artwork/Screenshot 2023-09-17 at 1.05.40 PM.png"
+    },
+    {
+      "id": "sketch-painting",
+      "title": "Sketch Painting",
+      "image": "assets/artwork/IMG_5570.PNG"
+    },
+    {
+      "id": "small-painting",
+      "title": "Small Painting",
+      "image": "assets/artwork/7A61C532-20F0-4879-9FED-A0254EE1F9EE.JPG"
+    },
+    {
+      "id": "black-dove-falcon",
+      "title": "Falcon 2020",
+      "image": "assets/black-dove/motion-comic/LOBD_2020_Falcon.PNG"
+    },
+    {
+      "id": "black-dove-blast",
+      "title": "Blast 2020",
+      "image": "assets/black-dove/motion-comic/LOBD_2020_blast.PNG"
+    },
+    {
+      "id": "black-dove-edmond",
+      "title": "Edmond Prays",
+      "image": "assets/black-dove/motion-comic/LOBD_2020_Edmond_Prays.png"
+    },
+    {
+      "id": "black-dove-dove",
+      "title": "Dove 2020",
+      "image": "assets/black-dove/motion-comic/LOBD_2020_dove.jpg"
+    }
+  ],
+  "essays": [
+    {
+      "id": "the-software-of-consciousness",
+      "title": "The Software of Consciousness",
+      "image": "https://substackcdn.com/image/fetch/$s_!PIXM!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0403c5ca-8764-48a7-92cf-eee244f53c04_1024x708.jpeg",
+      "url": "https://mallonkhan.substack.com/p/the-software-of-consciousness?r=1ngiy"
+    },
+    {
+      "id": "the-real-witches-of-oz",
+      "title": "The Real Witches of Oz",
+      "image": "assets/posters/witches.png",
+      "url": "https://open.substack.com/pub/mallonkhan/p/the-real-witches-of-oz?r=1ngiy&utm_campaign=post&utm_medium=web"
+    },
+    {
+      "id": "puck-the-people-of-oz",
+      "title": "Puck the People of Oz",
+      "image": "assets/posters/puck the people of oz.jpg",
+      "url": "https://open.substack.com/pub/mallonkhan/p/puck-the-people-of-oz?r=1ngiy&utm_campaign=post&utm_medium=web"
+    },
+    {
+      "id": "space-railroad",
+      "title": "Space Railroad",
+      "image": "assets/posters/space railroad substack.jpg",
+      "url": "https://open.substack.com/pub/mallonkhan/p/space-railroad?r=1ngiy&utm_campaign=post&utm_medium=web"
+    },
+    {
+      "id": "proud-boys-of-the-1980s",
+      "title": "Proud Boys of the 1980s",
+      "image": "assets/posters/Proud Boys.jpg",
+      "url": "https://open.substack.com/pub/mallonkhan/p/welcome-to-the-machine-5?r=1ngiy&utm_campaign=post&utm_medium=web"
+    },
+    {
+      "id": "big-tech-is-the-new-church",
+      "title": "Big Tech is the New Church",
+      "image": "assets/posters/Big Tech is the New Church.jpg",
+      "url": "https://open.substack.com/pub/mallonkhan/p/big-tech-is-the-new-church?r=1ngiy&utm_campaign=post&utm_medium=web&showWelcomeOnShare=true"
+    },
+    {
+      "id": "america-s-hell-hole",
+      "title": "America's Hell Hole",
+      "image": "assets/posters/Hell Hole.jpg",
+      "url": "https://open.substack.com/pub/mallonkhan/p/americas-hell-hole?r=1ngiy&utm_campaign=post&utm_medium=web"
+    },
+    {
+      "id": "the-oil-is-the-drug",
+      "title": "The Oil Is the Drug",
+      "image": "assets/posters/Oil Is the Drug.jpg",
+      "url": "https://open.substack.com/pub/mallonkhan/p/the-oil-is-the-drug?r=1ngiy&utm_campaign=post&utm_medium=web"
+    }
+  ],
+  "music": [
+    {
+      "id": "ekhanomics",
+      "title": "Ekhanomics",
+      "artist": "Mallon Khan",
+      "kind": "embed",
+      "url": "https://mallon.bandcamp.com/album/ekhanomics",
+      "embed": "https://bandcamp.com/EmbeddedPlayer/album=1396164373/size=large/bgcol=333333/linkcol=4ec5ec/minimal=true/transparent=true/",
+      "audio": "",
+      "image": "assets/designer/music/econ-photoshop-economics2025-apr2025.png",
+      "linkLabel": "Open Mallon Bandcamp"
+    },
+    {
+      "id": "pretty-as-shit",
+      "title": "Pretty As Shit",
+      "artist": "Proud Fools",
+      "kind": "embed",
+      "url": "https://proudfools.bandcamp.com/album/pretty-as-shit",
+      "embed": "https://bandcamp.com/EmbeddedPlayer/album=3205329073/size=large/bgcol=333333/linkcol=4ec5ec/minimal=true/transparent=true/",
+      "audio": "",
+      "image": "assets/designer/music/proud-fools-pretty-as-shit.png",
+      "linkLabel": "Support on Bandcamp"
+    },
+    {
+      "id": "songs-for-humanoids",
+      "title": "Songs For Humanoids",
+      "artist": "GoZen",
+      "kind": "embed",
+      "url": "https://mallon.bandcamp.com/album/songs-for-humanoids",
+      "embed": "https://bandcamp.com/EmbeddedPlayer/album=125651572/size=large/bgcol=ffffff/linkcol=0687f5/minimal=true/transparent=true/",
+      "audio": "",
+      "image": "https://f4.bcbits.com/img/a3794975710_2.jpg",
+      "linkLabel": "Open Mallon Bandcamp"
+    },
+    {
+      "id": "khantact",
+      "title": "Khantact",
+      "artist": "Khan!",
+      "kind": "embed",
+      "url": "https://mallon.bandcamp.com/album/khantact",
+      "embed": "https://bandcamp.com/EmbeddedPlayer/album=2607510681/size=large/bgcol=333333/linkcol=4ec5ec/minimal=true/transparent=true/",
+      "audio": "",
+      "image": "https://f4.bcbits.com/img/a0584349703_2.jpg",
+      "linkLabel": "Open Mallon Bandcamp"
+    },
+    {
+      "id": "dante-s-history-radio",
+      "title": "Dante's History Radio",
+      "artist": "Mallon Khan",
+      "kind": "radio",
+      "url": "https://redcircle.com/shows/1cbfd88e-9c60-4e7f-9168-46e0c7dc7b4a",
+      "embed": "https://redcircle.com/shows/1cbfd88e-9c60-4e7f-9168-46e0c7dc7b4a",
+      "audio": "",
+      "image": "assets/designer/music/dh-logio.png",
+      "linkLabel": "Open on RedCircle"
+    },
+    {
+      "id": "emplant-opening",
+      "title": "Emplant Opening",
+      "artist": "Mallon Khan",
+      "kind": "tape",
+      "url": "emplant.html",
+      "embed": "",
+      "audio": "assets/audio/emplant/audiobook/Emplant-Opening.mp3",
+      "image": "assets/emplant/emplant-logo.png",
+      "linkLabel": "Open Emplant"
+    }
+  ],
+  "books": [
+    {
+      "id": "emplant",
+      "title": "Emplant",
+      "image": "assets/page-art/EMPLANT_Cover_Cover_Apr2025.png",
+      "url": "emplant.html",
+      "description": "Open project page"
+    },
+    {
+      "id": "the-legend-of-black-dove",
+      "title": "The Legend Of Black Dove",
+      "image": "assets/page-art/Legend of Black Dove Cover.png",
+      "url": "black-dove.html",
+      "description": "Open project page"
+    }
+  ]
+}

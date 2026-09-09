@@ -237,113 +237,113 @@ const videos = [
 ];
 
 const posterArt = {
-  "cornered": {
-    title: "Cornered",
-    src: "assets/artwork/cornered.png"
-  },
-  "baphomesh": {
-    title: "Baphomesh",
-    src: "assets/artwork/baphomesh.png"
-  },
-  "chaos": {
-    title: "Chaos",
-    src: "assets/artwork/Chaos.png"
-  },
-  "pizza": {
-    title: "Pizza",
-    src: "assets/artwork/pizza.jpg"
-  },
-  "dave": {
-    title: "Dave",
-    src: "assets/artwork/dave.png"
-  },
-  "election-2016": {
-    title: "2016 Election",
-    src: "assets/artwork/election-2016.png"
-  },
-  "sonic": {
-    title: "Sonic",
-    src: "assets/artwork/sonic.png"
-  },
   "universal": {
-    title: "Universal",
-    src: "assets/artwork/Universal.png"
-  },
-  "gollum": {
-    title: "Gollum",
-    src: "assets/artwork/Gollum-purp.JPG"
-  },
-  "american-gothic": {
-    title: "American Gothic",
-    src: "assets/artwork/American gothic 2020.PNG"
-  },
-  "witcher": {
-    title: "Witcher",
-    src: "assets/artwork/Witcher.JPEG"
-  },
-  "batman-at-home": {
-    title: "Batman At Home",
-    src: "assets/artwork/Batman at home.PNG"
-  },
-  "sabrina": {
-    title: "Sabrina",
-    src: "assets/artwork/Sabrina.PNG"
-  },
-  "strange": {
-    title: "Strange",
-    src: "assets/artwork/Strange.PNG"
-  },
-  "robo-oreos": {
-    title: "Robo Wants Oreos",
-    src: "assets/artwork/Robo wants oreos.PNG"
-  },
-  "purple-painting": {
-    title: "Whippy",
-    src: "assets/artwork/IMG_7165.PNG"
-  },
-  "new-painting": {
-    title: "New Painting",
-    src: "assets/artwork/Screenshot 2023-09-17 at 1.05.40 PM.png"
-  },
-  "sketch-painting": {
-    title: "Sketch Painting",
-    src: "assets/artwork/IMG_5570.PNG"
-  },
-  "small-painting": {
-    title: "Small Painting",
-    src: "assets/artwork/7A61C532-20F0-4879-9FED-A0254EE1F9EE.JPG"
+    "title": "Universal",
+    "src": "assets/artwork/Universal.png"
   },
   "we-are-butthead": {
-    title: "We Are Butthead",
-    src: "assets/artwork/We Are Butthead.png"
+    "title": "We Are Butthead",
+    "src": "assets/artwork/We Are Butthead.png"
   },
   "emplant-page-2": {
-    title: "Emplant Page 2 Preview",
-    src: "assets/emplant/emplant page 2 preview.png"
+    "title": "Emplant Page 2",
+    "src": "assets/emplant/emplant page 2 preview.png"
+  },
+  "purple-painting": {
+    "title": "Whippy",
+    "src": "assets/artwork/IMG_7165.PNG"
   },
   "black-dove-2020": {
-    title: "Black Dove 2020",
-    src: "assets/black-dove/motion-comic/LOBD_2020_Black Dove 2020.PNG"
-  },
-  "black-dove-falcon": {
-    title: "Falcon 2020",
-    src: "assets/black-dove/motion-comic/LOBD_2020_Falcon.PNG"
+    "title": "Black Dove 2020",
+    "src": "assets/black-dove/motion-comic/LOBD_2020_Black Dove 2020.PNG"
   },
   "black-dove-jessica": {
-    title: "Jessica 2020",
-    src: "assets/black-dove/motion-comic/LOBD_2020_jessica.PNG"
+    "title": "Jessica 2020",
+    "src": "assets/black-dove/motion-comic/LOBD_2020_jessica.PNG"
+  },
+  "strange": {
+    "title": "Strange",
+    "src": "assets/artwork/Strange.PNG"
+  },
+  "pizza": {
+    "title": "Pizza",
+    "src": "assets/artwork/pizza.jpg"
+  },
+  "baphomesh": {
+    "title": "Baphomesh",
+    "src": "assets/artwork/baphomesh.png"
+  },
+  "american-gothic": {
+    "title": "American Gothic",
+    "src": "assets/artwork/American gothic 2020.PNG"
+  },
+  "witcher": {
+    "title": "Witcher",
+    "src": "assets/artwork/Witcher.JPEG"
+  },
+  "cornered": {
+    "title": "Cornered",
+    "src": "assets/artwork/cornered.png"
+  },
+  "chaos": {
+    "title": "Chaos",
+    "src": "assets/artwork/Chaos.png"
+  },
+  "dave": {
+    "title": "Dave",
+    "src": "assets/artwork/dave.png"
+  },
+  "election-2016": {
+    "title": "2016 Election",
+    "src": "assets/artwork/election-2016.png"
+  },
+  "sonic": {
+    "title": "Sonic",
+    "src": "assets/artwork/sonic.png"
+  },
+  "gollum": {
+    "title": "Gollum",
+    "src": "assets/artwork/Gollum-purp.JPG"
+  },
+  "batman-at-home": {
+    "title": "Batman At Home",
+    "src": "assets/artwork/Batman at home.PNG"
+  },
+  "sabrina": {
+    "title": "Sabrina",
+    "src": "assets/artwork/Sabrina.PNG"
+  },
+  "robo-oreos": {
+    "title": "Robo Wants Oreos",
+    "src": "assets/artwork/Robo wants oreos.PNG"
+  },
+  "new-painting": {
+    "title": "New Painting",
+    "src": "assets/artwork/Screenshot 2023-09-17 at 1.05.40 PM.png"
+  },
+  "sketch-painting": {
+    "title": "Sketch Painting",
+    "src": "assets/artwork/IMG_5570.PNG"
+  },
+  "small-painting": {
+    "title": "Small Painting",
+    "src": "assets/artwork/7A61C532-20F0-4879-9FED-A0254EE1F9EE.JPG"
+  },
+  "black-dove-falcon": {
+    "title": "Falcon 2020",
+    "src": "assets/black-dove/motion-comic/LOBD_2020_Falcon.PNG"
   },
   "black-dove-blast": {
-    title: "Blast 2020",
-    src: "assets/black-dove/motion-comic/LOBD_2020_blast.PNG"
+    "title": "Blast 2020",
+    "src": "assets/black-dove/motion-comic/LOBD_2020_blast.PNG"
   },
   "black-dove-edmond": {
-    title: "Edmond Prays",
-    src: "assets/black-dove/motion-comic/LOBD_2020_Edmond_Prays.png"
+    "title": "Edmond Prays",
+    "src": "assets/black-dove/motion-comic/LOBD_2020_Edmond_Prays.png"
   },
   "black-dove-dove": {
-    title: "Dove 2020",
-    src: "assets/black-dove/motion-comic/LOBD_2020_dove.jpg"
+    "title": "Dove 2020",
+    "src": "assets/black-dove/motion-comic/LOBD_2020_dove.jpg"
   }
 };
 
@@ -706,6 +706,7 @@ document.addEventListener("click", (event) => {
   }
   if (action === "music") {
     openDialog(dialogs.music);
+    document.querySelector(".album")?.click();
   }
   if (action === "essays") {
     openDialog(dialogs.essays);
