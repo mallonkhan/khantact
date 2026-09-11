@@ -196,6 +196,7 @@
     {
       "id": "ekhanomics",
       "title": "Ekhanomics",
+      "label": "",
       "artist": "Mallon Khan",
       "kind": "embed",
       "url": "https://mallon.bandcamp.com/album/ekhanomics",
@@ -207,6 +208,7 @@
     {
       "id": "pretty-as-shit",
       "title": "Pretty As Shit",
+      "label": "",
       "artist": "Proud Fools",
       "kind": "embed",
       "url": "https://proudfools.bandcamp.com/album/pretty-as-shit",
@@ -218,6 +220,7 @@
     {
       "id": "songs-for-humanoids",
       "title": "Songs For Humanoids",
+      "label": "",
       "artist": "GoZen",
       "kind": "embed",
       "url": "https://mallon.bandcamp.com/album/songs-for-humanoids",
@@ -229,6 +232,7 @@
     {
       "id": "khantact",
       "title": "Khantact",
+      "label": "",
       "artist": "Khan!",
       "kind": "embed",
       "url": "https://mallon.bandcamp.com/album/khantact",
@@ -240,6 +244,7 @@
     {
       "id": "dante-s-history-radio",
       "title": "Dante's History Radio",
+      "label": "",
       "artist": "Mallon Khan",
       "kind": "radio",
       "url": "https://redcircle.com/shows/1cbfd88e-9c60-4e7f-9168-46e0c7dc7b4a",
@@ -251,6 +256,7 @@
     {
       "id": "emplant-opening",
       "title": "Emplant Opening",
+      "label": "",
       "artist": "Mallon Khan",
       "kind": "tape",
       "url": "emplant.html",
