@@ -316,7 +316,7 @@
     "desktopFit": "full-width",
     "mobileFit": "full-width",
     "focusX": 50.0,
-    "focusY": 31.0,
+    "focusY": 35.0,
     "boardImages": [
       {
         "image": "assets/dante/DH logio.png",
@@ -374,8 +374,8 @@
         "x": 0.214,
         "y": 0.22,
         "width": 0.055,
-        "mobileX": 0.214,
-        "mobileY": 0.22,
+        "mobileX": 0.219,
+        "mobileY": 0.225,
         "mobileWidth": 0.055
       },
       {
@@ -384,8 +384,8 @@
         "x": 0.815,
         "y": 0.294,
         "width": 0.081,
-        "mobileX": 0.815,
-        "mobileY": 0.294,
+        "mobileX": 0.831,
+        "mobileY": 0.302,
         "mobileWidth": 0.081
       },
       {
@@ -394,8 +394,8 @@
         "x": 0.92,
         "y": 0.309,
         "width": 0.051,
-        "mobileX": 0.92,
-        "mobileY": 0.309,
+        "mobileX": 0.939,
+        "mobileY": 0.319,
         "mobileWidth": 0.051
       },
       {
