@@ -136,7 +136,7 @@ h1 {
   content: "";
   position: absolute;
   inset: 0;
-  z-index: 2;
+  z-index: 4;
   pointer-events: none;
   background:
     linear-gradient(90deg, rgba(0, 0, 0, 0.34), transparent 22%, transparent 72%, rgba(0, 0, 0, 0.42)),
@@ -156,6 +156,51 @@ h1 {
   filter: none;
   opacity: 1;
   animation: none;
+}
+
+.board-art-layer {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+  transform: translate(-50%, -50%);
+  filter: drop-shadow(0 0.35rem 0.3rem rgba(0, 0, 0, 0.42));
+  pointer-events: none;
+}
+
+/* Panoramic editor mode: one consistent room at every breakpoint. */
+.bedroom-stage[data-designer-layout="true"][data-panorama="true"] {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.bedroom-stage[data-designer-layout="true"][data-panorama="true"] .bedroom-art {
+  width: auto;
+  height: 100%;
+  min-height: 0;
+  max-width: none;
+  object-fit: fill;
+  object-position: left top;
+}
+
+@media (min-width: 761px) {
+  .bedroom-stage[data-panorama="true"] {
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(239, 177, 72, 0.72) rgba(5, 6, 7, 0.38);
+    cursor: ew-resize;
+  }
+
+  .bedroom-stage[data-panorama="true"] .bedroom-art {
+    width: auto;
+    height: 100dvh;
+    min-height: 100vh;
+    object-fit: fill;
+    object-position: left top;
+  }
 }
 
 .constellation-lines {
@@ -1925,10 +1970,7 @@ h1 {
   }
 
   .quick-links {
-    left: auto;
-    right: 0.75rem;
-    justify-content: flex-end;
-    max-width: min(14rem, calc(100vw - 1.5rem));
+    display: none;
   }
 
   .submenu {
@@ -2562,4 +2604,105 @@ h1 {
   .proposal-card {
     grid-template-columns: 1fr;
   }
+}
+
+/* Website Designer: responsive hero image controls */
+.bedroom-stage[data-designer-layout="true"] .bedroom-art {
+  object-position: calc(var(--hero-focus-x, 50) * 1%) calc(var(--hero-focus-y, 50) * 1%);
+}
+
+.bedroom-stage[data-designer-layout="true"][data-desktop-fit="cover"] .bedroom-art {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bedroom-stage[data-designer-layout="true"][data-desktop-fit="contain"] .bedroom-art {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@media (max-width: 760px) {
+  .bedroom-stage[data-designer-layout="true"] {
+    overflow: hidden;
+  }
+
+  .bedroom-stage[data-designer-layout="true"][data-mobile-fit="cover"] .bedroom-art {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .bedroom-stage[data-designer-layout="true"][data-mobile-fit="contain"] .bedroom-art {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .bedroom-stage[data-designer-layout="true"][data-mobile-fit="full-width"] .bedroom-art {
+    width: 100vw;
+    height: auto;
+    object-fit: fill;
+  }
+}
+
+.bedroom-stage[data-designer-layout="true"][data-panorama="true"] {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.bedroom-stage[data-designer-layout="true"][data-panorama="true"] .bedroom-art {
+  width: auto;
+  height: 100dvh;
+  min-height: 100vh;
+  max-width: none;
+  object-fit: fill;
+  object-position: left top;
+}
+
+@media (max-width: 760px) {
+  .bedroom-stage[data-designer-layout="true"][data-panorama="true"] {
+    overflow-x: auto;
+    overflow-y: hidden;
+    background: linear-gradient(180deg, #0b1727 0 58%, #4a2616 78%, #20110c 100%);
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 207, 87, .8) rgba(5, 6, 7, .35);
+  }
+
+  .bedroom-stage[data-designer-layout="true"][data-panorama="true"]::before {
+    content: none;
+  }
+
+  .bedroom-stage[data-designer-layout="true"][data-panorama="true"] .bedroom-art {
+    position: absolute;
+    left: 0;
+    top: 26dvh;
+    z-index: 1;
+    width: auto;
+    height: calc(var(--hero-mobile-scale, 55) * 1dvh);
+    min-height: 0;
+    transform: none;
+    object-fit: fill;
+    object-position: left top;
+  }
+
+  .bedroom-stage .scene-object {
+    width: 0.7rem;
+    height: 0.7rem;
+    border-width: 1px;
+  }
+
+  .bedroom-stage .avatar-hub {
+    width: 2.2rem;
+  }
+}
+
+
+
+
+.bedroom-stage .board-art-layer {
+  max-height: none !important;
+  max-width: none !important;
+  object-fit: contain !important;
 }

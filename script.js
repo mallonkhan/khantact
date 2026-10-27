@@ -245,6 +245,10 @@ const posterArt = {
     "title": "We Are Butthead",
     "src": "assets/artwork/We Are Butthead.png"
   },
+  "say-no-to-fascism": {
+    "title": "SAY NO TO FASCISM",
+    "src": "assets/designer/artwork/monopoly-guy-fascist.png"
+  },
   "emplant-page-2": {
     "title": "Emplant Page 2",
     "src": "assets/emplant/emplant page 2 preview.png"
@@ -252,6 +256,18 @@ const posterArt = {
   "purple-painting": {
     "title": "Whippy",
     "src": "assets/artwork/IMG_7165.PNG"
+  },
+  "strange": {
+    "title": "Strange",
+    "src": "assets/artwork/Strange.PNG"
+  },
+  "gollum": {
+    "title": "Gollum",
+    "src": "assets/artwork/Gollum-purp.JPG"
+  },
+  "pizza": {
+    "title": "Pizza",
+    "src": "assets/artwork/pizza.jpg"
   },
   "black-dove-2020": {
     "title": "Black Dove 2020",
@@ -261,14 +277,6 @@ const posterArt = {
     "title": "Jessica 2020",
     "src": "assets/black-dove/motion-comic/LOBD_2020_jessica.PNG"
   },
-  "strange": {
-    "title": "Strange",
-    "src": "assets/artwork/Strange.PNG"
-  },
-  "pizza": {
-    "title": "Pizza",
-    "src": "assets/artwork/pizza.jpg"
-  },
   "baphomesh": {
     "title": "Baphomesh",
     "src": "assets/artwork/baphomesh.png"
@@ -276,10 +284,6 @@ const posterArt = {
   "american-gothic": {
     "title": "American Gothic",
     "src": "assets/artwork/American gothic 2020.PNG"
-  },
-  "witcher": {
-    "title": "Witcher",
-    "src": "assets/artwork/Witcher.JPEG"
   },
   "cornered": {
     "title": "Cornered",
@@ -301,10 +305,6 @@ const posterArt = {
     "title": "Sonic",
     "src": "assets/artwork/sonic.png"
   },
-  "gollum": {
-    "title": "Gollum",
-    "src": "assets/artwork/Gollum-purp.JPG"
-  },
   "batman-at-home": {
     "title": "Batman At Home",
     "src": "assets/artwork/Batman at home.PNG"
@@ -316,6 +316,10 @@ const posterArt = {
   "robo-oreos": {
     "title": "Robo Wants Oreos",
     "src": "assets/artwork/Robo wants oreos.PNG"
+  },
+  "witcher": {
+    "title": "Witcher",
+    "src": "assets/artwork/Witcher.JPEG"
   },
   "new-painting": {
     "title": "New Painting",
@@ -470,8 +474,12 @@ function getRenderedBedroomRect() {
 
 function pointFromImageCoords(element, imageRect = getRenderedBedroomRect()) {
   if (!element || !imageRect) return null;
-  const x = Number(element.dataset.x);
-  const y = Number(element.dataset.y);
+  const sameMobileArtwork = bedroomArt?.dataset.mobileSrc === bedroomArt?.dataset.desktopSrc;
+  let breakpoint = "";
+  if (window.innerWidth <= 760) breakpoint = sameMobileArtwork ? "" : "Mobile";
+  else if (window.innerWidth <= 1100) breakpoint = "Tablet";
+  const x = Number(element.dataset[`x${breakpoint}`] ?? element.dataset.x);
+  const y = Number(element.dataset[`y${breakpoint}`] ?? element.dataset.y);
   if (!Number.isFinite(x) || !Number.isFinite(y)) return null;
   return {
     x: imageRect.left + imageRect.width * x,
@@ -488,6 +496,10 @@ function positionSceneObjects() {
     if (!point) return;
     element.style.left = `${point.x}px`;
     element.style.top = `${point.y}px`;
+    const width = Number(window.innerWidth <= 760 ? (element.dataset.widthMobile ?? element.dataset.width) : element.dataset.width);
+    if (Number.isFinite(width) && width > 0) {
+      element.style.width = `${imageRect.width * width}px`;
+    }
   });
 
   drawConstellation(imageRect);
@@ -693,6 +705,15 @@ document.addEventListener("click", (event) => {
     return;
   }
 
+  const linkedHotspot = event.target.closest("[data-link]");
+  const customLink = linkedHotspot?.dataset.link;
+  if (customLink) {
+    event.preventDefault();
+    if (/^https?:/i.test(customLink)) window.open(customLink, "_blank", "noopener,noreferrer");
+    else window.location.href = customLink;
+    return;
+  }
+
   const hotspot = event.target.closest("[data-action]");
   if (!hotspot) return;
 
@@ -703,6 +724,11 @@ document.addEventListener("click", (event) => {
   }
   if (action === "poster") {
     openPoster(hotspot.dataset.poster);
+  }
+  if (action === "donate") {
+    donateBookTitle.textContent = "Mallon Khan's work";
+    continueBookLink.href = "https://khanimations.printful.me";
+    openDialog(donateModal);
   }
   if (action === "music") {
     openDialog(dialogs.music);
@@ -788,7 +814,35 @@ posterViewer?.addEventListener("dblclick", resetPosterZoom);
 
 roomShell?.classList.remove("pins-on");
 
+let panoramaCentered = false;
+
+function centerPanorama() {
+  if (!bedroomStage || bedroomStage.dataset.panorama !== "true") return;
+  if (window.innerWidth <= 760) {
+    const focus = Number(bedroomStage.dataset.focusX || 50) / 100;
+    const panoramaWidth = bedroomArt?.offsetWidth || bedroomStage.clientWidth;
+    bedroomStage.scrollLeft = Math.max(0, panoramaWidth - bedroomStage.clientWidth) * focus;
+    panoramaCentered = true;
+    return;
+  }
+  if (bedroomStage.scrollWidth <= bedroomStage.clientWidth) return;
+  const focus = Number(bedroomStage.dataset.focusX || 50) / 100;
+  const panoramaWidth = bedroomArt?.offsetWidth || bedroomStage.scrollWidth;
+  bedroomStage.scrollLeft = Math.max(0, panoramaWidth - bedroomStage.clientWidth) * focus;
+  panoramaCentered = true;
+}
+
 function scheduleScenePositioning() {
+  if (bedroomArt) {
+    const desiredSource = window.innerWidth <= 760
+      ? bedroomArt.dataset.mobileSrc
+      : bedroomArt.dataset.desktopSrc;
+    if (desiredSource && bedroomArt.getAttribute("src") !== desiredSource) {
+      panoramaCentered = false;
+      bedroomArt.setAttribute("src", desiredSource);
+    }
+  }
+  if (!panoramaCentered) requestAnimationFrame(centerPanorama);
   positionSceneObjects();
   requestAnimationFrame(positionSceneObjects);
   window.setTimeout(positionSceneObjects, 120);
@@ -796,12 +850,21 @@ function scheduleScenePositioning() {
 }
 
 scheduleScenePositioning();
-window.addEventListener("resize", scheduleScenePositioning);
-window.addEventListener("orientationchange", scheduleScenePositioning);
-window.visualViewport?.addEventListener("resize", scheduleScenePositioning);
+function resetPanoramaAndPosition() {
+  panoramaCentered = false;
+  scheduleScenePositioning();
+}
+window.addEventListener("resize", resetPanoramaAndPosition);
+window.addEventListener("orientationchange", resetPanoramaAndPosition);
+window.visualViewport?.addEventListener("resize", resetPanoramaAndPosition);
 window.visualViewport?.addEventListener("scroll", scheduleScenePositioning);
 bedroomStage?.addEventListener("scroll", scheduleScenePositioning, { passive: true });
 bedroomArt?.addEventListener("load", scheduleScenePositioning);
+document.querySelectorAll("[data-label]").forEach((hotspot) => {
+  const label = hotspot.dataset.label;
+  const caption = hotspot.querySelector("span");
+  if (label && caption) caption.textContent = label;
+});
 openHashTarget();
 window.addEventListener("hashchange", openHashTarget);
 
@@ -875,3 +938,4 @@ document.addEventListener("contextmenu", (event) => {
     event.preventDefault();
   }
 });
+

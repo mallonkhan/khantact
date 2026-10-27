@@ -1,9 +1,43 @@
 {
   "version": 1,
+  "deletedPages": [],
   "managedFiles": [
     "assets/designer/music/econ-photoshop-economics2025-apr2025.png",
     "assets/designer/music/proud-fools-pretty-as-shit.png",
-    "assets/designer/music/dh-logio.png"
+    "assets/designer/music/dh-logio.png",
+    "assets/designer/essays/columbus-doomer-v2.png",
+    "assets/designer/essays/shakespear-and-debt.jpg",
+    "assets/designer/music/vulgartongueeconomics2027.png",
+    "assets/designer/music/proud-fools-economics-cover-v4.png",
+    "assets/designer/music/proud-fools-economics-cover-v3.png",
+    "assets/designer/music/proud-fools-economics-cover-v5.png",
+    "assets/designer/books/emplant-logo-logo-feb2025.png",
+    "assets/bedroom-hero-v8-desktop.png",
+    "assets/bedroom-hero-v8-mobile.png",
+    "assets/bedroom-hero-v10-panorama-blank-board.png",
+    "assets/bedroom-hero-v11-editable-room.png",
+    "assets/posters/space-railroad-substack.png",
+    "assets/designer/hero/columbus-doomer-v2.png",
+    "assets/designer/hero/proud-fools-economics-cover-v3.png",
+    "assets/designer/hero/witches-image-witches-oct2025.png",
+    "assets/designer/pages/the-vulgar-tongue-portrait.png",
+    "assets/designer/pages/proud-fools-economics-cover.png",
+    "assets/designer/pages/ape-rock-poster-square.png",
+    "assets/designer/hero/g8-strides.png",
+    "assets/designer/hero/hot-mess.png",
+    "assets/designer/hero/hot-mess-2.png",
+    "assets/designer/hero/hot-mess-4.png",
+    "assets/designer/hero/videobeast.png",
+    "assets/designer/pages/monopoly-guy-fascist.png",
+    "assets/designer/music/emplant-logo-logo-feb2025.png",
+    "assets/designer/hero/jairo.png",
+    "assets/designer/hero/emplant-image-generated-apr2025-18.png",
+    "assets/designer/hero/emplant-page-2-preview.png",
+    "assets/designer/hero/monopoly-guy-fascist.png",
+    "assets/designer/pages/exec-d3f2a500-a9d2-4cf0-ac89-0693280f5570.png",
+    "assets/designer/pages/emplant-cover-cover-feb2025.jpg",
+    "assets/designer/pages/emplant-cover-cover-feb2025-02.jpg",
+    "assets/designer/artwork/monopoly-guy-fascist.png"
   ],
   "artwork": [
     {
@@ -17,6 +51,11 @@
       "image": "assets/artwork/We Are Butthead.png"
     },
     {
+      "id": "say-no-to-fascism",
+      "title": "SAY NO TO FASCISM",
+      "image": "assets/designer/artwork/monopoly-guy-fascist.png"
+    },
+    {
       "id": "emplant-page-2",
       "title": "Emplant Page 2",
       "image": "assets/emplant/emplant page 2 preview.png"
@@ -25,6 +64,21 @@
       "id": "purple-painting",
       "title": "Whippy",
       "image": "assets/artwork/IMG_7165.PNG"
+    },
+    {
+      "id": "strange",
+      "title": "Strange",
+      "image": "assets/artwork/Strange.PNG"
+    },
+    {
+      "id": "gollum",
+      "title": "Gollum",
+      "image": "assets/artwork/Gollum-purp.JPG"
+    },
+    {
+      "id": "pizza",
+      "title": "Pizza",
+      "image": "assets/artwork/pizza.jpg"
     },
     {
       "id": "black-dove-2020",
@@ -37,16 +91,6 @@
       "image": "assets/black-dove/motion-comic/LOBD_2020_jessica.PNG"
     },
     {
-      "id": "strange",
-      "title": "Strange",
-      "image": "assets/artwork/Strange.PNG"
-    },
-    {
-      "id": "pizza",
-      "title": "Pizza",
-      "image": "assets/artwork/pizza.jpg"
-    },
-    {
       "id": "baphomesh",
       "title": "Baphomesh",
       "image": "assets/artwork/baphomesh.png"
@@ -55,11 +99,6 @@
       "id": "american-gothic",
       "title": "American Gothic",
       "image": "assets/artwork/American gothic 2020.PNG"
-    },
-    {
-      "id": "witcher",
-      "title": "Witcher",
-      "image": "assets/artwork/Witcher.JPEG"
     },
     {
       "id": "cornered",
@@ -87,11 +126,6 @@
       "image": "assets/artwork/sonic.png"
     },
     {
-      "id": "gollum",
-      "title": "Gollum",
-      "image": "assets/artwork/Gollum-purp.JPG"
-    },
-    {
       "id": "batman-at-home",
       "title": "Batman At Home",
       "image": "assets/artwork/Batman at home.PNG"
@@ -105,6 +139,11 @@
       "id": "robo-oreos",
       "title": "Robo Wants Oreos",
       "image": "assets/artwork/Robo wants oreos.PNG"
+    },
+    {
+      "id": "witcher",
+      "title": "Witcher",
+      "image": "assets/artwork/Witcher.JPEG"
     },
     {
       "id": "new-painting",
@@ -144,10 +183,16 @@
   ],
   "essays": [
     {
-      "id": "the-software-of-consciousness",
-      "title": "The Software of Consciousness",
-      "image": "https://substackcdn.com/image/fetch/$s_!PIXM!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0403c5ca-8764-48a7-92cf-eee244f53c04_1024x708.jpeg",
-      "url": "https://mallonkhan.substack.com/p/the-software-of-consciousness?r=1ngiy"
+      "id": "shakespeare-debt",
+      "title": "Shakespeare & Debt",
+      "image": "assets/designer/essays/shakespear-and-debt.jpg",
+      "url": "https://mallonkhan.substack.com/p/the-kingdom-of-the-devil?r=1ngiy"
+    },
+    {
+      "id": "new-essay",
+      "title": "New essay",
+      "image": "assets/designer/essays/columbus-doomer-v2.png",
+      "url": "https://mallonkhan.substack.com/p/columbus-was-a-doomer?r=1ngiy"
     },
     {
       "id": "the-real-witches-of-oz",
@@ -156,16 +201,28 @@
       "url": "https://open.substack.com/pub/mallonkhan/p/the-real-witches-of-oz?r=1ngiy&utm_campaign=post&utm_medium=web"
     },
     {
+      "id": "space-railroad",
+      "title": "Space Railroad",
+      "image": "assets/posters/space railroad substack.jpg",
+      "url": "https://open.substack.com/pub/mallonkhan/p/space-railroad?r=1ngiy&utm_campaign=post&utm_medium=web"
+    },
+    {
       "id": "puck-the-people-of-oz",
       "title": "Puck the People of Oz",
       "image": "assets/posters/puck the people of oz.jpg",
       "url": "https://open.substack.com/pub/mallonkhan/p/puck-the-people-of-oz?r=1ngiy&utm_campaign=post&utm_medium=web"
     },
     {
-      "id": "space-railroad",
-      "title": "Space Railroad",
-      "image": "assets/posters/space railroad substack.jpg",
-      "url": "https://open.substack.com/pub/mallonkhan/p/space-railroad?r=1ngiy&utm_campaign=post&utm_medium=web"
+      "id": "the-oil-is-the-drug",
+      "title": "The Oil Is the Drug",
+      "image": "assets/posters/Oil Is the Drug.jpg",
+      "url": "https://open.substack.com/pub/mallonkhan/p/the-oil-is-the-drug?r=1ngiy&utm_campaign=post&utm_medium=web"
+    },
+    {
+      "id": "the-software-of-consciousness",
+      "title": "The Software of Consciousness",
+      "image": "https://substackcdn.com/image/fetch/$s_!PIXM!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0403c5ca-8764-48a7-92cf-eee244f53c04_1024x708.jpeg",
+      "url": "https://mallonkhan.substack.com/p/the-software-of-consciousness?r=1ngiy"
     },
     {
       "id": "proud-boys-of-the-1980s",
@@ -174,72 +231,24 @@
       "url": "https://open.substack.com/pub/mallonkhan/p/welcome-to-the-machine-5?r=1ngiy&utm_campaign=post&utm_medium=web"
     },
     {
-      "id": "big-tech-is-the-new-church",
-      "title": "Big Tech is the New Church",
-      "image": "assets/posters/Big Tech is the New Church.jpg",
-      "url": "https://open.substack.com/pub/mallonkhan/p/big-tech-is-the-new-church?r=1ngiy&utm_campaign=post&utm_medium=web&showWelcomeOnShare=true"
-    },
-    {
       "id": "america-s-hell-hole",
       "title": "America's Hell Hole",
       "image": "assets/posters/Hell Hole.jpg",
       "url": "https://open.substack.com/pub/mallonkhan/p/americas-hell-hole?r=1ngiy&utm_campaign=post&utm_medium=web"
-    },
-    {
-      "id": "the-oil-is-the-drug",
-      "title": "The Oil Is the Drug",
-      "image": "assets/posters/Oil Is the Drug.jpg",
-      "url": "https://open.substack.com/pub/mallonkhan/p/the-oil-is-the-drug?r=1ngiy&utm_campaign=post&utm_medium=web"
     }
   ],
   "music": [
     {
       "id": "ekhanomics",
-      "title": "Ekhanomics",
-      "label": "",
-      "artist": "Mallon Khan",
-      "kind": "embed",
-      "url": "https://mallon.bandcamp.com/album/ekhanomics",
-      "embed": "https://bandcamp.com/EmbeddedPlayer/album=1396164373/size=large/bgcol=333333/linkcol=4ec5ec/minimal=true/transparent=true/",
-      "audio": "",
-      "image": "assets/designer/music/econ-photoshop-economics2025-apr2025.png",
-      "linkLabel": "Open Mallon Bandcamp"
-    },
-    {
-      "id": "pretty-as-shit",
-      "title": "Pretty As Shit",
-      "label": "",
+      "title": "Economics",
+      "label": "Economics",
       "artist": "Proud Fools",
       "kind": "embed",
-      "url": "https://proudfools.bandcamp.com/album/pretty-as-shit",
-      "embed": "https://bandcamp.com/EmbeddedPlayer/album=3205329073/size=large/bgcol=333333/linkcol=4ec5ec/minimal=true/transparent=true/",
+      "url": "https://proudfools.bandcamp.com/album/economics",
+      "embed": "https://bandcamp.com/EmbeddedPlayer/album=1396164373/size=large/bgcol=333333/linkcol=4ec5ec/minimal=true/transparent=true/",
       "audio": "",
-      "image": "assets/designer/music/proud-fools-pretty-as-shit.png",
-      "linkLabel": "Support on Bandcamp"
-    },
-    {
-      "id": "songs-for-humanoids",
-      "title": "Songs For Humanoids",
-      "label": "",
-      "artist": "GoZen",
-      "kind": "embed",
-      "url": "https://mallon.bandcamp.com/album/songs-for-humanoids",
-      "embed": "https://bandcamp.com/EmbeddedPlayer/album=125651572/size=large/bgcol=ffffff/linkcol=0687f5/minimal=true/transparent=true/",
-      "audio": "",
-      "image": "https://f4.bcbits.com/img/a3794975710_2.jpg",
-      "linkLabel": "Open Mallon Bandcamp"
-    },
-    {
-      "id": "khantact",
-      "title": "Khantact",
-      "label": "",
-      "artist": "Khan!",
-      "kind": "embed",
-      "url": "https://mallon.bandcamp.com/album/khantact",
-      "embed": "https://bandcamp.com/EmbeddedPlayer/album=2607510681/size=large/bgcol=333333/linkcol=4ec5ec/minimal=true/transparent=true/",
-      "audio": "",
-      "image": "https://f4.bcbits.com/img/a0584349703_2.jpg",
-      "linkLabel": "Open Mallon Bandcamp"
+      "image": "assets/designer/music/proud-fools-economics-cover-v3.png",
+      "linkLabel": "Bandcamp"
     },
     {
       "id": "dante-s-history-radio",
@@ -259,27 +268,514 @@
       "label": "",
       "artist": "Mallon Khan",
       "kind": "tape",
-      "url": "emplant.html",
+      "url": "",
       "embed": "",
       "audio": "assets/audio/emplant/audiobook/Emplant-Opening.mp3",
-      "image": "assets/emplant/emplant-logo.png",
+      "image": "assets/designer/music/emplant-logo-logo-feb2025.png",
       "linkLabel": "Open Emplant"
+    },
+    {
+      "id": "pretty-as-shit",
+      "title": "Pretty As Shit",
+      "label": "",
+      "artist": "Proud Fools",
+      "kind": "embed",
+      "url": "https://proudfools.bandcamp.com/album/pretty-as-shit",
+      "embed": "https://bandcamp.com/EmbeddedPlayer/album=3205329073/size=large/bgcol=333333/linkcol=4ec5ec/minimal=true/transparent=true/",
+      "audio": "",
+      "image": "assets/designer/music/proud-fools-pretty-as-shit.png",
+      "linkLabel": "Support on Bandcamp"
+    },
+    {
+      "id": "songs-for-humanoids",
+      "title": "Songs For Humanoids",
+      "label": "",
+      "artist": "GoZen",
+      "kind": "embed",
+      "url": "https://mallonkhan.bandcamp.com/album/songs-for-humanoids",
+      "embed": "https://bandcamp.com/EmbeddedPlayer/album=125651572/size=large/bgcol=ffffff/linkcol=0687f5/minimal=true/transparent=true/",
+      "audio": "",
+      "image": "https://f4.bcbits.com/img/a3794975710_2.jpg",
+      "linkLabel": "Open Mallon Bandcamp"
     }
   ],
   "books": [
     {
       "id": "emplant",
       "title": "Emplant",
-      "image": "assets/page-art/EMPLANT_Cover_Cover_Apr2025.png",
+      "image": "assets/designer/books/emplant-logo-logo-feb2025.png",
       "url": "emplant.html",
       "description": "Open project page"
+    }
+  ],
+  "hero": {
+    "title": "Mallon Khan",
+    "subtitle": "Multimedia artist and storyteller. I make learning animations. Host the podcast Dante's History and do a bunch of other creative stuff. Go ahead, SNOOP AROUND!",
+    "image": "assets/bedroom-hero-v11-editable-room.png",
+    "mobileImage": "assets/bedroom-hero-v11-editable-room.png",
+    "desktopFit": "full-width",
+    "mobileFit": "cover",
+    "focusX": 50.0,
+    "focusY": 50.0,
+    "boardImages": [
+      {
+        "image": "assets/dante/DH logio.png",
+        "slot": "board-top-right",
+        "x": 0.41,
+        "y": 0.17,
+        "width": 0.04,
+        "mobileX": 0.41,
+        "mobileY": 0.17,
+        "mobileWidth": 0.04
+      },
+      {
+        "image": "assets/posters/space-railroad-substack.png",
+        "slot": "board-bottom-right",
+        "x": 0.52,
+        "y": 0.21,
+        "width": 0.03,
+        "mobileX": 0.52,
+        "mobileY": 0.21,
+        "mobileWidth": 0.03
+      },
+      {
+        "image": "assets/designer/hero/columbus-doomer-v2.png",
+        "slot": "board-bottom-right",
+        "x": 0.45,
+        "y": 0.2,
+        "width": 0.02,
+        "mobileX": 0.45,
+        "mobileY": 0.2,
+        "mobileWidth": 0.02
+      },
+      {
+        "image": "assets/designer/hero/proud-fools-economics-cover-v3.png",
+        "slot": "board-bottom-right",
+        "x": 0.409,
+        "y": 0.285,
+        "width": 0.045,
+        "mobileX": 0.409,
+        "mobileY": 0.285,
+        "mobileWidth": 0.045
+      },
+      {
+        "image": "assets/designer/hero/witches-image-witches-oct2025.png",
+        "slot": "easel",
+        "x": 0.48,
+        "y": 0.22,
+        "width": 0.03,
+        "mobileX": 0.48,
+        "mobileY": 0.22,
+        "mobileWidth": 0.03
+      },
+      {
+        "image": "assets/designer/hero/hot-mess-4.png",
+        "slot": "left-wall",
+        "x": 0.214,
+        "y": 0.22,
+        "width": 0.055,
+        "mobileX": 0.214,
+        "mobileY": 0.22,
+        "mobileWidth": 0.055
+      },
+      {
+        "image": "assets/designer/hero/videobeast.png",
+        "slot": "friend-wall-left",
+        "x": 0.815,
+        "y": 0.294,
+        "width": 0.081,
+        "mobileX": 0.815,
+        "mobileY": 0.294,
+        "mobileWidth": 0.081
+      },
+      {
+        "image": "assets/designer/hero/jairo.png",
+        "slot": "friend-wall-right",
+        "x": 0.92,
+        "y": 0.309,
+        "width": 0.051,
+        "mobileX": 0.92,
+        "mobileY": 0.309,
+        "mobileWidth": 0.051
+      },
+      {
+        "image": "assets/designer/hero/emplant-image-generated-apr2025-18.png",
+        "slot": "easel",
+        "x": 0.22,
+        "y": 0.45,
+        "width": 0.054,
+        "mobileX": 0.22,
+        "mobileY": 0.45,
+        "mobileWidth": 0.054
+      },
+      {
+        "image": "assets/designer/hero/monopoly-guy-fascist.png",
+        "slot": "custom",
+        "x": 0.475,
+        "y": 0.356,
+        "width": 0.042,
+        "mobileX": 0.475,
+        "mobileY": 0.356,
+        "mobileWidth": 0.042
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "avatar",
+        "label": "Bio",
+        "url": "bio.html",
+        "desktop": {
+          "x": 0.45764,
+          "y": 0.64193
+        },
+        "tablet": {
+          "x": 0.45723,
+          "y": 0.65401
+        },
+        "mobile": {
+          "x": 0.45517,
+          "y": 0.66479
+        }
+      },
+      {
+        "id": "tv",
+        "label": "Videos",
+        "url": "",
+        "desktop": {
+          "x": 0.65518,
+          "y": 0.48144
+        },
+        "tablet": {
+          "x": 0.65784,
+          "y": 0.45657
+        },
+        "mobile": {
+          "x": 0.91,
+          "y": 0.48
+        }
+      },
+      {
+        "id": "poster",
+        "label": "Art Gallery",
+        "url": "",
+        "desktop": {
+          "x": 0.4774,
+          "y": 0.38318
+        },
+        "tablet": {
+          "x": 0.47004,
+          "y": 0.37452
+        },
+        "mobile": {
+          "x": 0.47988,
+          "y": 0.32729
+        }
+      },
+      {
+        "id": "proud-fools",
+        "label": "Proud Fools",
+        "url": "proud-fools.html",
+        "desktop": {
+          "x": 0.42994,
+          "y": 0.27752
+        },
+        "tablet": {
+          "x": 0.41882,
+          "y": 0.30016
+        },
+        "mobile": {
+          "x": 0.39599,
+          "y": 0.32104
+        }
+      },
+      {
+        "id": "ape-rock",
+        "label": "Ape Rock",
+        "url": "ape-rock.html",
+        "desktop": {
+          "x": 0.60402,
+          "y": 0.58808
+        },
+        "tablet": {
+          "x": 0.60876,
+          "y": 0.56683
+        },
+        "mobile": {
+          "x": 0.8,
+          "y": 0.5
+        }
+      },
+      {
+        "id": "dantes-history",
+        "label": "Dante's History",
+        "url": "dantes-history.html",
+        "desktop": {
+          "x": 0.42497,
+          "y": 0.14524
+        },
+        "tablet": {
+          "x": 0.41775,
+          "y": 0.11554
+        },
+        "mobile": {
+          "x": 0.422,
+          "y": 0.17573
+        }
+      },
+      {
+        "id": "essays",
+        "label": "Khannections",
+        "url": "",
+        "desktop": {
+          "x": 0.47551,
+          "y": 0.16005
+        },
+        "tablet": {
+          "x": 0.45937,
+          "y": 0.24375
+        },
+        "mobile": {
+          "x": 0.47662,
+          "y": 0.12886
+        }
+      },
+      {
+        "id": "music",
+        "label": "Music",
+        "url": "",
+        "desktop": {
+          "x": 0.3481,
+          "y": 0.40073
+        },
+        "tablet": {
+          "x": 0.33452,
+          "y": 0.34375
+        },
+        "mobile": {
+          "x": 0.12,
+          "y": 0.46
+        }
+      },
+      {
+        "id": "books",
+        "label": "Books",
+        "url": "",
+        "desktop": {
+          "x": 0.33937,
+          "y": 0.24343
+        },
+        "tablet": {
+          "x": 0.32812,
+          "y": 0.18478
+        },
+        "mobile": {
+          "x": 0.14,
+          "y": 0.33
+        }
+      },
+      {
+        "id": "pc",
+        "label": "All Khantent",
+        "url": "",
+        "desktop": {
+          "x": 0.45826,
+          "y": 0.48588
+        },
+        "tablet": {
+          "x": 0.4455,
+          "y": 0.47196
+        },
+        "mobile": {
+          "x": 0.44541,
+          "y": 0.48354
+        }
+      },
+      {
+        "id": "cat-instagram",
+        "label": "Whippy",
+        "url": "https://www.instagram.com/whipolina",
+        "desktop": {
+          "x": 0.82392,
+          "y": 0.64866
+        },
+        "tablet": {
+          "x": 0.81683,
+          "y": 0.64375
+        },
+        "mobile": {
+          "x": 0.86,
+          "y": 0.63
+        }
+      },
+      {
+        "id": "professional-bio",
+        "label": "[it]",
+        "url": "https://www.learnitmedia.com",
+        "desktop": {
+          "x": 0.53323,
+          "y": 0.29596
+        },
+        "tablet": {
+          "x": 0.5554,
+          "y": 0.30529
+        },
+        "mobile": {
+          "x": 0.54295,
+          "y": 0.37729
+        }
+      },
+      {
+        "id": "latest-painting",
+        "label": "Art of Mallon",
+        "url": "https://www.instagram.com/artofmallon",
+        "desktop": {
+          "x": 0.20932,
+          "y": 0.49302
+        },
+        "tablet": {
+          "x": 0.20541,
+          "y": 0.47452
+        },
+        "mobile": {
+          "x": 0.22,
+          "y": 0.45
+        }
+      },
+      {
+        "id": "friend-work-left",
+        "label": "Videobeast",
+        "url": "https://videobeast.bandcamp.com/",
+        "desktop": {
+          "x": 0.78523,
+          "y": 0.38221
+        },
+        "tablet": {
+          "x": 0.78162,
+          "y": 0.40272
+        },
+        "mobile": {
+          "x": 0.83,
+          "y": 0.28
+        }
+      },
+      {
+        "id": "friend-work-right",
+        "label": "Art.i.llery",
+        "url": "https://www.instagram.com/art.i.llery_/",
+        "desktop": {
+          "x": 0.90788,
+          "y": 0.37925
+        },
+        "tablet": {
+          "x": 0.89686,
+          "y": 0.39247
+        },
+        "mobile": {
+          "x": 0.94,
+          "y": 0.29
+        }
+      },
+      {
+        "id": "shop-donations",
+        "label": "GIVE ME $$$",
+        "url": "https://khanimations.printful.me/",
+        "desktop": {
+          "x": 0.55441,
+          "y": 0.49033
+        },
+        "tablet": {
+          "x": 0.55327,
+          "y": 0.47708
+        },
+        "mobile": {
+          "x": 0.5501,
+          "y": 0.46948
+        }
+      },
+      {
+        "id": "custom-1793129281481",
+        "label": "G8 Strides Studio",
+        "url": "https://stephythegr8.myportfolio.com/shirts-merch",
+        "desktop": {
+          "x": 0.21892,
+          "y": 0.28328
+        },
+        "tablet": {
+          "x": 0.20327,
+          "y": 0.28734
+        },
+        "mobile": {
+          "x": 0.5,
+          "y": 0.5
+        }
+      },
+      {
+        "id": "custom-1793131926589",
+        "label": "Twitch",
+        "url": "https://twitch.tv/defkhanzero",
+        "desktop": {
+          "x": 0.66057,
+          "y": 0.7489
+        },
+        "tablet": {
+          "x": 0.64557,
+          "y": 0.75401
+        },
+        "mobile": {
+          "x": 0.5,
+          "y": 0.5
+        }
+      }
+    ]
+  },
+  "pages": [
+    {
+      "id": "bio",
+      "file": "bio.html",
+      "title": "Mallon Khan",
+      "kicker": "Multimedia Storyteller",
+      "summary": "I am the human known as Mallon Khan. Like you, I live during a turning point in history; an Axial Age. This is a time of reorientation, where we shed old skin and usher in a new kind of world. My life's mission is to use art and knowledge to help reorient humanity in the direction of truth, security, and abundance for all.",
+      "image": "assets/designer/pages/the-vulgar-tongue-portrait.png"
     },
     {
-      "id": "the-legend-of-black-dove",
-      "title": "The Legend Of Black Dove",
-      "image": "assets/page-art/Legend of Black Dove Cover.png",
-      "url": "black-dove.html",
-      "description": "Open project page"
+      "id": "proud-fools",
+      "file": "proud-fools.html",
+      "title": "Proud Fools",
+      "kicker": "Music / Bandcamp / Timeline",
+      "summary": "Founded in 2013 by Mallon Khan.\nAll the tracks on Economics were written, recorded, and produced by Mallon Khan in NYC from 2009-2013. \n\nKeko D and Michal Olowina joined on drums and bass in 2016. The trio wrote and recorded the demo Pretty As Shit before disbanding in 2018.",
+      "image": "assets/designer/pages/proud-fools-economics-cover.png"
+    },
+    {
+      "id": "dantes-history",
+      "file": "dantes-history.html",
+      "title": "Dante's History",
+      "kicker": "History / Storytelling / Podcast",
+      "summary": "Dante's History is a serialized podcast unpacking the allegories of Dante Alighieri's\n            Divine Comedy, canto by canto, for modern audiences. Combining rigorous scholarship,\n            immersive audio, and storytelling, it demystifies one of Western literature's most\n            important and notoriously inaccessible masterworks.\n\nThe project reintroduces the Comedy as a radical moral vision, one that speaks to\n            power, injustice, and personal redemption in any era. Long before modern science,\n            Dante mapped a moral physics: an architecture of conscience, community, and\n            transformation for a world still searching for meaning.",
+      "image": "assets/dante/DH logio.png"
+    },
+    {
+      "id": "emplant",
+      "file": "emplant.html",
+      "title": "Emplant",
+      "kicker": "Novel / Audio Play / Audiobook",
+      "summary": "A near-future satire about communication technology, identity, and the systems that promise\n            to enhance life while quietly changing what it means to be human.",
+      "image": "assets/page-art/EMPLANT_Cover_Cover_Apr2025.png"
+    },
+    {
+      "id": "black-dove",
+      "file": "black-dove.html",
+      "title": "The Legend of Black Dove",
+      "kicker": "Novel / Myth / Vigilante Story",
+      "summary": "A supernatural vigilante story with crime, myth, and illustrated-world energy. This page\n            is shaped as a home for the cover, old concept art, character fragments, and future extras.",
+      "image": "assets/page-art/Legend of Black Dove Cover.png"
+    },
+    {
+      "id": "ape-rock",
+      "file": "ape-rock.html",
+      "title": "Ape Rock",
+      "kicker": "Animated Series",
+      "summary": "Created by Mallon Khan in 2010, Ape Rock is a web animation series about a missing-link society being manipulated by a reptilian species in disguise. I experimented with many different looks in 2012, 2014, and 2018. The series was once featured on the High Times app.\n\nAdditional voice work came from Dave Weinstein, Jairo Velasco, Fabian Jimenez, and Sabrina Khan.",
+      "image": "assets/designer/pages/ape-rock-poster-square.png"
     }
   ]
 }
