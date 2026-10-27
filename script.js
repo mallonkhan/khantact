@@ -476,7 +476,7 @@ function pointFromImageCoords(element, imageRect = getRenderedBedroomRect()) {
   if (!element || !imageRect) return null;
   const sameMobileArtwork = bedroomArt?.dataset.mobileSrc === bedroomArt?.dataset.desktopSrc;
   let breakpoint = "";
-  if (window.innerWidth <= 760) breakpoint = sameMobileArtwork ? "" : "Mobile";
+  if (window.innerWidth <= 760) breakpoint = element.classList.contains("board-art-layer") ? "Mobile" : (sameMobileArtwork ? "" : "Mobile");
   else if (window.innerWidth <= 1100) breakpoint = "Tablet";
   const x = Number(element.dataset[`x${breakpoint}`] ?? element.dataset.x);
   const y = Number(element.dataset[`y${breakpoint}`] ?? element.dataset.y);

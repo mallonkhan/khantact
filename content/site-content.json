@@ -314,9 +314,9 @@
     "image": "assets/bedroom-hero-v11-editable-room.png",
     "mobileImage": "assets/bedroom-hero-v11-editable-room.png",
     "desktopFit": "full-width",
-    "mobileFit": "cover",
+    "mobileFit": "full-width",
     "focusX": 50.0,
-    "focusY": 50.0,
+    "focusY": 31.0,
     "boardImages": [
       {
         "image": "assets/dante/DH logio.png",

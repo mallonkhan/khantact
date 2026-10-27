@@ -132,18 +132,7 @@ h1 {
   background: #050607;
 }
 
-.bedroom-stage::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 4;
-  pointer-events: none;
-  background:
-    linear-gradient(90deg, rgba(0, 0, 0, 0.34), transparent 22%, transparent 72%, rgba(0, 0, 0, 0.42)),
-    linear-gradient(0deg, rgba(0, 0, 0, 0.42), transparent 26%, transparent 76%, rgba(0, 0, 0, 0.35)),
-    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.045) 0 1px, transparent 1px 5px);
-  opacity: 0.28;
-}
+.bedroom-stage::after { content: none; }
 
 .bedroom-art {
   display: block;
@@ -2705,4 +2694,59 @@ h1 {
   max-height: none !important;
   max-width: none !important;
   object-fit: contain !important;
+}
+
+/*
+ * Phone layout: the room itself defines the height.
+ * Do not float a wide image inside a viewport-height canvas: that creates
+ * artificial bands above/below the art and makes the scene appear to slide
+ * behind a filter while the browser is resized.
+ */
+@media (max-width: 760px) {
+  .room-shell {
+    min-height: 0;
+    overflow: visible;
+    background: #050607;
+  }
+
+  .room-intro {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    max-width: none;
+    box-sizing: border-box;
+    border-radius: 0;
+    padding: 0.8rem 0.85rem 0.7rem;
+    background: #0b1727;
+  }
+
+  .bedroom-stage[data-designer-layout="true"][data-panorama="true"] {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    overflow: hidden;
+    background: #050607;
+    scrollbar-width: none;
+  }
+
+  .bedroom-stage[data-designer-layout="true"][data-panorama="true"]::-webkit-scrollbar {
+    display: none;
+  }
+
+  .bedroom-stage[data-designer-layout="true"][data-panorama="true"] .bedroom-art {
+    position: relative;
+    inset: auto;
+    display: block;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    max-width: none;
+    transform: none;
+    object-fit: contain;
+    object-position: left top;
+  }
+
+  .quick-links {
+    display: none;
+  }
 }
