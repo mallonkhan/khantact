@@ -494,6 +494,17 @@ function positionSceneObjects() {
   document.querySelectorAll("[data-x][data-y]").forEach((element) => {
     const point = pointFromImageCoords(element, imageRect);
     if (!point) return;
+    if (element.classList.contains("board-art-layer")) {
+      element.style.position = "absolute";
+      element.style.zIndex = "2";
+      element.style.display = "block";
+      element.style.height = "auto";
+      element.style.maxWidth = "none";
+      element.style.maxHeight = "none";
+      element.style.objectFit = "contain";
+      element.style.transform = "translate(-50%, -50%)";
+      element.style.pointerEvents = "none";
+    }
     element.style.left = `${point.x}px`;
     element.style.top = `${point.y}px`;
     const width = Number(window.innerWidth <= 760 ? (element.dataset.widthMobile ?? element.dataset.width) : element.dataset.width);
