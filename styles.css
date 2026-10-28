@@ -2868,7 +2868,10 @@ h1 {
     touch-action: pan-x pan-y !important;
     scrollbar-width: thin;
     scrollbar-color: rgba(255, 207, 87, .85) rgba(5, 6, 7, .4);
+    cursor: grab;
   }
+
+  .bedroom-stage[data-designer-layout="true"][data-mobile-fit="cover"].is-panning { cursor: grabbing; }
 
   .bedroom-stage[data-designer-layout="true"][data-mobile-fit="cover"] > .bedroom-art {
     position: relative !important;

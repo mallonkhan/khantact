@@ -877,6 +877,28 @@ window.visualViewport?.addEventListener("resize", resetPanoramaAndPosition);
 window.visualViewport?.addEventListener("scroll", scheduleScenePositioning);
 bedroomStage?.addEventListener("scroll", scheduleScenePositioning, { passive: true });
 bedroomArt?.addEventListener("load", scheduleScenePositioning);
+
+let roomPanStart = null;
+bedroomStage?.addEventListener("pointerdown", (event) => {
+  if (window.innerWidth > 760 || event.pointerType !== "mouse" || event.target.closest("a, button")) return;
+  roomPanStart = { x: event.clientX, scrollLeft: bedroomStage.scrollLeft };
+  bedroomStage.classList.add("is-panning");
+});
+window.addEventListener("pointermove", (event) => {
+  if (!roomPanStart) return;
+  bedroomStage.scrollLeft = roomPanStart.scrollLeft - (event.clientX - roomPanStart.x);
+});
+window.addEventListener("pointerup", () => {
+  roomPanStart = null;
+  bedroomStage?.classList.remove("is-panning");
+});
+bedroomStage?.addEventListener("wheel", (event) => {
+  if (window.innerWidth > 760 || bedroomStage.scrollWidth <= bedroomStage.clientWidth) return;
+  if (Math.abs(event.deltaY) > Math.abs(event.deltaX)) {
+    event.preventDefault();
+    bedroomStage.scrollLeft += event.deltaY;
+  }
+}, { passive: false });
 document.querySelectorAll("[data-label]").forEach((hotspot) => {
   const label = hotspot.dataset.label;
   const caption = hotspot.querySelector("span");
