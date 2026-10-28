@@ -37,7 +37,8 @@
     "assets/designer/pages/exec-d3f2a500-a9d2-4cf0-ac89-0693280f5570.png",
     "assets/designer/pages/emplant-cover-cover-feb2025.jpg",
     "assets/designer/pages/emplant-cover-cover-feb2025-02.jpg",
-    "assets/designer/artwork/monopoly-guy-fascist.png"
+    "assets/designer/artwork/monopoly-guy-fascist.png",
+    "assets/designer/hero/website-hero-5-2.png"
   ],
   "artwork": [
     {
@@ -312,10 +313,10 @@
     "title": "Mallon Khan",
     "subtitle": "Multimedia artist and storyteller. I make learning animations. I host the podcast Dante's History and do a bunch of other creative stuff. Go ahead, SNOOP AROUND!",
     "image": "assets/bedroom-hero-v11-editable-room.png",
-    "mobileImage": "assets/bedroom-hero-v11-editable-room.png",
+    "mobileImage": "assets/designer/hero/website-hero-5-2.png",
     "desktopFit": "full-width",
     "mobileFit": "cover",
-    "mobileScale": 42.0,
+    "mobileScale": 45.0,
     "focusX": 50.0,
     "focusY": 35.0,
     "boardImages": [
@@ -460,8 +461,8 @@
         "label": "Art Gallery",
         "url": "",
         "desktop": {
-          "x": 0.4774,
-          "y": 0.38318
+          "x": 0.47226,
+          "y": 0.36069
         },
         "tablet": {
           "x": 0.47004,
@@ -613,8 +614,8 @@
         "label": "[it]",
         "url": "https://www.learnitmedia.com",
         "desktop": {
-          "x": 0.5389,
-          "y": 0.36867
+          "x": 0.5541,
+          "y": 0.37627
         },
         "tablet": {
           "x": 0.5554,
@@ -689,8 +690,8 @@
           "y": 0.47708
         },
         "mobile": {
-          "x": 0.5501,
-          "y": 0.46948
+          "x": 0.56385,
+          "y": 0.52307
         }
       },
       {

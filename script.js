@@ -474,9 +474,8 @@ function getRenderedBedroomRect() {
 
 function pointFromImageCoords(element, imageRect = getRenderedBedroomRect()) {
   if (!element || !imageRect) return null;
-  const sameMobileArtwork = bedroomArt?.dataset.mobileSrc === bedroomArt?.dataset.desktopSrc;
   let breakpoint = "";
-  if (window.innerWidth <= 760) breakpoint = element.classList.contains("board-art-layer") ? "Mobile" : (sameMobileArtwork ? "" : "Mobile");
+  if (window.innerWidth <= 760) breakpoint = "Mobile";
   else if (window.innerWidth <= 1100) breakpoint = "Tablet";
   const x = Number(element.dataset[`x${breakpoint}`] ?? element.dataset.x);
   const y = Number(element.dataset[`y${breakpoint}`] ?? element.dataset.y);
@@ -490,8 +489,15 @@ function pointFromImageCoords(element, imageRect = getRenderedBedroomRect()) {
 function positionSceneObjects() {
   const imageRect = getRenderedBedroomRect();
   if (!imageRect) return;
+  const hideMobileLayers = window.innerWidth <= 760
+    && bedroomArt?.dataset.mobileSrc
+    && bedroomArt.dataset.mobileSrc !== bedroomArt.dataset.desktopSrc;
 
   document.querySelectorAll("[data-x][data-y]").forEach((element) => {
+    if (element.classList.contains("board-art-layer") && hideMobileLayers) {
+      element.style.display = "none";
+      return;
+    }
     const point = pointFromImageCoords(element, imageRect);
     if (!point) return;
     if (element.classList.contains("board-art-layer")) {
@@ -521,8 +527,8 @@ function drawConstellation(imageRect = getRenderedBedroomRect()) {
   const avatarPoint = pointFromImageCoords(avatarHub, imageRect);
   if (!avatarPoint) return;
 
-  const lineWidth = Math.max(bedroomStage.clientWidth, bedroomStage.scrollWidth);
-  const lineHeight = Math.max(bedroomStage.clientHeight, bedroomStage.scrollHeight);
+  const lineWidth = Math.max(bedroomStage.clientWidth, imageRect.left + imageRect.width);
+  const lineHeight = Math.max(bedroomStage.clientHeight, imageRect.top + imageRect.height);
   constellationLines.style.width = `${lineWidth}px`;
   constellationLines.style.height = `${lineHeight}px`;
   constellationLines.setAttribute("viewBox", `0 0 ${lineWidth} ${lineHeight}`);
@@ -845,11 +851,9 @@ function centerPanorama() {
 
 function scheduleScenePositioning() {
   if (bedroomArt) {
-    const desiredSource = bedroomStage?.dataset.panorama === "true"
-      ? bedroomArt.dataset.desktopSrc
-      : (window.innerWidth <= 760
-          ? bedroomArt.dataset.mobileSrc
-          : bedroomArt.dataset.desktopSrc);
+    const desiredSource = window.innerWidth <= 760
+      ? bedroomArt.dataset.mobileSrc
+      : bedroomArt.dataset.desktopSrc;
     if (desiredSource && bedroomArt.getAttribute("src") !== desiredSource) {
       panoramaCentered = false;
       bedroomArt.setAttribute("src", desiredSource);
@@ -951,168 +955,3 @@ document.addEventListener("contextmenu", (event) => {
     event.preventDefault();
   }
 });
-
-
-/* MALLON_FINAL_MOBILE_ROOM_V1 */
-(function () {
-  const stage = document.querySelector(".bedroom-stage");
-  const art = document.querySelector(".bedroom-art");
-  if (!stage || !art) return;
-
-  function updateMobileRoom() {
-    if (window.innerWidth > 760) return;
-
-    if (art.dataset.desktopSrc &&
-        art.getAttribute("src") !== art.dataset.desktopSrc) {
-      art.setAttribute("src", art.dataset.desktopSrc);
-    }
-
-    stage.scrollLeft = 0;
-
-    if (typeof positionSceneObjects === "function") {
-      requestAnimationFrame(positionSceneObjects);
-    }
-  }
-
-  window.addEventListener("load", updateMobileRoom);
-  window.addEventListener("resize", updateMobileRoom);
-  art.addEventListener("load", updateMobileRoom);
-
-  updateMobileRoom();
-})();
-/* MALLON_MOBILE_PANORAMA_FINAL_2026 */
-(function () {
-  function repairMobileRoom() {
-    if (window.innerWidth > 760) return;
-
-    const stage = document.querySelector(".bedroom-stage");
-    const art = document.querySelector(".bedroom-art");
-    if (!stage || !art) return;
-
-    const original = art.dataset.desktopSrc;
-    if (original && art.getAttribute("src") !== original) {
-      art.setAttribute("src", original);
-    }
-
-    function positionRoom() {
-      if (typeof positionSceneObjects === "function") {
-        positionSceneObjects();
-      }
-    }
-
-    if (art.complete) {
-      requestAnimationFrame(positionRoom);
-    } else {
-      art.addEventListener("load", positionRoom, {once:true});
-    }
-  }
-
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", repairMobileRoom);
-  } else {
-    repairMobileRoom();
-  }
-
-  window.addEventListener("load", repairMobileRoom);
-  window.addEventListener("resize", repairMobileRoom);
-})();
-/* MALLON_MOBILE_ROOM_SYNC_V2 */
-(function () {
-  const stage = document.querySelector(".bedroom-stage");
-  const art = document.querySelector(".bedroom-art");
-  if (!stage || !art) return;
-
-  function mobileRoom() {
-    if (window.innerWidth > 760) return;
-    const src = art.dataset.desktopSrc;
-    if (src && art.getAttribute("src") !== src) {
-      art.setAttribute("src", src);
-      return;
-    }
-    requestAnimationFrame(function () {
-      if (typeof positionSceneObjects === "function") {
-        positionSceneObjects();
-      }
-    });
-  }
-
-  art.addEventListener("load", mobileRoom);
-  window.addEventListener("resize", mobileRoom);
-  window.addEventListener("load", mobileRoom);
-  mobileRoom();
-})();
-/* MALLON_ACTUAL_MOBILE_STAGE_V4 */
-(function () {
-  function fixRoom() {
-    if (window.innerWidth > 760) return;
-
-    const stage = document.querySelector(".bedroom-stage");
-    const art = document.querySelector(".bedroom-art");
-    if (!stage || !art) return;
-
-    const set = (el, values) => {
-      for (const [key, value] of Object.entries(values)) {
-        el.style.setProperty(key, value, "important");
-      }
-    };
-
-    const source = art.dataset.desktopSrc;
-    if (source && art.getAttribute("src") !== source) {
-      art.setAttribute("src", source);
-      return;
-    }
-
-    const height = Math.round(window.innerHeight * 0.88);
-
-    set(stage, {
-      "position": "relative",
-      "display": "block",
-      "width": "100vw",
-      "height": height + "px",
-      "min-height": "0",
-      "max-height": "none",
-      "aspect-ratio": "auto",
-      "overflow-x": "auto",
-      "overflow-y": "hidden",
-      "touch-action": "pan-x",
-      "background": "#050607"
-    });
-
-    set(art, {
-      "position": "relative",
-      "display": "block",
-      "inset": "auto",
-      "left": "0",
-      "top": "0",
-      "width": "auto",
-      "height": height + "px",
-      "min-width": "0",
-      "min-height": "0",
-      "max-width": "none",
-      "max-height": "none",
-      "margin": "0",
-      "transform": "none",
-      "object-fit": "fill"
-    });
-
-    if (typeof positionSceneObjects === "function") {
-      requestAnimationFrame(positionSceneObjects);
-    }
-  }
-
-  document.addEventListener("DOMContentLoaded", fixRoom);
-  window.addEventListener("load", fixRoom);
-  window.addEventListener("resize", fixRoom);
-
-  const boot = () => {
-    const art = document.querySelector(".bedroom-art");
-    if (art) art.addEventListener("load", fixRoom);
-    fixRoom();
-  };
-
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", boot);
-  } else {
-    boot();
-  }
-})();
