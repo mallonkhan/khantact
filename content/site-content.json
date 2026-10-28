@@ -314,7 +314,8 @@
     "image": "assets/bedroom-hero-v11-editable-room.png",
     "mobileImage": "assets/bedroom-hero-v11-editable-room.png",
     "desktopFit": "full-width",
-    "mobileFit": "full-width",
+    "mobileFit": "cover",
+    "mobileScale": 42.0,
     "focusX": 50.0,
     "focusY": 35.0,
     "boardImages": [
@@ -476,8 +477,8 @@
         "label": "Proud Fools",
         "url": "proud-fools.html",
         "desktop": {
-          "x": 0.42994,
-          "y": 0.27752
+          "x": 0.41016,
+          "y": 0.26315
         },
         "tablet": {
           "x": 0.41882,
@@ -510,8 +511,8 @@
         "label": "Dante's History",
         "url": "dantes-history.html",
         "desktop": {
-          "x": 0.42497,
-          "y": 0.14524
+          "x": 0.41665,
+          "y": 0.16243
         },
         "tablet": {
           "x": 0.41775,
@@ -527,8 +528,8 @@
         "label": "Khannections",
         "url": "",
         "desktop": {
-          "x": 0.47551,
-          "y": 0.16005
+          "x": 0.48052,
+          "y": 0.14325
         },
         "tablet": {
           "x": 0.45937,
@@ -612,8 +613,8 @@
         "label": "[it]",
         "url": "https://www.learnitmedia.com",
         "desktop": {
-          "x": 0.53323,
-          "y": 0.29596
+          "x": 0.5389,
+          "y": 0.36867
         },
         "tablet": {
           "x": 0.5554,
@@ -629,8 +630,8 @@
         "label": "Art of Mallon",
         "url": "https://www.instagram.com/artofmallon",
         "desktop": {
-          "x": 0.20932,
-          "y": 0.49302
+          "x": 0.21506,
+          "y": 0.50776
         },
         "tablet": {
           "x": 0.20541,
