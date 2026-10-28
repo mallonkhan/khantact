@@ -726,6 +726,15 @@ document.addEventListener("click", (event) => {
   const customLink = linkedHotspot?.dataset.link;
   if (customLink) {
     event.preventDefault();
+    if (customLink.startsWith("gallery:")) {
+      const gallery = customLink.slice("gallery:".length);
+      if (gallery === "artwork") openPoster("cornered");
+      if (gallery === "essays") openDialog(dialogs.essays);
+      if (gallery === "music") { openDialog(dialogs.music); document.querySelector(".album")?.click(); }
+      if (gallery === "books") openDialog(dialogs.books);
+      if (gallery === "all") openDialog(dialogs.pc);
+      return;
+    }
     if (/^https?:/i.test(customLink)) window.open(customLink, "_blank", "noopener,noreferrer");
     else window.location.href = customLink;
     return;
@@ -853,7 +862,9 @@ function scheduleScenePositioning() {
   if (bedroomArt) {
     const desiredSource = window.innerWidth <= 760
       ? bedroomArt.dataset.mobileSrc
-      : bedroomArt.dataset.desktopSrc;
+      : window.innerWidth <= 1100
+        ? (bedroomArt.dataset.tabletSrc || bedroomArt.dataset.desktopSrc)
+        : bedroomArt.dataset.desktopSrc;
     if (desiredSource && bedroomArt.getAttribute("src") !== desiredSource) {
       panoramaCentered = false;
       bedroomArt.setAttribute("src", desiredSource);

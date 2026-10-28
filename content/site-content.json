@@ -312,115 +312,14 @@
   "hero": {
     "title": "Mallon Khan",
     "subtitle": "Multimedia artist and storyteller. I make learning animations. I host the podcast Dante's History and do a bunch of other creative stuff. Go ahead, SNOOP AROUND!",
-    "image": "assets/bedroom-hero-v11-editable-room.png",
+    "image": "assets/designer/hero/website-hero-5-2.png",
     "mobileImage": "assets/designer/hero/website-hero-5-2.png",
     "desktopFit": "full-width",
     "mobileFit": "cover",
     "mobileScale": 45.0,
     "focusX": 50.0,
     "focusY": 35.0,
-    "boardImages": [
-      {
-        "image": "assets/dante/DH logio.png",
-        "slot": "board-top-right",
-        "x": 0.41,
-        "y": 0.17,
-        "width": 0.04,
-        "mobileX": 0.41,
-        "mobileY": 0.17,
-        "mobileWidth": 0.04
-      },
-      {
-        "image": "assets/posters/space-railroad-substack.png",
-        "slot": "board-bottom-right",
-        "x": 0.52,
-        "y": 0.21,
-        "width": 0.03,
-        "mobileX": 0.52,
-        "mobileY": 0.21,
-        "mobileWidth": 0.03
-      },
-      {
-        "image": "assets/designer/hero/columbus-doomer-v2.png",
-        "slot": "board-bottom-right",
-        "x": 0.45,
-        "y": 0.2,
-        "width": 0.02,
-        "mobileX": 0.45,
-        "mobileY": 0.2,
-        "mobileWidth": 0.02
-      },
-      {
-        "image": "assets/designer/hero/proud-fools-economics-cover-v3.png",
-        "slot": "board-bottom-right",
-        "x": 0.409,
-        "y": 0.285,
-        "width": 0.045,
-        "mobileX": 0.409,
-        "mobileY": 0.285,
-        "mobileWidth": 0.045
-      },
-      {
-        "image": "assets/designer/hero/witches-image-witches-oct2025.png",
-        "slot": "easel",
-        "x": 0.48,
-        "y": 0.22,
-        "width": 0.03,
-        "mobileX": 0.48,
-        "mobileY": 0.22,
-        "mobileWidth": 0.03
-      },
-      {
-        "image": "assets/designer/hero/hot-mess-4.png",
-        "slot": "left-wall",
-        "x": 0.214,
-        "y": 0.22,
-        "width": 0.055,
-        "mobileX": 0.219,
-        "mobileY": 0.225,
-        "mobileWidth": 0.055
-      },
-      {
-        "image": "assets/designer/hero/videobeast.png",
-        "slot": "friend-wall-left",
-        "x": 0.815,
-        "y": 0.294,
-        "width": 0.081,
-        "mobileX": 0.831,
-        "mobileY": 0.302,
-        "mobileWidth": 0.081
-      },
-      {
-        "image": "assets/designer/hero/jairo.png",
-        "slot": "friend-wall-right",
-        "x": 0.92,
-        "y": 0.309,
-        "width": 0.051,
-        "mobileX": 0.939,
-        "mobileY": 0.319,
-        "mobileWidth": 0.051
-      },
-      {
-        "image": "assets/designer/hero/emplant-image-generated-apr2025-18.png",
-        "slot": "easel",
-        "x": 0.22,
-        "y": 0.45,
-        "width": 0.054,
-        "mobileX": 0.22,
-        "mobileY": 0.45,
-        "mobileWidth": 0.054
-      },
-      {
-        "image": "assets/designer/hero/monopoly-guy-fascist.png",
-        "slot": "custom",
-        "x": 0.475,
-        "y": 0.356,
-        "width": 0.042,
-        "mobileX": 0.475,
-        "mobileY": 0.356,
-        "mobileWidth": 0.042
-      }
-    ],
+    "boardImages": [],
     "hotspots": [
       {
         "id": "avatar",
@@ -435,25 +334,25 @@
           "y": 0.65401
         },
         "mobile": {
-          "x": 0.45517,
-          "y": 0.66479
+          "x": 0.4648,
+          "y": 0.68641
         }
       },
       {
         "id": "tv",
-        "label": "Videos",
+        "label": "Mallon TV",
         "url": "",
         "desktop": {
           "x": 0.65518,
           "y": 0.48144
         },
         "tablet": {
-          "x": 0.65784,
-          "y": 0.45657
+          "x": 0.66846,
+          "y": 0.49711
         },
         "mobile": {
-          "x": 0.91,
-          "y": 0.48
+          "x": 0.67138,
+          "y": 0.49457
         }
       },
       {
@@ -461,16 +360,16 @@
         "label": "Art Gallery",
         "url": "",
         "desktop": {
-          "x": 0.47226,
-          "y": 0.36069
+          "x": 0.22594,
+          "y": 0.52246
         },
         "tablet": {
-          "x": 0.47004,
-          "y": 0.37452
+          "x": 0.21769,
+          "y": 0.45645
         },
         "mobile": {
-          "x": 0.47988,
-          "y": 0.32729
+          "x": 0.23427,
+          "y": 0.46939
         }
       },
       {
@@ -478,12 +377,12 @@
         "label": "Proud Fools",
         "url": "proud-fools.html",
         "desktop": {
-          "x": 0.41016,
-          "y": 0.26315
+          "x": 0.38915,
+          "y": 0.19602
         },
         "tablet": {
-          "x": 0.41882,
-          "y": 0.30016
+          "x": 0.38077,
+          "y": 0.23464
         },
         "mobile": {
           "x": 0.39599,
@@ -495,16 +394,16 @@
         "label": "Ape Rock",
         "url": "ape-rock.html",
         "desktop": {
-          "x": 0.60402,
-          "y": 0.58808
+          "x": 0.79292,
+          "y": 0.34791
         },
         "tablet": {
-          "x": 0.60876,
-          "y": 0.56683
+          "x": 0.81154,
+          "y": 0.2827
         },
         "mobile": {
-          "x": 0.8,
-          "y": 0.5
+          "x": 0.79613,
+          "y": 0.30152
         }
       },
       {
@@ -512,16 +411,16 @@
         "label": "Dante's History",
         "url": "dantes-history.html",
         "desktop": {
-          "x": 0.41665,
-          "y": 0.16243
+          "x": 0.48915,
+          "y": 0.13255
         },
         "tablet": {
-          "x": 0.41775,
-          "y": 0.11554
+          "x": 0.42231,
+          "y": 0.09415
         },
         "mobile": {
-          "x": 0.422,
-          "y": 0.17573
+          "x": 0.4653,
+          "y": 0.11327
         }
       },
       {
@@ -529,50 +428,50 @@
         "label": "Khannections",
         "url": "",
         "desktop": {
-          "x": 0.48052,
-          "y": 0.14325
+          "x": 0.45142,
+          "y": 0.29803
         },
         "tablet": {
-          "x": 0.45937,
-          "y": 0.24375
+          "x": 0.48385,
+          "y": 0.30857
         },
         "mobile": {
-          "x": 0.47662,
-          "y": 0.12886
+          "x": 0.45732,
+          "y": 0.31711
         }
       },
       {
         "id": "music",
-        "label": "Music",
+        "label": "Mallon Radio",
         "url": "",
         "desktop": {
-          "x": 0.3481,
-          "y": 0.40073
+          "x": 0.32217,
+          "y": 0.43405
         },
         "tablet": {
-          "x": 0.33452,
-          "y": 0.34375
+          "x": 0.32846,
+          "y": 0.37512
         },
         "mobile": {
-          "x": 0.12,
-          "y": 0.46
+          "x": 0.34754,
+          "y": 0.44541
         }
       },
       {
         "id": "books",
-        "label": "Books",
-        "url": "",
+        "label": "Emplant",
+        "url": "emplant.html",
         "desktop": {
-          "x": 0.33937,
-          "y": 0.24343
+          "x": 0.5467,
+          "y": 0.21189
         },
         "tablet": {
-          "x": 0.32812,
-          "y": 0.18478
+          "x": 0.51154,
+          "y": 0.17179
         },
         "mobile": {
-          "x": 0.14,
-          "y": 0.33
+          "x": 0.53765,
+          "y": 0.21039
         }
       },
       {
@@ -584,12 +483,12 @@
           "y": 0.48588
         },
         "tablet": {
-          "x": 0.4455,
-          "y": 0.47196
+          "x": 0.46538,
+          "y": 0.47493
         },
         "mobile": {
-          "x": 0.44541,
-          "y": 0.48354
+          "x": 0.46425,
+          "y": 0.48752
         }
       },
       {
@@ -605,8 +504,8 @@
           "y": 0.64375
         },
         "mobile": {
-          "x": 0.86,
-          "y": 0.63
+          "x": 0.81808,
+          "y": 0.65404
         }
       },
       {
@@ -618,8 +517,8 @@
           "y": 0.37627
         },
         "tablet": {
-          "x": 0.5554,
-          "y": 0.30529
+          "x": 0.55923,
+          "y": 0.38251
         },
         "mobile": {
           "x": 0.54295,
@@ -627,63 +526,12 @@
         }
       },
       {
-        "id": "latest-painting",
-        "label": "Art of Mallon",
-        "url": "https://www.instagram.com/artofmallon",
-        "desktop": {
-          "x": 0.21506,
-          "y": 0.50776
-        },
-        "tablet": {
-          "x": 0.20541,
-          "y": 0.47452
-        },
-        "mobile": {
-          "x": 0.22,
-          "y": 0.45
-        }
-      },
-      {
-        "id": "friend-work-left",
-        "label": "Videobeast",
-        "url": "https://videobeast.bandcamp.com/",
-        "desktop": {
-          "x": 0.78523,
-          "y": 0.38221
-        },
-        "tablet": {
-          "x": 0.78162,
-          "y": 0.40272
-        },
-        "mobile": {
-          "x": 0.83,
-          "y": 0.28
-        }
-      },
-      {
-        "id": "friend-work-right",
-        "label": "Art.i.llery",
-        "url": "https://www.instagram.com/art.i.llery_/",
-        "desktop": {
-          "x": 0.90788,
-          "y": 0.37925
-        },
-        "tablet": {
-          "x": 0.89686,
-          "y": 0.39247
-        },
-        "mobile": {
-          "x": 0.94,
-          "y": 0.29
-        }
-      },
-      {
         "id": "shop-donations",
         "label": "GIVE ME $$$",
         "url": "https://khanimations.printful.me/",
         "desktop": {
-          "x": 0.55441,
-          "y": 0.49033
+          "x": 0.57594,
+          "y": 0.52699
         },
         "tablet": {
           "x": 0.55327,
@@ -695,23 +543,6 @@
         }
       },
       {
-        "id": "custom-1793129281481",
-        "label": "G8 Strides Studio",
-        "url": "https://stephythegr8.myportfolio.com/shirts-merch",
-        "desktop": {
-          "x": 0.21892,
-          "y": 0.28328
-        },
-        "tablet": {
-          "x": 0.20327,
-          "y": 0.28734
-        },
-        "mobile": {
-          "x": 0.5,
-          "y": 0.5
-        }
-      },
-      {
         "id": "custom-1793131926589",
         "label": "Twitch",
         "url": "https://twitch.tv/defkhanzero",
@@ -720,12 +551,29 @@
           "y": 0.7489
         },
         "tablet": {
-          "x": 0.64557,
-          "y": 0.75401
+          "x": 0.66846,
+          "y": 0.75589
         },
         "mobile": {
-          "x": 0.5,
-          "y": 0.5
+          "x": 0.65691,
+          "y": 0.77035
+        }
+      },
+      {
+        "id": "custom-1793207862308",
+        "label": "Legend of Black Dove",
+        "url": "black-dove.html",
+        "desktop": {
+          "x": 0.90047,
+          "y": 0.41138
+        },
+        "tablet": {
+          "x": 0.91308,
+          "y": 0.38251
+        },
+        "mobile": {
+          "x": 0.93485,
+          "y": 0.33509
         }
       }
     ]
